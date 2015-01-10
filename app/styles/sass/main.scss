@@ -1,10 +1,13 @@
 $icon-font-path: '../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
+@import "variables-bootstrap";
 @import "variables";
 // bower:scss
 @import "../../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 @import "../../../bower_components/neat/app/assets/stylesheets/_neat";
 // endbower
+
+@import "partials/browser";
 
 
 
@@ -94,5 +97,25 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+
+/*
+*
+* CONTENT SECTIONS
+*
+*/
+
+#accordion {
+  .panel {
+    border: none;
+    @include box-shadow(none);
+  }
+  .panel-heading {
+    border-bottom: 2px solid $gray-light;
+  }
+  .panel-title {
+    font-size: $panel-default-heading-size
   }
 }
