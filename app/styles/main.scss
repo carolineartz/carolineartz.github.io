@@ -1,8 +1,9 @@
 $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
-@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
 // endbower
 
 .browsehappy {
@@ -14,7 +15,7 @@ $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
+  padding-top: 60px;
   padding-bottom: 20px;
 }
 

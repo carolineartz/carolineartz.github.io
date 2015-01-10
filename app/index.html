@@ -11,46 +11,58 @@
     <script src="../bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#headings">Home         </a></li>
-          <li><a href="#headings">About              </a></li>
-          <li><a href="#headings">Contact           </a></li>
-        </ul>
-        <h3 class="text-muted">carolineartz github io   </h3>
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Caroline Artz</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#projects">Projects</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <h3 class="text-muted">carolineartz github io   </h3>
+        </div>
       </div>
       <div id="accordion" class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#collapse">Here is a title hi!                </a></h4>
+            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#projects">Projects                </a></h4>
           </div>
-          <div id="collapse" class="panel-collapse collapse in">
-            <div class="panel-body">Anotehr body   </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#collapse">Here is a title hi!                </a></h4>
-          </div>
-          <div id="collapse" class="panel-collapse collapse in">
-            <div class="panel-body">Anotehr body   </div>
+          <div id="projects" class="panel-collapse collapse in">
+            <div class="panel-body">Projects Here</div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#collapse">Here is a title hi!                </a></h4>
+            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#cv">Cirriculum Vitae               </a></h4>
           </div>
-          <div id="collapse" class="panel-collapse collapse in">
-            <div class="panel-body">Anotehr body   </div>
+          <div id="cv" class="panel-collapse collapse in">
+            <div class="panel-body">CV here   </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#collapse">Here is a title hi!                </a></h4>
+            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#skills">Skills                </a></h4>
           </div>
-          <div id="collapse" class="panel-collapse collapse in">
-            <div class="panel-body">Anotehr body   </div>
+          <div id="skills" class="panel-collapse collapse in">
+            <div class="panel-body">Skills here   </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse" href="#contact" class="collapsed">Contact                </a></h4>
+          </div>
+          <div id="contact" class="panel-collapse collapse in">
+            <div class="panel-body">Contact</div>
           </div>
         </div>
       </div>
@@ -61,6 +73,7 @@
     </div>
   </body>
   <script src="../bower_components/jquery/dist/jquery.js"> </script>
+  <script src="../bower_components/underscore/underscore-min.js"></script>
   <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
   <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
   <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
@@ -72,6 +85,7 @@
   <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"> </script>
   <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js">  </script>
   <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js">   </script>
-  <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js">  </script>
+  <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+  <script src="bower_components/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
   <script src="scripts/main.js"></script>
 </html>

@@ -18,3 +18,14 @@
   });
 
 })();
+
+$(function () {
+  'use strict';
+  $('.navbar-fixed-top').autoHidingNavbar({
+    // see next for specifications
+  });
+});
+
+
+//**************************************************************************
+
