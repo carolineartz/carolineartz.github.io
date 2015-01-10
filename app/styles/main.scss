@@ -1,7 +1,8 @@
 $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 // endbower
 
 .browsehappy {
@@ -70,7 +71,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+//    max-width: 730px;
   }
 
   /* Remove the padding we set earlier */

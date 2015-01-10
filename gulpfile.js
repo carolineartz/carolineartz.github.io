@@ -3,6 +3,8 @@
 // generated on 2015-01-09 using generator-gulp-webapp 0.2.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var jade = require('gulp-jade');
+//var jade = require('jade');
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -20,6 +22,15 @@ gulp.task('jshint', function () {
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.jshint.reporter('fail'));
+});
+
+gulp.task('templates', function() {
+  return gulp.src('app/templates/*.jade')
+    .pipe($.plumber())
+    .pipe($.jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('app'));
 });
 
 gulp.task('html', ['styles'], function () {
@@ -115,6 +126,7 @@ gulp.task('watch', ['connect'], function () {
   ]).on('change', $.livereload.changed);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/templates/**/*.jade', ['templates']);
   gulp.watch('bower.json', ['wiredep']);
 });
 
