@@ -24,6 +24,12 @@ $padding-larger-vertical: ($padding-large-vertical * 2);
 $body-font-weight: 300;
 $border-bottom-light: 1px solid rgba(0,0,0,0.05);
 
+
+// colors
+$tangerine: #f7d100;
+$ce-soir-purple: #90759e;
+
+
 /*
 * custom mixin imports
 */
@@ -47,6 +53,25 @@ pre code {
 .panel-group  .panel-heading {
   border-bottom: $border-bottom-light;
 }
+
+.navbar-default {
+  background-color: white;
+  border-bottom: none;
+//  border-bottom: $border-bottom-light;
+  .navbar-nav li a {
+    @include transition(.2s ease);
+    color: $gray-lighter;
+  }
+  .navbar-nav li.active a {
+    background: none;
+    color: $gray-light;
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+
 
 
 /*
@@ -84,7 +109,8 @@ body {
 }
 
 @include headings {
-  font-weight: 600;
+//  text-transform: uppercase;
+  font-weight: 300;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

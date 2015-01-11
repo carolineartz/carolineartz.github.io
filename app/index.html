@@ -10,6 +10,7 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
     <!-- link(rel='stylesheet', href='//cloud.typography.com/6728472/715226/css/fonts.css')-->
     <link rel="stylesheet" href="//fontastic.s3.amazonaws.com/yUUyimhStYWcjHQxYTrihd/icons.css">
     <script src="//fontastic.s3.amazonaws.com/yUUyimhStYWcjHQxYTrihd/icons.js"></script>
@@ -17,15 +18,15 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="header">
+      <header>
         <div role="navigation" class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Caroline Artz</a>
+              <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#projects">Projects</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#cv">CV</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -33,10 +34,11 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid">
-          <h3 class="text-muted">carolineartz github io   </h3>
-        </div>
-      </div>
+        <section class="intro container-fluid">
+          <h1><span>Hi. I'm <span>Caroline</span>.</span></h1>
+          <h2 class="headline letters type"><span class="words-wrapper waiting"><b class="is-visible">Software Developer.</b><b>UI/UX Engineer.</b></span></h2>
+        </section>
+      </header>
       <div id="accordion" class="panel-group content-sections">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -112,6 +114,8 @@
     </div>
     <script src="../bower_components/jquery/dist/jquery.js"> </script>
     <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="scripts/vendor/headroom.min.js"></script>
+    <script src="scripts/vendor/jQuery.headroom.min.js"></script>
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
@@ -124,7 +128,7 @@
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js">  </script>
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js">   </script>
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-    <script src="bower_components/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
+    <script src="../bower_components/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>

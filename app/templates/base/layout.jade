@@ -11,6 +11,7 @@ html
       try{Typekit.load();}catch(e){}
     // Place favicon.ico and apple-touch-icon.png in the root directory
     link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat:400,700')
     // link(rel='stylesheet', href='//cloud.typography.com/6728472/715226/css/fonts.css')
     link(rel='stylesheet', href="//fontastic.s3.amazonaws.com/yUUyimhStYWcjHQxYTrihd/icons.css")
     script(src='//fontastic.s3.amazonaws.com/yUUyimhStYWcjHQxYTrihd/icons.js')
@@ -22,6 +23,8 @@ html
     block scripts
       script(src='../bower_components/jquery/dist/jquery.js')  
       script(src='../bower_components/underscore/underscore-min.js')
+      script(src='scripts/vendor/headroom.min.js')
+      script(src='scripts/vendor/jQuery.headroom.min.js')
       script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js')
       script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js')
       script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js')
@@ -34,5 +37,6 @@ html
       script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js')   
       script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js')    
       script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js')
-      script(src='bower_components/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js')
+      script(src='../bower_components/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js')
       script(src='scripts/main.js')
+      
