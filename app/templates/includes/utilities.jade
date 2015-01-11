@@ -2,8 +2,8 @@ mixin section(title, target)
   .panel.panel-default
     .panel-heading
       h2.panel-title.text-muted
-      a(data-parent='#accordion', class='collapsed', data-toggle='collapse', href=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
-          =title 
+        a(data-parent='#accordion', class='collapsed', data-toggle='collapse', href=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+            =title 
     div(class='panel-collapse collapse', id=title)
       .panel-body
         block

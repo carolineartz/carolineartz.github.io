@@ -35,7 +35,7 @@ $link-hover-decoration: none;
 
 //== Typography
 
-$font-family-sans-serif:  'myriad-pro', 'Whitney SSm A', 'Whitney SSm B', "WhitneyHTF", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "jaf-bernino-sans", "tk-jaf-bernino-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -57,8 +57,8 @@ $line-height-base:        1.828571429;
 $line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-$headings-font-family:    'myriad-pro-semi-condensed', 'myriad-pro';
-$headings-font-weight:    700;
+$headings-font-family:    "jaf-bernino-sans", "tk-jaf-bernino-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-weight:    600;
 $headings-line-height:    1.1;
 $headings-color:          inherit;
 
