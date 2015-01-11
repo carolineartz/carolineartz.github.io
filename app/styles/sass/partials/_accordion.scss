@@ -1,0 +1,30 @@
+@import "browser";
+
+
+#accordion {
+  .panel {
+    border: none;
+    @include box-shadow(none);
+  }
+}
+.panel-heading [data-toggle="collapse"] {
+  display: block;
+  padding: 20px 0;
+  font-size: $panel-default-heading-size;
+  color: $text-muted;
+  span svg {
+    @include transition(.3s ease);
+    @include transform(rotate(45deg));
+//    color: $text-muted;
+  }
+  svg path {
+    stroke-width: 15;
+    fill: $text-muted;
+    stroke: white;
+  }
+  &.collapsed {
+    span svg {
+      @include transform(rotate(0deg));
+    }
+  }
+}

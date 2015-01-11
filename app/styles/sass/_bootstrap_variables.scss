@@ -1,0 +1,111 @@
+/*
+*  Bootstrap Variable Overrides
+*/
+// quick reference for variables in non-imported sass file: for-reference-only
+
+
+//== Colors
+
+$gray-base:              #20262b;
+$gray-darker:            lighten($gray-base, 13.5%);
+$gray-dark:              #545e67;
+$gray:                   lighten($gray-base, 33.5%);
+$gray-light:             lighten($gray-base, 46.7%);
+$gray-lighter:           lighten($gray-base, 93.5%);
+
+$brand-primary:         #ffe868;
+$brand-success:         #ffe868;
+$brand-info:            #90759e;
+$brand-warning:         #ff8a6c;
+$brand-danger:          #ff8a6c;
+
+//== Scaffolding
+
+//** Background color for `<body>`.
+$body-bg:               #fff;
+//** Global text color on `<body>`.
+$text-color:            $gray-dark;
+
+//** Global textual link color.
+$link-color:            $brand-primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%);
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+//== Typography
+
+$font-family-sans-serif:  'myriad-pro', 'Whitney SSm A', 'Whitney SSm B', "WhitneyHTF", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$font-size-base:          18px;
+$font-size-large:         ceil(($font-size-base * 1.45)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+
+$font-size-h1:            floor(($font-size-base * 3));
+$font-size-h2:            floor(($font-size-base * 2.5));
+$font-size-h3:            ceil(($font-size-base * 2));
+$font-size-h4:            ceil(($font-size-base * 1.75));
+$font-size-h5:            $font-size-base;
+$font-size-h6:            ceil(($font-size-base * 0.95));
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.828571429; 
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    'myriad-pro-semi-condensed', 'myriad-pro';
+$headings-font-weight:    700;
+$headings-line-height:    1.1;
+$headings-color:          inherit;
+
+
+//-- Iconography
+//== Components
+//== Tables
+//== Buttons
+//== Forms
+//== Dropdowns
+//-- Z-index master list
+//== Media queries breakpoints
+
+//== Grid system
+
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     400px;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+//== Container sizes
+//== Navbar
+//== Navs
+//== Pills
+//== Pagination
+//== Pager
+//== Jumbotron
+//== Form states and alerts
+//== Tooltips
+//== Popovers
+//== Labels
+//== Modals
+//== Alerts
+//== Progress bars
+//== List group
+
+//== Panels
+
+$panel-default-heading-bg:    #ffffff;
+
+//== Thumbnails
+//== Wells
+//== Badges
+//== Breadcrumbs
+//== Carousel
+//== Close
+//== Code
+//== Type
+//== Miscellaneous
+//

@@ -22,7 +22,8 @@
 $(function () {
   'use strict';
   $('.navbar-fixed-top').autoHidingNavbar({
-    // see next for specifications
+    'animationDuration' : 300,
+    'showOnBottom': false
   });
 });
 
