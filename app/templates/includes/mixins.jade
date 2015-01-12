@@ -1,0 +1,55 @@
+mixin section(title, target)
+  .panel.panel-default
+    .panel-heading
+      h2.panel-title.text-muted
+        a(data-parent='#accordion', class='collapsed', data-toggle='collapse', href=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+            =title 
+    div(class='panel-collapse collapse', id=title)
+      .panel-body
+        block
+        
+//-***************************************
+
+mixin browser
+  .browsers
+    .browser
+      .browser-top-bar
+        .browser-circle    
+        .browser-circle     
+        .browser-circle  
+      .browser-content
+
+
+mixin project(iden, title, imageside)
+  .row(id=iden)
+    if imageside == 'left'
+      .col-md-8
+        div
+          +browser
+      .col-md-4
+        div.description
+          h2= title
+          block
+    else
+      .col-md-8.col-md-push-4
+        div(id=iden)
+          +browser
+      .col-md-4.col-md-pull-8
+        div.description
+          h2= title
+          block
+
+
+
+
+
+mixin technology(...techs)
+  ul.tech-list
+    each tech in techs
+      li(id=tech)
+        span.icon-star
+        =tech
+        
+  
+
+

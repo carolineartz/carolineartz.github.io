@@ -1,3 +1,4 @@
+
 @mixin headings {
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -27,3 +28,48 @@
     @include transform(translateY(-50%));
   }
 }
+
+@mixin buttons($color) {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  padding: 0;
+  margin: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s;
+  background: $color;
+  &:hover {
+    background: darken($color, 10%);
+  }
+}
+
+///
+@mixin browser-content($link) {
+  $large-screen: em(860) !default;  
+  background: url($link);
+  background-color: white; 
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-left: 0;
+  border-right: 0;
+  height: 17em;
+  overflow: hidden;
+  @include media($large-screen) {
+    height: 18em;
+  }
+}
+
+@mixin project-theme($color) {
+  .repo, .live {
+    @include buttons($color);
+  }
+  .tech-list li span {
+    color: $color;
+  }
+}
+

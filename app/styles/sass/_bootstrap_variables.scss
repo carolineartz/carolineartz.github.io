@@ -13,7 +13,7 @@ $gray:                   lighten($gray-base, 33.5%);
 $gray-light:             lighten($gray-base, 46.7%);
 $gray-lighter:           lighten($gray-base, 73.5%);
 
-$brand-primary:         #ffe868;
+$brand-primary:         #f7d100;
 $brand-success:         #ffe868;
 $brand-info:            #90759e;
 $brand-warning:         #ff8a6c;
@@ -35,12 +35,12 @@ $link-hover-decoration: none;
 
 //== Typography
 
-$font-family-sans-serif:  "jaf-bernino-sans", "tk-jaf-bernino-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 
-$font-size-base:          18px;
+$font-size-base:          22px;
 $font-size-large:         ceil(($font-size-base * 1.45)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 

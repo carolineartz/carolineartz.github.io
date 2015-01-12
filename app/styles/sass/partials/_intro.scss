@@ -84,9 +84,9 @@ $color-3: #0d0d0d; // Cod Gray
     } 
 
     &.selected {
-      background-color: lighten($color-2, 10%);
+      background-color: $tangerine;
       i {
-        color: darken($gray-dark, 5%);
+        color: $gray-dark;
       }
       &::after {
         visibility: hidden;

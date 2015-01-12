@@ -1,5 +1,5 @@
 extends ./base/layout.jade
-include ./includes/utilities.jade
+include ./includes/mixins.jade
 
 block content
   .container-fluid
@@ -7,7 +7,7 @@ block content
       include ./includes/navigation.jade
       include ./includes/intro.jade
     #accordion.panel-group.content-sections
-      include ./includes/sections/projects.jade
+      include ./includes/sections/portfolio.jade
       include ./includes/sections/cv.jade
       include ./includes/sections/skills.jade
       include ./includes/sections/contact.jade

@@ -1,0 +1,111 @@
+#portfolio {
+  //    margin-left: 10px;
+  @include breakpoint($xs) {
+    .description {
+      margin-left: 40px;
+      .content {
+        margin-left: 10px;
+      }
+    }
+  }
+  .tech-list {
+    -webkit-padding-start: 0;
+      list-style-type: none;
+      padding-left: 10px;
+
+    li {
+      display: inline-block;
+      font-family: $headings-font-family;
+      padding-right: .4em;
+      font-size: $font-size-small;
+      color: $text-muted;
+      span {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+  .links {
+    white-space: nowrap;
+    padding-top: 2em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  a svg {
+    vertical-align: text-top;
+  }
+  
+  
+  .row {
+    margin-bottom: 4em;
+  }
+  
+  #ohey {
+    .browser-content {
+      @include browser-content('../images/ohey2.png');
+      height: 23em;
+      @include breakpoint(min-width 53.75px) {
+        height: 23em;
+      }
+    }
+    @include project-theme($mandy);
+  }
+  
+  #sudoku {
+    .browser-content {
+      @include breakpoint($sm) {
+        @include browser-content('../images/sudoku-solver.png');
+      }
+      @include browser-content('../images/sudoku-narrow.png');
+      height: 27em;
+
+      @include breakpoint(min-width 53.75px) {
+        height: 27em;
+      }
+    }
+    @include project-theme($mantis);
+  }
+  #devbootcat {
+    .browser-content {
+      @include browser-content('../images/devbootcat.png');
+      height: 30em;
+      @include breakpoint(min-width 53.75px) {
+        height: 30em;
+      }
+    }
+    @include project-theme($viking);
+  }
+  #devpizzacamp {
+    .browser-content {
+      @include browser-content('../images/devpizzacamp.png');
+      height: 31em;
+      @include breakpoint(min-width 53.75px) {
+        height: 31em;
+      }
+    }
+    @include project-theme($antique-fuchsia);
+  }
+  #polity {
+    .browser-content {
+      @include browser-content('../images/polity.png');
+      height: 26em;
+      @include breakpoint(min-width 53.75px) {
+        height: 26em;
+      }
+    }
+    @include project-theme($carolina-blue);
+  }
+  #devref {
+    .browser-content {
+      @include browser-content('../images/devref.png');
+      height: 32em;
+      @include breakpoint(min-width 53.75px) {
+        height: 32em;
+      }
+    }
+    @include project-theme($monte-carlo);
+  }
+
+  
+  
+}

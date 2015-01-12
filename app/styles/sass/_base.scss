@@ -1,5 +1,6 @@
 // Add any variables needed before bootstrap import here:
 
+@import "partials/mixins";
 /*
 *  bootstrap import
 */
@@ -13,6 +14,7 @@ $icon-font-path: '../../../bower_components/bootstrap-sass-official/assets/fonts
 
 @import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 @import "../../../bower_components/neat/app/assets/stylesheets/_neat";
+@import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 
 
 /*
@@ -21,20 +23,38 @@ $icon-font-path: '../../../bower_components/bootstrap-sass-official/assets/fonts
 
 $panel-default-heading-size:  $font-size-h2;
 $padding-larger-vertical: ($padding-large-vertical * 2);
-$body-font-weight: 300;
+$body-font-weight: 400;
 $border-bottom-light: 1px solid rgba(0,0,0,0.05);
+
+$xxs: min-width 320px;
+$xs: min-width 480px;
+$sm: min-width 768px;
+$md: min-width 992px;
+$lg: min-width 1200px;
 
 
 // colors
 $tangerine: #f7d100;
 $ce-soir-purple: #90759e;
+$light-blue: #5DC8CD;
+$bright-orange: #FFAA40;
+$mantis: #7bc84b;
+$viking: #57c8d4;
+$mandy: #d64e66;
+$antique-fuchsia: #94607e;
+$carolina-blue: #90bbda;
+$monte-carlo: #78bfb6;
+
+
+
+
 
 
 /*
 * custom mixin imports
 */
+@import 'partials/components';
 
-@import "partials/mixins";
 
 
 /*
