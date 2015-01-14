@@ -40,11 +40,11 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 
-$font-size-base:          22px;
+$font-size-base:          17px;
 $font-size-large:         ceil(($font-size-base * 1.45)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 
-$font-size-h1:            floor(($font-size-base * 3));
+$font-size-h1:            floor(($font-size-base * 2.7));
 $font-size-h2:            floor(($font-size-base * 2.5));
 $font-size-h3:            ceil(($font-size-base * 2));
 $font-size-h4:            ceil(($font-size-base * 1.75));

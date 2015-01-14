@@ -1,5 +1,14 @@
-#portfolio {
-  //    margin-left: 10px;
+#projects {
+  .description {
+    h2 {
+      @include breakpoint($md) {
+        font-size: 1.8em;
+      }
+      @include breakpoint($lg) {
+        font-size: 2em;
+      }
+    }
+  }
   @include breakpoint($xs) {
     .description {
       margin-left: 40px;
@@ -33,6 +42,8 @@
   }
   a svg {
     vertical-align: text-top;
+    width: 25px;
+    height: 25px;
   }
   
   
@@ -42,68 +53,94 @@
   
   #ohey {
     .browser-content {
-      @include browser-content('../images/ohey2.png');
-      height: 23em;
-      @include breakpoint(min-width 53.75px) {
-        height: 23em;
+      @include browser-content('../images/ohey-sm.png');
+      height: 26em;
+      @include breakpoint($sm) {
+        @include browser-content('../images/ohey2.png');
+        height: 29em;
+      }
+      @include breakpoint($md) {
+       
+        height: 18em;
+      }
+
+      @include breakpoint($lg) {
+        height: 21em;
+      }
+      @include breakpoint(min-width 1450px) {
+        height: 26em;
       }
     }
-    @include project-theme($mandy);
+//    @include project-theme($mandy);
+    @include project-theme($tangerine);
   }
   
   #sudoku {
     .browser-content {
+      @include browser-content('../images/sudoku-narrow.png');
+      height: 42em;
+      @include breakpoint(min-width 518px) {
+        @include browser-content('../images/sudoku-solver.png');
+        height: 32em;
+      }
+  
       @include breakpoint($sm) {
         @include browser-content('../images/sudoku-solver.png');
+        height: 36em;
       }
-      @include browser-content('../images/sudoku-narrow.png');
-      height: 27em;
-
-      @include breakpoint(min-width 53.75px) {
-        height: 27em;
+      @include breakpoint($md) {
+        @include browser-content('../images/sudoku-solver.png');
+        height: 26em;
+      }
+      @include breakpoint($lg) {
+        @include browser-content('../images/sudoku-solver.png');
+        height: 31em;
       }
     }
-    @include project-theme($mantis);
+    @include project-theme($tangerine);
   }
   #devbootcat {
     .browser-content {
       @include browser-content('../images/devbootcat.png');
       height: 30em;
-      @include breakpoint(min-width 53.75px) {
-        height: 30em;
-      }
+
+
     }
-    @include project-theme($viking);
+    
+    @include project-theme($tangerine);
   }
   #devpizzacamp {
     .browser-content {
       @include browser-content('../images/devpizzacamp.png');
       height: 31em;
-      @include breakpoint(min-width 53.75px) {
-        height: 31em;
+      @include breakpoint($md) {
+        height: 28em;
       }
+      @include breakpoint($sm) {
+        height: 38em;
+      }
+      @include breakpoint($xxs) {
+        height: 25em;
+      }
+
     }
-    @include project-theme($antique-fuchsia);
+    @include project-theme($tangerine);
   }
   #polity {
     .browser-content {
       @include browser-content('../images/polity.png');
       height: 26em;
-      @include breakpoint(min-width 53.75px) {
-        height: 26em;
-      }
+
     }
-    @include project-theme($carolina-blue);
+    @include project-theme($tangerine);
   }
   #devref {
     .browser-content {
       @include browser-content('../images/devref.png');
       height: 32em;
-      @include breakpoint(min-width 53.75px) {
-        height: 32em;
-      }
+
     }
-    @include project-theme($monte-carlo);
+    @include project-theme($tangerine);
   }
 
   

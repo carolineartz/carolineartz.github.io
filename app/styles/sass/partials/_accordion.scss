@@ -1,5 +1,7 @@
 
 @import "partials/projects";
+@import "partials/cv";
+@import "partials/skills";
 
 
 
@@ -11,8 +13,23 @@
 }
 .panel-heading [data-toggle="collapse"] {
   display: block;
-  padding: 20px 0;
-  font-size: $panel-default-heading-size;
+  padding: 10px 0;
+  font-size: 30px;
+  @include breakpoint($xxs) {
+    padding: 13px 0;
+    font-size: 40px;
+  }
+  @include breakpoint($sm) {
+    font-size: 45px;
+  }
+  @include breakpoint($md) {
+    padding: 15px 0;
+    font-size: 50px;
+  }
+  @include breakpoint($lg) {
+    padding: 20px 0;
+    font-size: 60px;
+  }
   color: $text-muted;
   span svg {
     @include transition(.3s ease);

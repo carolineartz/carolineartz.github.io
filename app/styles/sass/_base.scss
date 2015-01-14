@@ -1,12 +1,14 @@
 // Add any variables needed before bootstrap import here:
 
 @import "partials/mixins";
+
 /*
 *  bootstrap import
 */
 
 @import "bootstrap_custom";
-$icon-font-path: '../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
+
+$icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 /*
 *  other library imports, if any
@@ -16,15 +18,14 @@ $icon-font-path: '../../../bower_components/bootstrap-sass-official/assets/fonts
 @import "../../../bower_components/neat/app/assets/stylesheets/_neat";
 @import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 
-
 /*
 *  custom variables
 */
 
-$panel-default-heading-size:  $font-size-h2;
-$padding-larger-vertical: ($padding-large-vertical * 2);
+$panel-default-heading-size: $font-size-h2;
+$padding-larger-vertical: $padding-large-vertical * 2;
 $body-font-weight: 400;
-$border-bottom-light: 1px solid rgba(0,0,0,0.05);
+$border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
 
 $xxs: min-width 320px;
 $xs: min-width 480px;
@@ -32,30 +33,24 @@ $sm: min-width 768px;
 $md: min-width 992px;
 $lg: min-width 1200px;
 
-
 // colors
 $tangerine: #f7d100;
 $ce-soir-purple: #90759e;
 $light-blue: #5DC8CD;
 $bright-orange: #FFAA40;
+$flush-orange: #fd8505;
 $mantis: #7bc84b;
 $viking: #57c8d4;
 $mandy: #d64e66;
 $antique-fuchsia: #94607e;
 $carolina-blue: #90bbda;
 $monte-carlo: #78bfb6;
-
-
-
-
-
+$saphire: #234ba5;
 
 /*
 * custom mixin imports
 */
-@import 'partials/components';
-
-
+@import "partials/components";
 
 /*
 *  Bootstrap Style Overrides:
@@ -66,20 +61,24 @@ pre code {
   font-size: 85%;
 }
 
+.panel {
+  background: none;
+}
+
 .panel-body {
   border: none !important;
 }
 
-.panel-group  .panel-heading {
+.panel-group .panel-heading {
   border-bottom: $border-bottom-light;
 }
 
 .navbar-default {
   background-color: white;
   border-bottom: none;
-//  border-bottom: $border-bottom-light;
+  //  border-bottom: $border-bottom-light;
   .navbar-nav li a {
-    @include transition(.2s ease);
+    @include transition(0.2s ease);
     color: $gray-lighter;
   }
   .navbar-nav li.active a {
@@ -91,9 +90,6 @@ pre code {
   }
 }
 
-
-
-
 /*
 *  global styles
 */
@@ -101,15 +97,14 @@ pre code {
 [class^="icon-"], [class*=" icon-"] {
   height: 32px;
   width: 32px;
-  display: inline-block; 
-  fill: currentColor; 
+  display: inline-block;
+  fill: currentColor;
 }
-
-
 
 .text-large {
   font-size: $font-size-large;
 }
+
 .text-small {
   font-size: $font-size-small;
 }
@@ -126,12 +121,14 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
   font-weight: $body-font-weight;
+  overflow-x: hidden;
 }
 
 @include headings {
-//  text-transform: uppercase;
+  //  text-transform: uppercase;
   font-weight: 300;
 }
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -143,7 +140,6 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -168,15 +164,14 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     //    max-width: 730px;
-  }
 
+  }
   /* Remove the padding we set earlier */
   .header,
   .footer {
     padding-left: 0;
     padding-right: 0;
   }
-
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
@@ -184,3 +179,48 @@ body {
 }
 
 
+
+
+
+/* Responsive TYPOGRAPHY: FML */
+@include breakpoint($xxs) {
+  $font-size-base: 17px;
+  @include resize-headings(30px, 25px, 22px, 20px, 18px, 17px);
+
+}
+
+
+@include breakpoint($xs) {
+  $font-size-base: 17px;
+  @include resize-headings(35px, 30px, 25px, 22px, 20px, 18px);
+}
+
+
+@include breakpoint($sm) {
+  $font-size-base: 18px;
+  @include resize-headings(37px, 33px, 27px, 25px, 23px, 20px);
+}
+
+
+@include breakpoint($md) {
+  $font-size-base: 19px;
+  body {
+    font-size: $font-size-base;
+  }
+}
+
+
+@include breakpoint($lg) {
+  $font-size-base: 22px;
+  body {
+    font-size: $font-size-base;
+  }
+}
+
+
+
+
+
+//body {
+//  font-size: $font-size-base;
+//}

@@ -40,9 +40,6 @@ mixin project(iden, title, imageside)
           block
 
 
-
-
-
 mixin technology(...techs)
   ul.tech-list
     each tech in techs
@@ -51,5 +48,25 @@ mixin technology(...techs)
         =tech
         
   
+mixin education(id, title, institution, time)
+  div(id=id)
+    div.title= title
+    div.institution= institution
+    div.time= time
+    if block
+      block
+  
+mixin work(id, position, location, time)
+  div(id=id)
+    div.position= position
+    div.location= location
+    div.time= time
+    if block
+      block
+
+mixin skill(num, title)
+  li.skill(class="skill-#{num}")
+        h2= title
+        block
 
 

@@ -6,6 +6,30 @@
   }
 }
 
+@mixin resize-headings($h1, $h2, $h3, $h4, $h5, $h6) {
+  h1, .h1 {
+    font-size: $h1;
+  }
+  h2, .h2 {
+    font-size: $h2;
+  }
+  h3, .h3 {
+    font-size: $h3;
+  }
+  h4, .h4 {
+    font-size: $h4;
+  }
+
+  h5, .h5 {
+    font-size: $h5;
+  }
+  h6, .h6 {
+    font-size: $h6;
+  }
+}
+
+
+
 // center vertically and/or horizontally an absolute positioned element
 //credit: http://codyhouse.co/gem/css-animated-headlines/
 
@@ -32,12 +56,12 @@
 @mixin buttons($color) {
   display: inline-block;
   position: relative;
-  width: 150px;
-  padding: 0;
+//  width: 150px;
+  padding: 5px 15px;
   margin: 10px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
-  line-height: 50px;
+  line-height: 30px;
   color: #FFF;
   border-radius: 5px;
   transition: all 0.2s;
@@ -59,9 +83,9 @@
   border-right: 0;
   height: 17em;
   overflow: hidden;
-  @include media($large-screen) {
-    height: 18em;
-  }
+//  @include media($large-screen) {
+//    height: 18em;
+//  }
 }
 
 @mixin project-theme($color) {

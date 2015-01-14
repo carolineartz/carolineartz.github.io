@@ -15,27 +15,51 @@
     var id = $(e.target).prev().find('[id]')[0].id;
     navigateToElement(id);
   });
-
+  
+//  ***********************************************
+  
 })();
 
+//function updateOnFocusItem(items) {
+//  items.each(function(){
+//    ( $(this).offset().top - $(window).scrollTop() <= $(window).height()/2 ) ? $(this).addClass('focus') : $(this).removeClass('focus');
+//  });
+//}
+//
+//function bodyBackground(itemsTopValues) {
+//  var topPosition = $(window).scrollTop() + $(window).height()/2,
+//      skillsNumber = itemsTopValues.length;
+//  console.log(topPosition);
+//  console.log(itemsTopValues);
+//  $.each(itemsTopValues, function(key, value){
+//    if ( (itemsTopValues[key] <= topPosition && itemsTopValues[key+1] > topPosition) || (itemsTopValues[key] <= topPosition && key+1 == skillsNumber ) ) {	
+//      $('#skills .content').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
+//    }
+//  });
+//}
+
 $(function () {
+  
   'use strict';
+  console.log($('body').scrollTop());
+  
+  if ($('body').scrollTop() === 0) {
+    $('.navbar-fixed-top').css('top', '-50px');
+  }
+  
+  
+
   $('.navbar-fixed-top').autoHidingNavbar({
     'animationDuration': 300,
     'showOnBottom': false
   });
+  
 
-  //scroll to project info
+
   //calculate size of intro
-
-
   var iheight = $(window).height();
   $('.intro').css('height', iheight + 'px');
   console.log(iheight + 'px');
-
-  //  $('.projects-container .cd-scroll').on('click', function(){
-  //    $('.projects-container').animate({'scrollTop':$(window).height()}, 500); 
-  //  });
 
   //  **************************************************************
 
@@ -73,7 +97,9 @@ $(function () {
         width = 0;
       words.each(function () {
         var wordWidth = $(this).width();
-        if (wordWidth > width) width = wordWidth;
+        if (wordWidth > width) {
+          width = wordWidth;
+        };
       });
       headline.find('.words-wrapper').css('width', width);
     };
@@ -169,6 +195,30 @@ $(function () {
     $oldWord.removeClass('is-visible').addClass('is-hidden');
     $newWord.removeClass('is-hidden').addClass('is-visible');
   }
+  
+  
+//  ******************************************************************
+//  Skills 
+  
+//  //store service items
+//  var fillingBlocks = $('.skill').not('.skill-divider');
+//
+//  //store service items top position into an array
+//  var topValueFillingBlocks = [];
+//  fillingBlocks.each(function(index){
+//    var topValue = $(this).offset().top;
+//    topValueFillingBlocks[topValueFillingBlocks.length] = topValue;
+//  });
+//
+//  //add the .focus class to the first service item
+//  fillingBlocks.eq(0).addClass('focus');
+//
+//  $(window).on('scroll', function(){
+//    //check which service item is in the viewport and add the .focus class to it
+//    updateOnFocusItem(fillingBlocks.slice(1));
+//    //evaluate the $(window).scrollTop value and change the body::after and body::before background accordingly (using the new-color-n classes)
+//    bodyBackground(topValueFillingBlocks);
+//  });
 });
 
 //$(".navbar-fixed-top").headroom();

@@ -22,7 +22,9 @@
   padding-top: 0;
   text-align: center;
   width: 100%;
-  margin-bottom: 4em;
+  @include breakpoint($sm) {
+    margin-bottom: 3em;
+  }
   @include media($large-screen) {
     padding-top: 4em;
   }

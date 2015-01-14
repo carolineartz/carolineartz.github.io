@@ -5,20 +5,40 @@
   }
 }
 .intro h1 > span {
-  font-size: 2em;
+  font-size: 1.2em;
   border-bottom: 3px solid $text-muted;
   > span {
 //    font-size: 1em;
     color: $tangerine;
   }
-  
+  @include breakpoint($sm) {
+    font-size: 1.4em;
+  }
+  @include breakpoint($md) {
+    font-size: 1.6em;
+  }
+  @include breakpoint($lg) {
+    font-size: 1.8em;
+  }
 }
 .intro h2 {
-  font-size: 3em;
+  font-size: 2em;
   letter-spacing: -2px;
-  line-height: 1.6em;
+  line-height: 1.3em;
   margin-top: 1em;
   color: $text-muted;
+  @include breakpoint($sm) {
+    font-size: 2.2em;
+  }
+  @include breakpoint($md) {
+    font-size: 2.3em;
+    line-height: 1.4em;
+  }
+  @include breakpoint($lg) {
+    font-size: 2.5em;
+    line-height: 1.5em;
+  }
+    
 }
 
 /* -------------------------------- 
