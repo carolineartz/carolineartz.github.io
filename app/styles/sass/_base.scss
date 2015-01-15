@@ -1,41 +1,9 @@
-// Add any variables needed before bootstrap import here:
-
-@import "partials/mixins";
-
-/*
-*  bootstrap import
-*/
-
-@import "bootstrap_custom";
-
-$icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-
-/*
-*  other library imports, if any
-*/
-
-@import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
-@import "../../../bower_components/neat/app/assets/stylesheets/_neat";
-@import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
-
-/*
-*  custom variables
-*/
-
-$panel-default-heading-size: $font-size-h2;
-$padding-larger-vertical: $padding-large-vertical * 2;
-$body-font-weight: 400;
-$border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
-
-$xxs: min-width 320px;
-$xs: min-width 480px;
-$sm: min-width 768px;
-$md: min-width 992px;
-$lg: min-width 1200px;
+// Add any variables, libraries, mixins needed before bootstrap or bootstrap typography overrides import here:
 
 // colors
 $tangerine: #f7d100;
 $ce-soir-purple: #90759e;
+$ce-soir: #90759e;
 $light-blue: #5DC8CD;
 $bright-orange: #FFAA40;
 $flush-orange: #fd8505;
@@ -46,9 +14,91 @@ $antique-fuchsia: #94607e;
 $carolina-blue: #90bbda;
 $monte-carlo: #78bfb6;
 $saphire: #234ba5;
+$dark-byzantium: #594157;
+$eggplant: #6d516b;
+$pacific-blue: #15b7c9;
+$eastern-blue: #1199a9;
+$iris-blue: #00b0c4;
+
+$bottom-skills-fill: $eggplant; // de-saturated purple
+$top-skills-fill: $tangerine; // bright sunny yellow
+
+@import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
+@import "partials/mixins";
+
+/* 
+*  Responsive typography
+*/
+
+$xxs: min-width 320px;
+$xs: min-width 480px;
+$sm: min-width 768px;
+$md: min-width 992px;
+$lg: min-width 1200px;
+
+@include breakpoint($xxs) {
+  $font-size-base: 17px;
+  @include resize-headings(32px, 28px, 25px, 22px, 20px, 18px);
+
+}
+
+@include breakpoint($xs) {
+  $font-size-base: 17px;
+  @include resize-headings(35px, 30px, 25px, 22px, 20px, 18px);
+  .panel-heading [data-toggle="collapse"] {
+
+  }
+}
+
+@include breakpoint($sm) {
+  $font-size-base: 18px;
+  @include resize-headings(37px, 33px, 27px, 25px, 23px, 20px);
+  .panel-heading [data-toggle="collapse"] {
+
+  }
+}
+
+@include breakpoint($md) {
+  $font-size-base: 19px;
+  .panel-heading [data-toggle="collapse"] {
+
+  }
+}
+
+@include breakpoint($lg) {
+  $font-size-base: 22px;
+  .panel-heading [data-toggle="collapse"] {
+
+  }
+}
+
 
 /*
-* custom mixin imports
+*  bootstrap & other library imports here
+*/
+
+@import "bootstrap_custom";
+$icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "../../../bower_components/neat/app/assets/stylesheets/_neat";
+
+
+//override neat's breakpoint mixin, have to import again TODO: fix this. find out: does neat's breakpoint mixin replace the need for this?
+@import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
+@import "partials/icon-fonts";
+@import "partials/social-icons";
+@import "partials/hover";
+/*
+*  custom variables
+*/
+
+
+$panel-default-heading-size: $font-size-h2;
+$padding-larger-vertical: $padding-large-vertical * 2;
+$body-font-weight: 400;
+$border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
+/*
+* custom component imports
 */
 @import "partials/components";
 
@@ -60,7 +110,7 @@ code,
 pre code {
   font-size: 85%;
 }
-
+/* Panels */
 .panel {
   background: none;
 }
@@ -69,17 +119,29 @@ pre code {
   border: none !important;
 }
 
+.panel-heading {
+  padding: 10px 0;
+}
+
 .panel-group .panel-heading {
   border-bottom: $border-bottom-light;
 }
 
+.panel-title a {
+  border-bottom: none;
+  font-style: normal;
+}
+
+/* Navbar */
 .navbar-default {
   background-color: white;
   border-bottom: none;
-  //  border-bottom: $border-bottom-light;
+
   .navbar-nav li a {
     @include transition(0.2s ease);
     color: $gray-lighter;
+    font-style: normal;
+    border-bottom: none;
   }
   .navbar-nav li.active a {
     background: none;
@@ -90,9 +152,6 @@ pre code {
   }
 }
 
-footer {
-  border-top: 0;
-}
 
 /*
 *  global styles
@@ -128,9 +187,18 @@ body {
   overflow-x: hidden;
 }
 
-@include headings {
-  //  text-transform: uppercase;
-  font-weight: 300;
+/* Style links */
+a {
+  @include reveal-underline;
+//  text-decoration: underline;
+//  font-style: italic;
+//  color: $ce-soir;
+//  text-decoration: underline;
+////  border-bottom: 1px solid $antique-fuchsia;
+//  @include transition(all .3s ease-in-out);
+//  &:hover {
+//    border-bottom-color: $link-hover-color;
+//  }
 }
 
 
@@ -157,7 +225,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: none;
 }
 
 .container-narrow > hr {
@@ -165,11 +233,8 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    //    max-width: 730px;
+@include breakpoint($sm) {
 
-  }
   /* Remove the padding we set earlier */
   .header,
   .footer {
@@ -184,47 +249,3 @@ body {
 
 
 
-
-
-/* Responsive TYPOGRAPHY: FML */
-@include breakpoint($xxs) {
-  $font-size-base: 17px;
-  @include resize-headings(30px, 25px, 22px, 20px, 18px, 17px);
-
-}
-
-
-@include breakpoint($xs) {
-  $font-size-base: 17px;
-  @include resize-headings(35px, 30px, 25px, 22px, 20px, 18px);
-}
-
-
-@include breakpoint($sm) {
-  $font-size-base: 18px;
-  @include resize-headings(37px, 33px, 27px, 25px, 23px, 20px);
-}
-
-
-@include breakpoint($md) {
-  $font-size-base: 19px;
-  body {
-    font-size: $font-size-base;
-  }
-}
-
-
-@include breakpoint($lg) {
-  $font-size-base: 22px;
-  body {
-    font-size: $font-size-base;
-  }
-}
-
-
-
-
-
-//body {
-//  font-size: $font-size-base;
-//}

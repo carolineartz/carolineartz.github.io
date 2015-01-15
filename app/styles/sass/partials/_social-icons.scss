@@ -1,0 +1,194 @@
+//colors
+$color_river_bed_approx: #44505b;
+$color_viking_approx: #75c3d8;
+$color_lochmara_approx: #1384c7;
+$color_shady_lady_approx: #a8a8a8;
+$color_san_marino_approx: #586ab2;
+$color_pelorous_approx: #3eb4c0;
+$color_background: #e2eaf2;
+
+$color1: #001021;
+$ca-darkest: #d9f0ff;
+$color3: #7c7287;
+$color4: #eff9f0;
+$color5: #788aa3;
+
+$caroline-social: "caroline-social";
+
+%icons_normal {
+  color: $color1;
+  position: absolute;
+  // bottom: 69px;
+  @include transition(color 0.35s linear);
+}
+
+%icons_hover {
+  color: transparent;
+  position: relative;
+  @include transition(color 0.35s linear);
+}
+
+.icon-twitter:before {
+  content: "a";
+  @extend %icons_hover;
+}
+
+.inverse-icon-twitter:before {
+  content: "b";
+  @extend %icons_normal;
+}
+
+.icon-linkedin:before {
+  content: "c";
+  @extend %icons_hover;
+}
+
+.inverse-icon-linkedin:before {
+  content: "d";
+  @extend %icons_normal;
+}
+
+.icon-github:before {
+  content: "e";
+  @extend %icons_hover;
+}
+
+.inverse-icon-github:before {
+  content: "f";
+  @extend %icons_normal;
+}
+
+.icon-facebook:before {
+  content: "g";
+  @extend %icons_hover;
+}
+
+.inverse-icon-facebook:before {
+  content: "h";
+  @extend %icons_normal;
+}
+
+.icon-email:before {
+  content: "i";
+  @extend %icons_hover;
+}
+
+.inverse-icon-email:before {
+  content: "j";
+  @extend %icons_normal;
+}
+
+.social-twitter:hover {
+  .inverse-icon-twitter:before {
+    color: transparent;
+  }
+  .icon-twitter:before {
+    color: $color_viking_approx;
+  }
+}
+
+.social-linkedin:hover {
+  .inverse-icon-linkedin:before {
+    color: transparent;
+  }
+  .icon-linkedin:before {
+    color: $color_lochmara_approx;
+  }
+}
+
+.social-github:hover {
+  .inverse-icon-github:before {
+    color: transparent;
+  }
+  .icon-github:before {
+    color: $color_shady_lady_approx;
+  }
+}
+
+.social-facebook:hover {
+  .inverse-icon-facebook:before {
+    color: transparent;
+  }
+  .icon-facebook:before {
+    color: $color_san_marino_approx;
+  }
+}
+
+.social-email:hover {
+  .inverse-icon-email:before {
+    color: transparent;
+  }
+  .icon-email:before {
+    color: $color_pelorous_approx;
+  }
+}
+
+// ***********************************************
+.icons li {}
+
+[data-icon]:before
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: $caroline-social !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  pointer-events: all !important;
+  position: absolute;
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="inverse-"]:before {
+  left: 70px;
+}
+
+.social-icons1 {
+  text-align: center;
+  background: transparent;
+  ul {
+    margin-top: -50px;
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      font-family: $caroline-social;
+      line-height: 1;
+      text-decoration: inherit;
+      margin-bottom: 10px;
+      font-size: 400%;
+      width: 70px;
+//      @include respondto(phone, tablet-portrait) {
+//        width: 60px;
+//      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        height: 70px;
+        width: 70px;
+        color: $color1;
+        outline: none;
+        &:hover {
+          color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.icon-twitter,
+.icon-facebook,
+.icon-linkedin,
+.icon-github,
+.icon-email {
+  position: relative;
+  top: 68px;
+//  @include respondto(phone, tablet-portrait) {
+//    top: 56px;
+//  }
+}

@@ -1,7 +1,6 @@
 
 #cv .panel-body > div {
   @include breakpoint($xs) {
-    margin-left: 40px;
     .content {
     margin-left: 10px;
     }
@@ -10,7 +9,7 @@
 
 #cv {
   .content > div {
-    margin-bottom: 1.3em;
+    margin-bottom: 2em;
     &:first-of-type p {
       margin-bottom: 0;
     }
@@ -27,7 +26,7 @@
   @include breakpoint($sm) {
     .title, .position {
       border-bottom: none;
-      span {
+      > span:first-of-type {
         border-bottom: 2px solid $tangerine;
       }
     }
@@ -35,11 +34,30 @@
 
   .institution, .location {
     color: $text-muted;
-    line-height: 1.3em;
-    padding-top: .3em;
-//    display: inline-block;
+    white-space: nowrap;
+    font-size: .7em;
+    font-style: italic;
   }
   .time {
     color: $gray-dark;
+  }
+}
+
+.gpa {
+
+}
+.selected-work {
+//  line-height: 1.1em;
+  .description {
+    padding-left: 10px;
+    line-height: 1.2em;
+    margin-bottom: .7em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .course {
+//    font-style: italic;
+    font-weight: 500;
   }
 }

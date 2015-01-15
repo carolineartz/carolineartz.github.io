@@ -52,8 +52,8 @@ mixin education(id, title, institution, time)
   div(id=id)
     div.title
       span= title
-    div.institution= institution + ' '
-      span.time= time
+      span.institution!= ' &nbsp;' + institution + ' '
+        span.time= time
     if block
       block
   
@@ -72,3 +72,8 @@ mixin skill(num, title)
         block
 
 
+mixin social-icon(social, link)
+  li(class="social-#{social}")
+    a(href=link, target="_blank", title=social)
+      i(class="icon-#{social}")
+      i(class="icon-#{social}-inverse")

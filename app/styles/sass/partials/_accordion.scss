@@ -1,7 +1,5 @@
 
-@import "partials/projects";
-@import "partials/cv";
-@import "partials/skills";
+
 
 
 
@@ -34,7 +32,6 @@
   span svg {
     @include transition(.3s ease);
     @include transform(rotate(45deg));
-//    color: $text-muted;
   }
   svg path {
     stroke-width: 15;

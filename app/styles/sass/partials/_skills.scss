@@ -33,7 +33,7 @@ $icon-small-height: 56px;
 /* the 2 underneath colored sections */
 #skills .content {
   background-attachment: fixed;
-  @include background-image(linear-gradient(top, $flush-orange 0%, $flush-orange 50%, $tangerine 50%, $tangerine 100%));
+  @include background-image(linear-gradient(bottom, $bottom-skills-fill 0%, $bottom-skills-fill 50%, $top-skills-fill 50%, $top-skills-fill 100%));
 
   .skill {
     position: relative;
@@ -127,13 +127,6 @@ $icon-small-height: 56px;
       &::after {
         top: $icon-large-height;
         background-image: url("../images/skills/lg-divider.svg");
-      }
-      &.skill-divider:first-child, &.skill-divider:last-child {
-        min-height: 50px;
-        padding: 0;
-      }
-      &.skill-divider:last-child {
-        display: block;
       }
       &.skill-1::before {
         background-image: url("../images/skills/1-skills-frontend-lg.svg");

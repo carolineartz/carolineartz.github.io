@@ -1,0 +1,20 @@
+.about-photo {
+  text-align: center;
+  boder-radius: 50%;
+  
+}
+.image-border {
+  border-radius: 50%;
+  border: 4px solid $tangerine;
+}
+
+#about img {
+  @include transition(all .4s ease);
+  width: 60%;
+//  border-radius: 50%;
+//  border: 4px solid $tangerine;
+  &:hover {
+    @include filter(grayscale(100%));
+    border: 4px solid $tangerine;
+  }
+}
