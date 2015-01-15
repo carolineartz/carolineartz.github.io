@@ -1,5 +1,5 @@
 mixin section(title, target)
-  .panel.panel-default
+  .panel.panel-default(id="section-#{title}")
     .panel-heading
       h2.panel-title.text-muted
         a(data-parent='#accordion', class='collapsed', data-toggle='collapse', href=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
@@ -50,17 +50,19 @@ mixin technology(...techs)
   
 mixin education(id, title, institution, time)
   div(id=id)
-    div.title= title
-    div.institution= institution
-    div.time= time
+    div.title
+      span= title
+    div.institution= institution + ' '
+      span.time= time
     if block
       block
   
 mixin work(id, position, location, time)
   div(id=id)
-    div.position= position
-    div.location= location
-    div.time= time
+    div.position
+      span= position
+    div.location= location + ' '
+      span.time= time
     if block
       block
 

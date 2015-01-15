@@ -10,24 +10,36 @@
 
 #cv {
   .content > div {
-    margin-bottom: 10px;
-    &:first-of-type {
+    margin-bottom: 1.3em;
+    &:first-of-type p {
       margin-bottom: 0;
     }
   }
   p {
     margin-left: 10px;
   }
-
   .title, .position {
     font-size: 1.5em;
     line-height: 1em;
+    border-bottom: 2px solid $tangerine;
+    padding-bottom: .4em;
   }
+  @include breakpoint($sm) {
+    .title, .position {
+      border-bottom: none;
+      span {
+        border-bottom: 2px solid $tangerine;
+      }
+    }
+  }
+
   .institution, .location {
     color: $text-muted;
-    display: inline-block;
+    line-height: 1.3em;
+    padding-top: .3em;
+//    display: inline-block;
   }
   .time {
-    display: inline-block;
+    color: $gray-dark;
   }
 }

@@ -45,104 +45,155 @@
     width: 25px;
     height: 25px;
   }
-  
-  
   .row {
     margin-bottom: 4em;
   }
   
+  /*
+  * Projects
+  */
+  #ohey, #sudoku, #devbootcat, #devpizzacamp, #polity, #devref {
+    @include project-theme($tangerine);
+  }
+
   #ohey {
     .browser-content {
       @include browser-content('../images/ohey-sm.png');
-      height: 26em;
-      @include breakpoint($sm) {
-        @include browser-content('../images/ohey2.png');
-        height: 29em;
-      }
-      @include breakpoint($md) {
-       
-        height: 18em;
-      }
-
-      @include breakpoint($lg) {
-        height: 21em;
-      }
-      @include breakpoint(min-width 1450px) {
-        height: 26em;
-      }
+      height: 18em;
     }
-//    @include project-theme($mandy);
-    @include project-theme($tangerine);
   }
   
   #sudoku {
     .browser-content {
       @include browser-content('../images/sudoku-narrow.png');
-      height: 42em;
-      @include breakpoint(min-width 518px) {
-        @include browser-content('../images/sudoku-solver.png');
-        height: 32em;
-      }
-  
-      @include breakpoint($sm) {
-        @include browser-content('../images/sudoku-solver.png');
-        height: 36em;
-      }
-      @include breakpoint($md) {
-        @include browser-content('../images/sudoku-solver.png');
-        height: 26em;
-      }
-      @include breakpoint($lg) {
-        @include browser-content('../images/sudoku-solver.png');
-        height: 31em;
-      }
+      height: 36em;
     }
-    @include project-theme($tangerine);
   }
+    
   #devbootcat {
     .browser-content {
       @include browser-content('../images/devbootcat.png');
-      height: 30em;
-
-
+      height: 24em;
     }
-    
-    @include project-theme($tangerine);
   }
+    
   #devpizzacamp {
     .browser-content {
       @include browser-content('../images/devpizzacamp.png');
-      height: 31em;
-      @include breakpoint($md) {
-        height: 28em;
-      }
-      @include breakpoint($sm) {
-        height: 38em;
-      }
-      @include breakpoint($xxs) {
-        height: 25em;
-      }
-
+      height: 18em;
     }
-    @include project-theme($tangerine);
   }
+    
   #polity {
     .browser-content {
       @include browser-content('../images/polity.png');
-      height: 26em;
-
+      height: 20em;
     }
-    @include project-theme($tangerine);
   }
+    
   #devref {
     .browser-content {
       @include browser-content('../images/devref.png');
-      height: 32em;
-
+      height: 24em;
     }
-    @include project-theme($tangerine);
+  }
+  
+  
+  
+  /*
+  *    Media Breakpoints
+  */
+    
+  @include breakpoint($xxs) {
+    #devbootcamp .browser-content {
+      height: 25em;
+    }
+  }
+  
+  @include breakpoint($xs) {
+    #ohey .browser-content {
+      height: 27em;
+    }
+    #polity .browser-content {
+      height: 27em;
+    }
+  }
+    
+  @include breakpoint(min-width 518px) {
+    #ohey .browser-content {
+      @include browser-content('../images/ohey2.png');
+      height: 24em;
+    }
+    #sudoku .browser-content {
+      @include browser-content('../images/sudoku-solver.png');
+      height: 27em;
+    }
+    #devbootcat .browser-content {
+      height: 26em;
+    }
+    
+    #devpizzacamp .browser-content {
+      height: 30em;
+    }
+    #polity .browser-content {
+      height: 36em;
+    }
+    
+    #devref .browser-content {
+      height: 27em;
+    }
+
   }
 
+  @include breakpoint($sm) {
+    #ohey .browser-content {
+      @include browser-content('../images/ohey2.png');
+      height: 29em;
+    }
+    #sudoku .browser-content {
+      height: 36em;
+    }
+    #devpizzacamp .browser-content {
+      height: 38em;
+    }
+    #devbootcat .browser-content {
+      height: 42em;
+    }
+    #devref .browser-content {
+      height: 32em;
+    }
+  }
+
+  @include breakpoint($md) {
+    #ohey .browser-content {
+      height: 18em;
+      }
+    #sudoku .browser-content {
+      height: 26em;
+    }
+    #devpizzacamp .browser-content {
+      height: 28em;
+    }
+    #devbootcat .browser-content {
+      height: 34em;
+    }
+    #polity .browser-content {
+      height: 28em;
+    }
+  }
+
+  @include breakpoint($lg) {
+    #ohey .browser-content {
+      height: 21em;
+      }
+    #sudoku .browser-content {
+      height: 31em;
+    }
+  }
   
-  
+  @include breakpoint(min-width 1450px) {
+    #ohey .browser-content {
+      height: 26em;
+    }
+  }
 }

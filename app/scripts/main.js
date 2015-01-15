@@ -5,38 +5,20 @@
 (function () {
   'use strict';
 
-  var navigateToElement = function (id) {
+  function navigateToElement(e) {
+    var $elem = $(e.target).prev('.panel-heading').parent();
+    console.log($elem);
     $('html, body').animate({
-      scrollTop: $('#' + id).offset().top
-    }, 1000);
+      scrollTop: $elem.offset().top - 30
+    }, 500);
   };
-
-  $('#section-navigation').on('shown.bs.collapse', function (e) {
-    var id = $(e.target).prev().find('[id]')[0].id;
-    navigateToElement(id);
-  });
   
-//  ***********************************************
+  $('#accordion').on('shown.bs.collapse', navigateToElement);
+  $('#accordion').on('hidden.bs.collapse', navigateToElement);
+  
   
 })();
 
-//function updateOnFocusItem(items) {
-//  items.each(function(){
-//    ( $(this).offset().top - $(window).scrollTop() <= $(window).height()/2 ) ? $(this).addClass('focus') : $(this).removeClass('focus');
-//  });
-//}
-//
-//function bodyBackground(itemsTopValues) {
-//  var topPosition = $(window).scrollTop() + $(window).height()/2,
-//      skillsNumber = itemsTopValues.length;
-//  console.log(topPosition);
-//  console.log(itemsTopValues);
-//  $.each(itemsTopValues, function(key, value){
-//    if ( (itemsTopValues[key] <= topPosition && itemsTopValues[key+1] > topPosition) || (itemsTopValues[key] <= topPosition && key+1 == skillsNumber ) ) {	
-//      $('#skills .content').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
-//    }
-//  });
-//}
 
 $(function () {
   
@@ -196,39 +178,30 @@ $(function () {
     $newWord.removeClass('is-hidden').addClass('is-visible');
   }
   
-  
-//  ******************************************************************
-//  Skills 
-  
-//  //store service items
-//  var fillingBlocks = $('.skill').not('.skill-divider');
-//
-//  //store service items top position into an array
-//  var topValueFillingBlocks = [];
-//  fillingBlocks.each(function(index){
-//    var topValue = $(this).offset().top;
-//    topValueFillingBlocks[topValueFillingBlocks.length] = topValue;
-//  });
-//
-//  //add the .focus class to the first service item
-//  fillingBlocks.eq(0).addClass('focus');
-//
-//  $(window).on('scroll', function(){
-//    //check which service item is in the viewport and add the .focus class to it
-//    updateOnFocusItem(fillingBlocks.slice(1));
-//    //evaluate the $(window).scrollTop value and change the body::after and body::before background accordingly (using the new-color-n classes)
-//    bodyBackground(topValueFillingBlocks);
-//  });
+
 });
 
-//$(".navbar-fixed-top").headroom();
+var MOBILE = false;
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  var MOBILE = true;
+}
 
-//?????????????????????????????????????????????????????????????????
+if (!MOBILE) {
+  console.log("is not mobile");
+  $(".mobile-sep").css("display", "none");
+} else {
+  console.log("is is mobile");
+  var skillsStyles = {
+    backgroundAttachment : "scroll",
+    background: "#f7d100"
+  };
+  $("#skills .content").css(skillsStyles);
 
+}
 
+//
+//if($.browser.webkit) {
+//  alert('This is WebKit!');
+//}
 
-
-
-
-//**************************************************************************
