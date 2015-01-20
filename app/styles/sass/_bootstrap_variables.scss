@@ -2,7 +2,7 @@
 *  Bootstrap Variable Overrides
 */
 
-@import "partials/icon-fonts";
+@import "partials/fonts";
 
 //== Colors
 
@@ -36,7 +36,21 @@ $link-hover-decoration: none;
 
 //== Typography
 
-$font-family-sans-serif: "Avenir Next W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-light: "Avenir Next W01 Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-light-italic: "AvenirNextW01-LightItal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-light-sc: "AvenirNextW01SC-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-regular: "AvenirNextLTW01-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-italic: "AvenirNextLTW01-Italic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-medium: "AvenirNextLTW01-Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-medium-italic: "AvenirNextLTW01-MediumI_721278", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-medium-sc: "AvenirNextLTW01-MediumS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-demi: "Avenir Next LT W01 Demi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-demi-italic: "AvenirNextLTW01-DemiIta", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-demi-sc: "AvenirNextLTW01-DemiSC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-bold: "Avenir Next LT W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-bold-italic: "AvenirNextLTW01-BoldIta", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-family-sans-serif: $font-avenir-next-light;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.

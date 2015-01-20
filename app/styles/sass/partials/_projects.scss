@@ -23,11 +23,10 @@
     list-style-type: none;
     li {
       display: inline-block;
-      // font-family: $headings-font-family;
+      font-family: $font-avenir-next-light-sc;
       padding-right: .4em;
       font-size: $font-size-small;
       color: $text-muted;
-      font-style: oblique;
       span {
         height: 20px;
         width: 20px;

@@ -37,11 +37,11 @@ $top-skills-fill: $tangerine;
 $xxs: min-width 320px;
 $xs: min-width 480px;
 $smx: min-width 618px;
-
-//custom
 $sm: min-width 768px;
 $md: min-width 992px;
 $lg: min-width 1200px;
+
+$mobile-landscape: (max-width 768px) (orientation landscape);
 
 @include breakpoint($xxs) {
   $font-size-base: 17px;
@@ -89,7 +89,7 @@ $icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts
 
 //override neat's breakpoint mixin, have to import again TODO: fix this. find out: does neat's breakpoint mixin replace the need for this?
 @import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
-@import "partials/icon-fonts";
+@import "partials/fonts";
 @import "partials/social-icons";
 @import "partials/hover";
 
@@ -145,6 +145,7 @@ pre code {
 .navbar-default {
   background-color: white;
   border-bottom: none;
+  margin-bottom: 5px;
   .navbar-nav li a {
     @include transition(0.2s ease);
     color: $gray-lighter;
