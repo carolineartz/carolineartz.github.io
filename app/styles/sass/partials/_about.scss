@@ -1,20 +1,96 @@
-.about-photo {
-  text-align: center;
-  boder-radius: 50%;
-  
-}
-.image-border {
+#about img {
+  @include transition(all 0.4s ease-in-out);
+  width: 60%;
   border-radius: 50%;
-  border: 4px solid $tangerine;
+  border: 1px solid $tangerine;
+  @include filter(grayscale(100%));
+  &:hover {
+    //    @include filter(inherit);
+    //    @include filter(none);
+    //    @include transition(filter .4s ease);
+
+  }
 }
 
-#about img {
-  @include transition(all .4s ease);
-  width: 60%;
-//  border-radius: 50%;
-//  border: 4px solid $tangerine;
-  &:hover {
-    @include filter(grayscale(100%));
-    border: 4px solid $tangerine;
+//
+$filters: posterize, css_brightness, brightness_threshold, css_opacity, css_invert, gamma_correct, gamma_correct2, css_grayscale, WashoutFilter, css_saturate, css_hue_rotate, luminance_mask, css_sepia, dusk, sepia_blur, dilate_saturate, rotate_hue, erode_1;
+
+@each $filter in $filters {
+  @include keyframes(#{$filter}-on) {
+    0% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    20% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    30% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    30% {
+      @include filter(url(##{$filter}));
+      opacity: .7;
+    }
+    50% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    50% {
+      @include filter(url(##{$filter}));
+      opacity: .8;
+    }
+    80% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    80% {
+      @include filter(url(##{$filter}));
+      opacity: .9;
+    }
+    100% {
+      @include filter(url(##{$filter}));
+      opacity: 1;
+    }
+  }
+}
+
+@each $filter in $filters {
+  @include keyframes(#{$filter}-off) {
+    100% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    80% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    80% {
+      @include filter(url(##{$filter}));
+      opacity: .2;
+    }
+    20% {
+      @include filter(grayscale(100%));
+      opacity: 1;
+    }
+    20% {
+      @include filter(url(##{$filter}));
+      opacity: .8;
+    }
+    0% {
+      @include filter(url(##{$filter}));
+      opacity: 1;
+    }
+  }
+}
+
+@each $filter in $filters {
+  ##{$filter} {
+    //    @include animation(#{$filter}-off 1s ease-out forwards);
+    @include animation-play-state(play);
+    &:hover {
+      @include animation(#{$filter}-on 1s ease-in forwards, #{$filter}-off 1s ease-out paused);
+    }
   }
 }

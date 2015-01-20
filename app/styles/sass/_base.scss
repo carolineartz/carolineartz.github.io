@@ -20,18 +20,25 @@ $pacific-blue: #15b7c9;
 $eastern-blue: #1199a9;
 $iris-blue: #00b0c4;
 
-$bottom-skills-fill: $eggplant; // de-saturated purple
-$top-skills-fill: $tangerine; // bright sunny yellow
+$bottom-skills-fill: $iris-blue;
+
+// teal
+$top-skills-fill: $tangerine;
+
+// bright sunny yellow
 
 @import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 @import "partials/mixins";
 
-/* 
+/*
 *  Responsive typography
 */
 
 $xxs: min-width 320px;
 $xs: min-width 480px;
+$smx: min-width 618px;
+
+//custom
 $sm: min-width 768px;
 $md: min-width 992px;
 $lg: min-width 1200px;
@@ -39,37 +46,33 @@ $lg: min-width 1200px;
 @include breakpoint($xxs) {
   $font-size-base: 17px;
   @include resize-headings(32px, 28px, 25px, 22px, 20px, 18px);
-
 }
+
 
 @include breakpoint($xs) {
   $font-size-base: 17px;
   @include resize-headings(35px, 30px, 25px, 22px, 20px, 18px);
-  .panel-heading [data-toggle="collapse"] {
-
-  }
+  .panel-heading [data-toggle="collapse"] {}
 }
+
 
 @include breakpoint($sm) {
   $font-size-base: 18px;
   @include resize-headings(37px, 33px, 27px, 25px, 23px, 20px);
-  .panel-heading [data-toggle="collapse"] {
-
-  }
+  .panel-heading [data-toggle="collapse"] {}
 }
+
 
 @include breakpoint($md) {
   $font-size-base: 19px;
-  .panel-heading [data-toggle="collapse"] {
-
-  }
+  .panel-heading [data-toggle="collapse"] {}
 }
 
-@include breakpoint($lg) {
-  $font-size-base: 22px;
-  .panel-heading [data-toggle="collapse"] {
 
-  }
+@include breakpoint($lg) {
+  @include resize-headings(48px, 43px, 40px, 37px, 32px, 28px);
+  $font-size-base: 32px;
+  .panel-heading [data-toggle="collapse"] {}
 }
 
 
@@ -78,25 +81,30 @@ $lg: min-width 1200px;
 */
 
 @import "bootstrap_custom";
+
 $icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
 @import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 @import "../../../bower_components/neat/app/assets/stylesheets/_neat";
-
 
 //override neat's breakpoint mixin, have to import again TODO: fix this. find out: does neat's breakpoint mixin replace the need for this?
 @import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 @import "partials/icon-fonts";
 @import "partials/social-icons";
 @import "partials/hover";
+
 /*
 *  custom variables
 */
 
-
+$font-family-intro: "CutiveMonoRegular", "Source Code Pro", monospace;
 $panel-default-heading-size: $font-size-h2;
 $padding-larger-vertical: $padding-large-vertical * 2;
-$body-font-weight: 400;
+$body-font-weight: 200;
 $border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
+
+// $institution-location:
+
 /*
 * custom component imports
 */
@@ -110,6 +118,7 @@ code,
 pre code {
   font-size: 85%;
 }
+
 /* Panels */
 .panel {
   background: none;
@@ -136,7 +145,6 @@ pre code {
 .navbar-default {
   background-color: white;
   border-bottom: none;
-
   .navbar-nav li a {
     @include transition(0.2s ease);
     color: $gray-lighter;
@@ -151,7 +159,6 @@ pre code {
     }
   }
 }
-
 
 /*
 *  global styles
@@ -188,19 +195,9 @@ body {
 }
 
 /* Style links */
-a {
+div > a {
   @include reveal-underline;
-//  text-decoration: underline;
-//  font-style: italic;
-//  color: $ce-soir;
-//  text-decoration: underline;
-////  border-bottom: 1px solid $antique-fuchsia;
-//  @include transition(all .3s ease-in-out);
-//  &:hover {
-//    border-bottom-color: $link-hover-color;
-//  }
 }
-
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -234,7 +231,6 @@ a {
 
 /* Responsive: Portrait tablets and up */
 @include breakpoint($sm) {
-
   /* Remove the padding we set earlier */
   .header,
   .footer {
@@ -248,4 +244,8 @@ a {
 }
 
 
-
+.icon-amp1, .icon-amp2 {
+  vertical-align: text-top;
+  position: relative;
+  bottom: 4px;
+}

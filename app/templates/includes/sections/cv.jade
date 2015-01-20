@@ -2,11 +2,23 @@
   .content
     h2 Education
     +education('northwestern', 'Master of Science in Information Systems', 'Northwestern University', 'GPA: 4.0 ongoing')
-      .selected-work 
-        .heading Selected Course Work
-        #machine-learning.description <span class="course">Data Mining & Data Warehousing.</span> Comparing machine learning classification algorithms on wine composition dataset: <a target="_blank"  href="/docs/Artz_Assignment_Comparing_Classifiers_Data_Mining.pdf">preliminary work</a> and <a href="/docs/Artz_FinalPaper_Comparing_Classifiers_Data_Mining.pdf" target="_blank">final paper</a>.
-        #telecommunications.description <span class="course">Telecommunications Networks.</span> Case Study: <a href="/docs/Artz_Drew_FinalProject_Telecommunications.pdf">Frame Relay Public Switched Data Network</a>.
-        #object-oriented-programming.description <span class="course">Object Oriented Programming.</span> Cash for Metals program in Java. <a href="https://github.com/carolineartz/CashforMetals">Source on GitHub</a>.
+      .row
+        div.desc Selected Course Work
+      .row
+        .col-sm-offset-1.col-sm-3
+          #machine-learning.description <span class="course">Data Mining & Data Warehousing.</span>
+        .col-sm-5
+          div Comparing machine learning classification algorithms on wine composition dataset <a target="_blank"  href="/docs/Artz_Assignment_Comparing_Classifiers_Data_Mining.pdf">preliminary work</a> and <a href="/docs/Artz_FinalPaper_Comparing_Classifiers_Data_Mining.pdf" target="_blank">final paper</a>.
+      .row
+        .col-sm-offset-1.col-sm-3
+          #telecommunications.description <span class="course">Telecommunications Networks.</span>
+        .col-sm-5
+          div Case Study: <a href="/docs/Artz_Drew_FinalProject_Telecommunications.pdf">Frame Relay Public Switched Data Network</a>.
+      .row
+        .col-sm-offset-1.col-sm-3
+          #object-oriented-programming.description <span class="course">Object Oriented Programming.</span> 
+        .col-sm-5
+          div Cash for Metals program in Java. <a href="https://github.com/carolineartz/CashforMetals">Source on GitHub</a>.
     +education('dbc', 'Web Development: Ruby on Rails', 'Dev Bootcamp Chicago', '')
     +education('uw', 'Bachelor of Science in Psychology', 'University of Wisconsin - Madison', '')
     h2 Work

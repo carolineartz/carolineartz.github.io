@@ -1,13 +1,15 @@
+- var skill1 = {title: "Front-end Web Development <span class='icon-amp2'></span> Design"}
+- var skill2 = {title: "Internet <span class='icon-amp2'></span> Database Systems"}
 +section('skills', '#skills')
   .content
     ul.skills-container
       li.skill.skill-divider
-      +skill("1", "Front-end Web Development & Design")
+      +skill("1", skill1.title)
         p hello here is content
       +skill("2", "User Experience")
         p hello here is content
       +skill("3", "Back-end Web Development")
         p hello here is content
-      +skill("4", "Internet & Database Systems")
+      +skill("4", skill2.title)
         p hello here is content
       li.skill.skill-divider

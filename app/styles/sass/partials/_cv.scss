@@ -1,8 +1,7 @@
-
 #cv .panel-body > div {
   @include breakpoint($xs) {
     .content {
-    margin-left: 10px;
+      margin-left: 10px;
     }
   }
 }
@@ -36,18 +35,20 @@
     color: $text-muted;
     white-space: nowrap;
     font-size: .7em;
-    font-style: italic;
+    font-style: oblique;
+    // font-family: $institution-location;
+    // font-style: italic;
+
   }
   .time {
     color: $gray-dark;
   }
 }
 
-.gpa {
+.gpa {}
 
-}
 .selected-work {
-//  line-height: 1.1em;
+  //  line-height: 1.1em;
   .description {
     padding-left: 10px;
     line-height: 1.2em;
@@ -57,7 +58,7 @@
     }
   }
   .course {
-//    font-style: italic;
+    //    font-style: italic;
     font-weight: 500;
   }
 }

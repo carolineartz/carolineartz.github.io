@@ -3,20 +3,20 @@ mixin section(title, target)
     .panel-heading
       h2.panel-title.text-muted
         a(data-parent='#accordion', class='collapsed', data-toggle='collapse', href=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
-            =title 
+            =title
     div(class='panel-collapse collapse', id=title)
       .panel-body
         block
-        
+
 //-***************************************
 
 mixin browser
   .browsers
     .browser
       .browser-top-bar
-        .browser-circle    
-        .browser-circle     
-        .browser-circle  
+        .browser-circle
+        .browser-circle
+        .browser-circle
       .browser-content
 
 
@@ -46,8 +46,8 @@ mixin technology(...techs)
       li(id=tech)
         span.icon-star
         =tech
-        
-  
+
+
 mixin education(id, title, institution, time)
   div(id=id)
     div.title
@@ -56,7 +56,7 @@ mixin education(id, title, institution, time)
         span.time= time
     if block
       block
-  
+
 mixin work(id, position, location, time)
   div(id=id)
     div.position
@@ -68,7 +68,7 @@ mixin work(id, position, location, time)
 
 mixin skill(num, title)
   li.skill(class="skill-#{num}")
-        h2= title
+        h2!= title
         block
 
 

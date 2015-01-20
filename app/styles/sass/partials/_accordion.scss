@@ -10,6 +10,7 @@
   }
 }
 .panel-heading [data-toggle="collapse"] {
+  @include reveal-underline;
   display: block;
   padding: 10px 0;
   font-size: 30px;

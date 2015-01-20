@@ -1,26 +1,42 @@
 .intro {
   text-align: center;
   h1, h2 {
-    letter-spacing: -4px;
+    letter-spacing: -2px;
+    word-spacing: -4px;
+    font-family: $font-family-intro;
   }
 }
+
 .intro h1 > span {
   font-size: 1.2em;
   border-bottom: 3px solid $text-muted;
   > span {
-//    font-size: 1em;
     color: $tangerine;
   }
-  @include breakpoint($sm) {
+  @include breakpoint($xs) {
     font-size: 1.4em;
   }
-  @include breakpoint($md) {
-    font-size: 1.6em;
+
+  @include breakpoint($smx) {
+    font-size: 1.7em;
+    letter-spacing: -3px;
   }
+
+  @include breakpoint($sm) {
+    font-size: 1.9em;
+    letter-spacing: -5px;
+  }
+
+  @include breakpoint($md) {
+    font-size: 2.2em;
+    // letter-spacing: -5px;
+  }
+
   @include breakpoint($lg) {
     font-size: 1.8em;
   }
 }
+
 .intro h2 {
   font-size: 2em;
   letter-spacing: -2px;
@@ -30,18 +46,19 @@
   @include breakpoint($sm) {
     font-size: 2.2em;
   }
+
   @include breakpoint($md) {
     font-size: 2.3em;
     line-height: 1.4em;
   }
+
   @include breakpoint($lg) {
     font-size: 2.5em;
     line-height: 1.5em;
   }
-    
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 typing effect
 adapted from: http://codyhouse.co/gem/css-animated-headlines/
@@ -50,44 +67,42 @@ adapted from: http://codyhouse.co/gem/css-animated-headlines/
 
 // colors
 
-$color-1: #aebcb9; // Tower Gray
-$color-2: #0096a7; // Bondi Blue
-$color-3: #0d0d0d; // Cod Gray
+$color-1: #aebcb9;
+
+// Tower Gray
+$color-2: #0096a7;
+
+// Bondi Blue
+$color-3: #0d0d0d;
+
+// Cod Gray
 
 .words-wrapper {
   display: inline-block;
   position: relative;
   text-align: left;
-
   b {
     display: inline-block;
     position: absolute;
     white-space: nowrap;
     left: 0;
     top: 0;
-
     &.is-visible {
       position: relative;
     }
   }
-
   .no-js & b {
     opacity: 0;
-
     &.is-visible {
       opacity: 1;
     }
-
   }
 }
 
-
 .headline.type {
-
   .words-wrapper {
     vertical-align: top;
     overflow: hidden;
-
     &::after {
       /* vertical bar */
       content: '';
@@ -98,11 +113,9 @@ $color-3: #0d0d0d; // Cod Gray
       width: 1px;
       background-color: $color-1;
     }
-
     &.waiting::after {
       @include animation(typing-pulse 1s infinite);
-    } 
-
+    }
     &.selected {
       background-color: $tangerine;
       i {
@@ -111,13 +124,11 @@ $color-3: #0d0d0d; // Cod Gray
       &::after {
         visibility: hidden;
       }
-
       b {
         color: $color-3;
       }
     }
   }
-
   b {
     visibility: hidden;
     font-weight: 300;
@@ -125,13 +136,11 @@ $color-3: #0d0d0d; // Cod Gray
       visibility: visible;
     }
   }
-
   i {
     font-weight: 300;
     position: absolute;
     visibility: hidden;
     font-style: normal;
-
     &.in {
       position: relative;
       visibility: visible;
@@ -144,12 +153,10 @@ $color-3: #0d0d0d; // Cod Gray
     @include transform(translateY(-50%) scale(1));
     opacity: 1;
   }
-
   40% {
     @include transform(translateY(-50%) scale(0.9));
     opacity: 0;
   }
-
   100% {
     @include transform(translateY(-50%) scale(0));
     opacity: 0;

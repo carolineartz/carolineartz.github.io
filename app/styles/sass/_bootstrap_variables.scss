@@ -1,68 +1,76 @@
 /*
 *  Bootstrap Variable Overrides
 */
-// quick reference for variables in non-imported sass file: for-reference-only
 
+@import "partials/icon-fonts";
 
 //== Colors
 
-$gray-base:              #20262b;
-$gray-darker:            lighten($gray-base, 13.5%);
-$gray-dark:              #545e67;
-$gray:                   lighten($gray-base, 33.5%);
-$gray-light:             lighten($gray-base, 46.7%);
-$gray-lighter:           lighten($gray-base, 73.5%);
+$gray-base: #20262b;
+$gray-darker: lighten($gray-base, 13.5%);
+$gray-dark: #545e67;
+$gray: lighten($gray-base, 33.5%);
+$gray-light: lighten($gray-base, 46.7%);
+$gray-lighter: lighten($gray-base, 73.5%);
 
-$brand-primary:         #f7d100;
-$brand-success:         #ffe868;
-$brand-info:            #90759e;
-$brand-warning:         #ff8a6c;
-$brand-danger:          #ff8a6c;
+$brand-primary: #f7d100;
+$brand-success: #ffe868;
+$brand-info: #90759e;
+$brand-warning: #ff8a6c;
+$brand-danger: #ff8a6c;
 
 //== Scaffolding
 
 //** Background color for `<body>`.
-$body-bg:               #fff;
+$body-bg: #fff;
+
 //** Global text color on `<body>`.
-$text-color:            $gray-dark;
+$text-color: $gray-dark;
 
 //** Global textual link color.
 //$link-color:            saturate(lighten($eggplant, 15%), 5%);
-$link-color:           $iris-blue;
+$link-color: $iris-blue;
 
-$link-hover-color:      darken($link-color, 15%);
+$link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: none;
 
 //== Typography
 
-$font-family-sans-serif:  "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: "Avenir Next W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace:   "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-monospace: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 
-$font-size-base:          17px;
-$font-size-large:         ceil(($font-size-base * 1.45)); // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+$font-size-base: 17px;
+$font-size-large: ceil($font-size-base * 1.45);
 
-$font-size-h1:            floor(($font-size-base * 2.7));
-$font-size-h2:            floor(($font-size-base * 2.5));
-$font-size-h3:            ceil(($font-size-base * 2));
-$font-size-h4:            ceil(($font-size-base * 1.75));
-$font-size-h5:            $font-size-base;
-$font-size-h6:            ceil(($font-size-base * 0.95));
+// ~18px
+$font-size-small: ceil($font-size-base * 0.85);
+
+// ~12px
+
+$font-size-h1: floor($font-size-base * 2.7);
+$font-size-h2: floor($font-size-base * 2.5);
+$font-size-h3: ceil($font-size-base * 2);
+$font-size-h4: ceil($font-size-base * 1.75);
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil($font-size-base * 0.95);
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.828571429; 
+$line-height-base: 1.82857;
+
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+$line-height-computed: floor($font-size-base * $line-height-base);
+
+// ~20px
 
 //** By default, this inherits from the `<body>`.
-$headings-font-family:   'Montserrat';
+$headings-font-family: "LagunaW26";
 
-$headings-font-weight:    400;
-$headings-line-height:    1.1;
-$headings-color:          inherit;
-
+$headings-font-weight: 400;
+$headings-line-height: 1.1;
+$headings-color: inherit;
 
 //-- Iconography
 //== Components
@@ -76,9 +84,10 @@ $headings-color:          inherit;
 //== Grid system
 
 //** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint:     400px;
+$grid-float-breakpoint: 200px;
+
 //** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+$grid-float-breakpoint-max: $grid-float-breakpoint - 1;
 
 //== Container sizes
 //== Navbar
@@ -98,7 +107,7 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
 
 //== Panels
 
-$panel-default-heading-bg:    #ffffff;
+$panel-default-heading-bg: #ffffff;
 
 //== Thumbnails
 //== Wells

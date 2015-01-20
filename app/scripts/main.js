@@ -1,6 +1,10 @@
 /* jshint devel:true */
 /* jshint node:true */
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 
 (function () {
   'use strict';
@@ -12,30 +16,40 @@
       scrollTop: $elem.offset().top - 30
     }, 500);
   };
-  
+
   $('#accordion').on('shown.bs.collapse', navigateToElement);
   $('#accordion').on('hidden.bs.collapse', navigateToElement);
-  
-  
+
+  /*
+   *
+   * about section photo effects
+   *
+   */
+
+
+
+
+
 })();
 
 
 $(function () {
-  
+
+
   'use strict';
   console.log($('body').scrollTop());
-  
+
   if ($('body').scrollTop() === 0) {
     $('.navbar-fixed-top').css('top', '-50px');
   }
-  
-  
+
+
 
   $('.navbar-fixed-top').autoHidingNavbar({
     'animationDuration': 300,
     'showOnBottom': false
   });
-  
+
 
 
   //calculate size of intro
@@ -44,11 +58,25 @@ $(function () {
   console.log(iheight + 'px');
 
   //  **************************************************************
+  
+  var effects = ['no_op', 'posterize', 'css_brightness', 'brightness_threshold', 'css_opacity', 'css_invert', 'gamma_correct', 'gamma_correct2', 'css_grayscale', 'WashoutFilter', 'css_saturate', 'css_hue_rotate', 'luminance_mask', 'css_sepia', 'dusk', 'sepia_blur', 'dilate_saturate', 'rotate_hue', 'erode_1'];
+  
+  
+  $('#about img').hover(
+    function() {
+     var effect = effects[getRandomInt(1, 20)];
+    }, function() {
+//      $(this).
+      var effect = effects[getRandomInt(1, 20)];
+      $(this).attr('id', effect);
+    });
+
+
 
   var animationDelay = 2500,
-      typeLettersDelay = 150,
-      selectionDuration = 500,
-      typeAnimationDelay = selectionDuration + 800;
+    typeLettersDelay = 150,
+    selectionDuration = 500,
+    typeAnimationDelay = selectionDuration + 800;
   initHeadline();
 
   function initHeadline() {
@@ -60,10 +88,10 @@ $(function () {
   function singleLetters($words) {
     $words.each(function () {
       var word = $(this),
-          letters = word.text().split(''),
-          selected = word.hasClass('is-visible');
+        letters = word.text().split(''),
+        selected = word.hasClass('is-visible');
       for (var letter in letters) {
-        letters[letter] = (selected) ? '<i class="in">' + letters[letter] + '</i>': '<i>' + letters[letter] + '</i>';
+        letters[letter] = (selected) ? '<i class="in">' + letters[letter] + '</i>' : '<i>' + letters[letter] + '</i>';
       }
       var newLetters = letters.join('');
       word.html(newLetters).css('opacity', 1);
@@ -177,13 +205,13 @@ $(function () {
     $oldWord.removeClass('is-visible').addClass('is-hidden');
     $newWord.removeClass('is-hidden').addClass('is-visible');
   }
-  
+
 
 });
 
 var MOBILE = false;
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
   var MOBILE = true;
 }
 
@@ -193,7 +221,7 @@ if (!MOBILE) {
 } else {
   console.log("is is mobile");
   var skillsStyles = {
-    backgroundAttachment : "scroll",
+    backgroundAttachment: "scroll",
     background: "#f7d100"
   };
   $("#skills .content").css(skillsStyles);
@@ -204,4 +232,3 @@ if (!MOBILE) {
 //if($.browser.webkit) {
 //  alert('This is WebKit!');
 //}
-
