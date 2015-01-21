@@ -1,3 +1,14 @@
+#cv .content h2:last-of-type {
+  margin-top: 2em;
+}
+
+#cv h3 {
+  // font-family: $font-avenir-next-light-italic;
+  font-family: $font-avenir-next-demi-sc;
+  font-size: 1em !important;
+  margin-top: 15px;
+}
+
 #cv .panel-body > div {
   @include breakpoint($xs) {
     .content {
@@ -21,28 +32,49 @@
     line-height: 1em;
     border-bottom: 2px solid $tangerine;
     padding-bottom: .4em;
+    margin: 0 .5em .3em;
+    // margin-left: 15px;
+    // margin-right: 15px;
+    padding-left: 0;
   }
   @include breakpoint($sm) {
-    .title, .position {
-      border-bottom: none;
-      > span:first-of-type {
-        border-bottom: 2px solid $tangerine;
-      }
-    }
+    // .title, .position {
+    //   > span:first-of-type {
+    //     border-bottom: 2px solid $tangerine;
+    //   }
+    // }
   }
 
   .institution, .location {
     color: $text-muted;
     white-space: nowrap;
-    font-size: .7em;
     font-family: $font-avenir-next-light-sc;
+    font-size: .7em;
   }
   .time {
     color: $gray-dark;
   }
 }
 
-.gpa {}
+.course-container {
+  line-height: 1.5;
+  margin-bottom: .7em;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.course {
+  padding-left: .7em;
+  text-indent: -.7em;
+}
+
+.course {
+  font-family: $font-avenir-next-italic;
+  .description {
+    font-family: $font-avenir-next-light;
+  }
+}
 
 .selected-work {
   //  line-height: 1.1em;
@@ -54,8 +86,114 @@
       margin-bottom: 0;
     }
   }
-  .course {
-    //    font-style: italic;
-    font-weight: 500;
+}
+
+// **************************************************************************************
+// Timeline
+
+#timeline {
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
+  // @include prefix(transition, all .4s ease);
+  &:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: $timeline-color;
+    left: 50%;
+    top: 0;
+    position: absolute;
+  }
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+    width: 100%;
+  }
+  .timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+    @include clearfix;
+    .timeline-icon {
+      background: $timeline-color;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      overflow: hidden;
+      margin-left: -23px;
+      border-radius: 50%;
+      // div.timeline-dot {
+      //   display: inline;
+      //   position: relative;
+      //   top: 14px;
+      //   left: 14px;
+      // }
+
+    }
+    .timeline-content {
+      width: 45%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      @include box-shadow(0 3px 0 rgba(0, 0, 0, 0.1));
+      @include transition(all 0.3s ease);
+      h2 {
+        padding: 15px;
+        background: $timeline-color;
+        color: #fff;
+        margin: -20px -20px 0 -20px;
+        font-weight: 500;
+        @include border-top-radius(3px);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: 45%;
+        top: 20px;
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 7px solid $timeline-color;
+      }
+      &.right {
+        float: right;
+        &:before {
+          content: '';
+          right: 45%;
+          left: inherit;
+          border-left: 0;
+          border-right: 7px solid $timeline-color;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($timeline) {
+  #timeline {
+    margin: 30px;
+    padding: 0;
+    &:before {
+      left: 0;
+    }
+    .timeline-item {
+      .timeline-content {
+        width: 90%;
+        float: right;
+        &:before, &.right:before {
+          left: 10%;
+          margin-left: -6px;
+          border-left: 0;
+          border-right: 7px solid $timeline-color;
+        }
+      }
+      .timeline-icon {
+        left: 0;
+      }
+    }
   }
 }

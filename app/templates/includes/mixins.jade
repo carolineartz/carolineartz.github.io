@@ -47,24 +47,33 @@ mixin technology(...techs)
         span.icon-star
         =tech
 
+mixin timeline_item(id, title, institution, time=none)
+
+
 
 mixin education(id, title, institution, time)
   div(id=id)
-    div.title
-      span= title
-      span.institution!= ' &nbsp;' + institution + ' '
-        span.time= time
+    .row
+      .title.col-md-9.col-lg-8= title
+        .institution= institution
+          span.time= time
     if block
-      block
+      .row
+        .cv-item-content.col-md-9.col-lg-8
+          block
 
 mixin work(id, position, location, time)
   div(id=id)
-    div.position
-      span= position
-    div.location= location + ' '
-      span.time= time
+    .row
+      .position.col-md-9.col-lg-8= position
+        .location= location + ' '
+          span.time= time
     if block
-      block
+      .row
+        .cv-item-content.col-md-9.col-lg-8
+          block
+
+
 
 mixin skill(num, title)
   li.skill(class="skill-#{num}")

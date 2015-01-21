@@ -22,10 +22,8 @@ $iris-blue: #00b0c4;
 
 $bottom-skills-fill: $iris-blue;
 
-// teal
 $top-skills-fill: $tangerine;
-
-// bright sunny yellow
+$timeline-color: $iris-blue;
 
 @import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 @import "partials/mixins";
@@ -42,6 +40,7 @@ $md: min-width 992px;
 $lg: min-width 1200px;
 
 $mobile-landscape: (max-width 768px) (orientation landscape);
+$timeline: max-width 768px;
 
 @include breakpoint($xxs) {
   $font-size-base: 17px;
@@ -64,7 +63,7 @@ $mobile-landscape: (max-width 768px) (orientation landscape);
 
 
 @include breakpoint($md) {
-  $font-size-base: 19px;
+  @include resize-headings(42px, 40px, 36px, 32px, 28px, 25px);
   .panel-heading [data-toggle="collapse"] {}
 }
 

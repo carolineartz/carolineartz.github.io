@@ -1,0 +1,27 @@
++section('cv', '#cv')
+  .content
+    h2 Education
+    +education('northwestern', 'Master of Science in Information Systems', 'Northwestern University', 'GPA: 4.0 ongoing')
+      h3 Selected Course Work
+      .course-container
+        #machine-learning.course Data Mining & Data Warehousing. <span class="description">Comparing machine learning classification algorithms on wine composition dataset <a target="_blank"  href="/docs/Artz_Assignment_Comparing_Classifiers_Data_Mining.pdf">preliminary work</a> and <a href="/docs/Artz_FinalPaper_Comparing_Classifiers_Data_Mining.pdf" target="_blank">final paper</a>.</span>
+      .divider-short
+      .course-container
+        #telecommunications.course Telecommunications Networks. <span class="description">Case Study: <a href="/docs/Artz_Drew_FinalProject_Telecommunications.pdf">Frame Relay Public Switched Data Network</a>.</span>
+      .divider-short
+      .course-container
+        #object-oriented-programming.course Object Oriented Programming. <span class="description"> Cash for Metals program in Java. <a href="https://github.com/carolineartz/CashforMetals">Source on GitHub</a>.</span>
+    +education('dbc', 'Web Development: Ruby on Rails', 'Dev Bootcamp Chicago', '')
+    +education('uw', 'Bachelor of Science in Psychology', 'University of Wisconsin - Madison', '')
+    h2 Work
+    +work('w-dbc', 'Prep Phase Guide & Tutor', 'Dev Bootcamp', '2014 - ongoing')
+      p Teach students web-development fundamentals (Ruby, JavaScript, Git, HTML/CSS) as they prepare for the on-campus phase of Dev Bootcamp.
+    +work('w-ohey', 'Full Stack Developer & Founding Member', 'Ohey App', '2014')
+      p Cofounding member of small team developing a social communication web app.
+    +work('w-startup-institute', 'Adjunt Instructor: Web Development Track', 'Startup Institute', '2014')
+      p Instructed the full curriculum for the Web Dev track (Ruby on Rails).
+    +work('w-motts58', 'Web & Digital Media Manager', 'Motts58 Foundation', '2012-2013')
+      p Developed and maintained the non-profit's website and digital media presence (Wordpress &amp; Graphic Design).
+    +work('w-cprgi', 'Clinical Database Manager', 'Northwestern University Division of Gastroenterology', '2009-2014')
+      p Designed and developed a clinical research database system for Division. Initiated and coordinated the implementation of a increasingly scalable division-wide integrated database management and electronic data capture research platform.
+
