@@ -1,23 +1,42 @@
 +section('cv', '#cv')
-  .content
+  .content#education
     h2 Education
     .container
         #timeline
-            .timeline-item
-              .timeline-icon
-                //- img(src='assets/images/star.svg', alt='')
-              .timeline-content
-                h2 LOREM IPSUM DOLOR
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
-            .timeline-item
-              .timeline-icon
-                //- img(src='assets/images/book.svg', alt='')
-              .timeline-content.right
-                h2 LOREM IPSUM DOLOR
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
-            .timeline-item
-              .timeline-icon
-                //- img(src='assets/images/star.svg', alt='')
-              .timeline-content
-                h2 LOREM IPSUM DOLOR
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
+          +timeline('e-northwestern', 'Master of Science in Information Systems', 'Northwestern University', 'left', true, 'Ongoing')
+            h4 Selected Course Work
+            .course-container
+              #machine-learning.course Data Mining & Data Warehousing. <span class="description">Comparing machine learning classification algorithms on wine composition dataset <a target="_blank"  href="/docs/Artz_Assignment_Comparing_Classifiers_Data_Mining.pdf">preliminary work</a> and <a href="/docs/Artz_FinalPaper_Comparing_Classifiers_Data_Mining.pdf" target="_blank">final paper</a>.</span>
+            .divider-short
+            .course-container
+              #telecommunications.course Telecommunications Networks. <span class="description">Case Study: <a href="/docs/Artz_Drew_FinalProject_Telecommunications.pdf">Frame Relay Public Switched Data Network</a>.</span>
+            .divider-short
+            .course-container
+              #object-oriented-programming.course Object Oriented Programming. <span class="description"> Cash for Metals program in Java. <a href="https://github.com/carolineartz/CashforMetals">Source on GitHub</a>.</span>
+          +timeline('e-dbc', 'Web Development: Ruby on Rails', 'Dev Bootcamp', 'right', false)
+          +timeline('e-uw-madison', 'Bachelor of Science in Psychology', 'University of Wisconsin-Madison', 'left', false)
+  .content#work
+    h2 Work
+    .container
+        #timeline
+          +timeline('w-dbc', 'Prep Phase Guide & Tutor', 'Dev Bootcamp', 'right', true, '2014 - ongoing')
+            p Teach students web-development fundamentals (Ruby, JavaScript, Git, HTML/CSS) as they prepare for the on-campus phase of Dev Bootcamp.
+          +timeline('w-ohey', 'Full Stack Developer & Founding Member', 'Ohey App', 'left', true, '2014')
+            p Cofounding member of small team developing a social communication web app.
+          +timeline('w-startup-institute', 'Adjunt Instructor: Web Development Track', 'Startup Institute', 'right', true, '2014')
+            p Instructed the full curriculum for the Web Dev track (Ruby on Rails).
+          +timeline('w-motts58', 'Web & Digital Media Manager', 'Motts58 Foundation', 'left', true, '2012-2013')
+            p Developed and maintained the non-profit's website and digital media presence (Wordpress &amp; Graphic Design).
+          +timeline('w-cprgi', 'Clinical Database Manager', 'Northwestern University Division of Gastroenterology', 'right', true, '2009-2014')
+            p Designed and developed a clinical research database system for Division. Initiated and coordinated the implementation of a increasingly scalable division-wide integrated database management and electronic data capture research platform.
+            h4 Publications in Peer-Reviewed Journals
+            ul.publications
+              li
+                a(target='_blank', href='http://www.ncbi.nlm.nih.gov/pubmed/21351218') Optimizing management of Crohn&rsquo;s disease within a project management framework: results of a pilot study
+              li
+                a(target='_blank', href='http://www.ncbi.nlm.nih.gov/pubmed/21424542') Perceptions of illness stigma in patients with inflammatory bowel disease and irritable bowel syndrome
+              li
+                a(target='_blank', href='http://www.ncbi.nlm.nih.gov/pubmed/20658805') Impact of race on early treatment termination and outcomes in posttraumatic stress disorder treatment
+              li
+                a(target='_blank', href='http://www.ncbi.nlm.nih.gov/pubmed/19588513') Participant Reactions to a Pretreatment Research Assessment During a Treatment Outcome Study for PTSD
+

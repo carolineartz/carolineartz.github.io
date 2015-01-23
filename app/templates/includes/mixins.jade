@@ -8,17 +8,6 @@ mixin section(title, target)
       .panel-body
         block
 
-//-***************************************
-
-mixin browser
-  .browsers
-    .browser
-      .browser-top-bar
-        .browser-circle
-        .browser-circle
-        .browser-circle
-      .browser-content
-
 
 mixin project(iden, title, imageside)
   .row(id=iden)
@@ -47,32 +36,20 @@ mixin technology(...techs)
         span.icon-star
         =tech
 
-mixin timeline_item(id, title, institution, time=none)
 
-
-
-mixin education(id, title, institution, time)
-  div(id=id)
-    .row
-      .title.col-md-9.col-lg-8= title
-        .institution= institution
-          span.time= time
-    if block
-      .row
-        .cv-item-content.col-md-9.col-lg-8
+mixin timeline(id, item, place, side, content, time)
+  - var time = time || ''
+  .timeline-item(id=id, class=content ? 'with-body' : 'no-body')
+    .timeline-icon
+    .timeline-content(class=side)
+      .timeline-header
+        h3= item
+        .place= place + ' '
+          unless time == ''
+            span.time= time
+      if block
+        .timeline-body
           block
-
-mixin work(id, position, location, time)
-  div(id=id)
-    .row
-      .position.col-md-9.col-lg-8= position
-        .location= location + ' '
-          span.time= time
-    if block
-      .row
-        .cv-item-content.col-md-9.col-lg-8
-          block
-
 
 
 mixin skill(num, title)
@@ -86,3 +63,14 @@ mixin social-icon(social, link)
     a(href=link, target="_blank", title=social)
       i(class="icon-#{social}")
       i(class="icon-#{social}-inverse")
+    .network= social
+
+
+mixin browser
+  .browsers
+    .browser
+      .browser-top-bar
+        .browser-circle
+        .browser-circle
+        .browser-circle
+      .browser-content

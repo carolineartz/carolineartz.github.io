@@ -1,12 +1,171 @@
-#cv .content h2:last-of-type {
-  margin-top: 2em;
+// **************************************************************************************
+// Timeline
+
+#timeline {
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
+  &:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    left: 50%;
+    top: 7px;
+    position: absolute;
+  }
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+    width: 100%;
+  }
+  .timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+    @include clearfix;
+    .timeline-icon {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      overflow: hidden;
+      margin-left: -16px;
+      border-radius: 50%;
+    }
+    .timeline-content {
+      width: 45%;
+      background: $white-smoke;
+      padding: 20px 20px 0;
+      border-radius: 5px;
+      @include transition(all 0.3s ease);
+      .timeline-header {
+        padding: 15px;
+        color: #fff;
+        margin: -20px -20px 0 -20px;
+        text-transform: capitalize;
+        @include border-top-radius(3px);
+        h3 {
+          font-family: $font-avenir-next-light;
+          margin: 5px 0;
+        }
+        .place {
+          font-family: $font-avenir-next-regular-sc;
+          line-height: 1;
+          margin-top: .5em;
+        }
+        .time {
+          font-family: $font-avenir-next-light-italic;
+          font-size: .7em;
+        }
+      }
+      .timeline-body {
+        padding-bottom: 20px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 45%;
+        top: 20px;
+        width: 7px;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 7px solid;
+      }
+      &.right {
+        float: right;
+        &::before {
+          content: '';
+          right: 45%;
+          left: inherit;
+          border-left: 0;
+          border-right: 7px solid;
+        }
+      }
+    }
+    &.no-body {
+      .timeline-header {
+        @include border-bottom-radius(3px);
+      }
+    }
+  }
+}
+
+#education {
+  @include timeline-color(darken($tangerine, 2%));
+  a {
+    @include basic-link($tangerine, false, true);
+  }
+}
+
+#work {
+  @include timeline-color($iris-blue);
+  a {
+    @include basic-link($iris-blue, true, false);
+  }
+  li {
+    line-height: 1.5;
+    margin-bottom: .5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .publications {
+    padding-left: 0;
+    list-style-type: none;
+    margin-bottom: 0;
+    font-size: .9em;
+  }
+}
+
+@include breakpoint($timeline) {
+  #timeline {
+    margin: 30px;
+    padding: 0;
+    &:before {
+      left: 0;
+    }
+    .timeline-item {
+      .timeline-content {
+        width: 90%;
+        float: right;
+        &:before, &.right:before {
+          left: 10%;
+          margin-left: -6px;
+          border-left: 0;
+          border-right: 7px solid;
+        }
+      }
+      .timeline-icon {
+        left: 0;
+      }
+    }
+  }
+}
+
+
+#cv .content h2 {
+  text-align: center;
+  font-size: 38px !important;
+  @include breakpoint($md) {
+    font-size: 43px !important;
+  }
+
+  // &:last-of-type {
+  //   margin-top: 2em;
+  // }
 }
 
 #cv h3 {
-  // font-family: $font-avenir-next-light-italic;
   font-family: $font-avenir-next-demi-sc;
-  font-size: 1em !important;
+  font-size: 1.5em !important;
   margin-top: 15px;
+}
+
+#cv h4 {
+  font-family: $font-avenir-next-regular-sc;
+  font-size: 1.2em !important;
 }
 
 #cv .panel-body > div {
@@ -25,7 +184,8 @@
     }
   }
   p {
-    margin-left: 10px;
+    line-height: 1.5;
+    padding-top: 20px;
   }
   .title, .position {
     font-size: 1.5em;
@@ -47,12 +207,14 @@
 
   .institution, .location {
     color: $text-muted;
-    white-space: nowrap;
+    // white-space: nowrap;
     font-family: $font-avenir-next-light-sc;
-    font-size: .7em;
+    // font-size: .7em;
+
   }
   .time {
-    color: $gray-dark;
+    // color: $gray-dark;
+
   }
 }
 
@@ -64,136 +226,25 @@
   }
 }
 
-.course {
+.course, .publications li {
   padding-left: .7em;
   text-indent: -.7em;
 }
 
 .course {
-  font-family: $font-avenir-next-italic;
+  font-family: $font-avenir-next-medium-italic;
   .description {
     font-family: $font-avenir-next-light;
   }
 }
 
 .selected-work {
-  //  line-height: 1.1em;
   .description {
     padding-left: 10px;
     line-height: 1.2em;
     margin-bottom: .7em;
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-}
-
-// **************************************************************************************
-// Timeline
-
-#timeline {
-  width: 90%;
-  margin: 30px auto;
-  position: relative;
-  // @include prefix(transition, all .4s ease);
-  &:before {
-    content: "";
-    width: 3px;
-    height: 100%;
-    background: $timeline-color;
-    left: 50%;
-    top: 0;
-    position: absolute;
-  }
-  &:after {
-    content: "";
-    clear: both;
-    display: table;
-    width: 100%;
-  }
-  .timeline-item {
-    margin-bottom: 50px;
-    position: relative;
-    @include clearfix;
-    .timeline-icon {
-      background: $timeline-color;
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      overflow: hidden;
-      margin-left: -23px;
-      border-radius: 50%;
-      // div.timeline-dot {
-      //   display: inline;
-      //   position: relative;
-      //   top: 14px;
-      //   left: 14px;
-      // }
-
-    }
-    .timeline-content {
-      width: 45%;
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      @include box-shadow(0 3px 0 rgba(0, 0, 0, 0.1));
-      @include transition(all 0.3s ease);
-      h2 {
-        padding: 15px;
-        background: $timeline-color;
-        color: #fff;
-        margin: -20px -20px 0 -20px;
-        font-weight: 500;
-        @include border-top-radius(3px);
-      }
-      &:before {
-        content: '';
-        position: absolute;
-        left: 45%;
-        top: 20px;
-        width: 0;
-        height: 0;
-        border-top: 7px solid transparent;
-        border-bottom: 7px solid transparent;
-        border-left: 7px solid $timeline-color;
-      }
-      &.right {
-        float: right;
-        &:before {
-          content: '';
-          right: 45%;
-          left: inherit;
-          border-left: 0;
-          border-right: 7px solid $timeline-color;
-        }
-      }
-    }
-  }
-}
-
-@include breakpoint($timeline) {
-  #timeline {
-    margin: 30px;
-    padding: 0;
-    &:before {
-      left: 0;
-    }
-    .timeline-item {
-      .timeline-content {
-        width: 90%;
-        float: right;
-        &:before, &.right:before {
-          left: 10%;
-          margin-left: -6px;
-          border-left: 0;
-          border-right: 7px solid $timeline-color;
-        }
-      }
-      .timeline-icon {
-        left: 0;
-      }
     }
   }
 }

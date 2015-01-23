@@ -62,6 +62,11 @@
         background: none;
       }
     }
+    > div {
+      text-transform: none;
+      font-size: .8em;
+      font-family: $font-avenir-next-italic;
+    }
   }
   a svg {
     vertical-align: text-top;
@@ -85,7 +90,7 @@
   }
   #sudoku {
     .browser-content {
-      @include browser-content("../images/sudoku-narrow.png");
+      @include browser-content("../images/sudoku-sm.png");
       height: 36em;
     }
   }
@@ -123,9 +128,7 @@
   }
 
   @include breakpoint($xs) {
-    #ohey .browser-content {
-      height: 27em;
-    }
+    #ohey .browser-content,
     #polity .browser-content {
       height: 27em;
     }
@@ -133,11 +136,11 @@
 
   @include breakpoint(min-width 518px) {
     #ohey .browser-content {
-      @include browser-content("../images/ohey2.png");
+      @include browser-content("../images/ohey-lg.png");
       height: 20em;
     }
     #sudoku .browser-content {
-      @include browser-content("../images/sudoku-solver.png");
+      @include browser-content("../images/sudoku-lg.png");
       height: 27em;
     }
     #devbootcat .browser-content {

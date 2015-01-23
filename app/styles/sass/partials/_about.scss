@@ -1,96 +1,109 @@
-#about img {
-  @include transition(all 0.4s ease-in-out);
-  width: 60%;
-  border-radius: 50%;
-  border: 1px solid $tangerine;
-  @include filter(grayscale(100%));
-  &:hover {
-    //    @include filter(inherit);
-    //    @include filter(none);
-    //    @include transition(filter .4s ease);
-
+#about {
+  margin-left: -15px;
+  margin-right: -15px;
+  background-position: 50% 50%;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("/images/carolineartz-bg.jpg");
+  background-attachment: fixed;
+  h2 {
+    text-align: center;
+    font-size: 42px !important;
+  }
+  h3 {
+    font-size: $font-avenir-next-regular-sc;
+    text-align: center;
   }
 }
 
-//
-$filters: posterize, css_brightness, brightness_threshold, css_opacity, css_invert, gamma_correct, gamma_correct2, css_grayscale, WashoutFilter, css_saturate, css_hue_rotate, luminance_mask, css_sepia, dusk, sepia_blur, dilate_saturate, rotate_hue, erode_1;
+// ***************************************************
 
-@each $filter in $filters {
-  @include keyframes(#{$filter}-on) {
-    0% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    20% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    30% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    30% {
-      @include filter(url(##{$filter}));
-      opacity: .7;
-    }
-    50% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    50% {
-      @include filter(url(##{$filter}));
-      opacity: .8;
-    }
-    80% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    80% {
-      @include filter(url(##{$filter}));
-      opacity: .9;
-    }
-    100% {
-      @include filter(url(##{$filter}));
-      opacity: 1;
+#about-img {
+  text-align: center;
+  img {
+    @include transition(all 0.4s ease-in-out);
+    border-radius: 50%;
+    max-width: 70%;
+  }
+}
+
+$caroline-social: "caroline-social";
+
+#about .icons,
+#about .icons i {
+  font-family: "caroline-social" !important;
+  position: relative;
+  pointer-events: all;
+  bottom: -13px;
+}
+
+#about .icons i::before {
+  // this is the one for font
+  font-family: "caroline-social" !important;
+}
+
+[class*="-inverse"]:before {
+  left: 55px;
+  pointer-events: none;
+}
+
+.social-icons {
+  text-align: center;
+  background: transparent;
+  bottom: 75px;
+  position: relative;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      font-family: $caroline-social;
+      line-height: 1;
+      text-decoration: inherit;
+      margin-bottom: 10px;
+      font-size: 300%;
+      width: 55px;
+      pointer-events: none;
+      @include transition(all 0.3s ease);
+      i {
+        width: 55px;
+        height: 55px;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        height: 55px;
+        width: 55px;
+        color: $gray-dark;
+        outline: none;
+        @include transition(all 0.3s ease);
+        &:hover {
+          color: transparent;
+        }
+      }
+      .network {
+        // display: none;
+        opacity: 0;
+        font-family: $font-avenir-next-regular-sc !important;
+        font-size: 15px !important;
+        position: absolute;
+        bottom: -40px;
+        text-align: center;
+        width: 55px;
+        @include transition(all 0.4s ease 0.2s);
+      }
+      &:hover {
+        .network {
+          opacity: 1;
+        }
+      }
     }
   }
 }
 
-@each $filter in $filters {
-  @include keyframes(#{$filter}-off) {
-    100% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    80% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    80% {
-      @include filter(url(##{$filter}));
-      opacity: .2;
-    }
-    20% {
-      @include filter(grayscale(100%));
-      opacity: 1;
-    }
-    20% {
-      @include filter(url(##{$filter}));
-      opacity: .8;
-    }
-    0% {
-      @include filter(url(##{$filter}));
-      opacity: 1;
-    }
-  }
-}
-
-@each $filter in $filters {
-  ##{$filter} {
-    //    @include animation(#{$filter}-off 1s ease-out forwards);
-    @include animation-play-state(play);
-    &:hover {
-      @include animation(#{$filter}-on 1s ease-in forwards, #{$filter}-off 1s ease-out paused);
-    }
-  }
+.icon-twitter,
+.icon-facebook,
+.icon-linkedin,
+.icon-github,
+.icon-email {
+  position: relative;
+  top: 68px;
 }

@@ -19,6 +19,8 @@ $eggplant: #6d516b;
 $pacific-blue: #15b7c9;
 $eastern-blue: #1199a9;
 $iris-blue: #00b0c4;
+$white-smoke: #f3f7f8;
+$porcelain: #eff3f4;
 
 $bottom-skills-fill: $iris-blue;
 
@@ -50,20 +52,20 @@ $timeline: max-width 768px;
 
 @include breakpoint($xs) {
   $font-size-base: 17px;
-  @include resize-headings(35px, 30px, 25px, 22px, 20px, 18px);
+  @include resize-headings(40px, 37px, 30px, 25px, 20px, 18px);
   .panel-heading [data-toggle="collapse"] {}
 }
 
 
 @include breakpoint($sm) {
   $font-size-base: 18px;
-  @include resize-headings(37px, 33px, 27px, 25px, 23px, 20px);
+  @include resize-headings(42px, 39px, 33px, 29px, 23px, 20px);
   .panel-heading [data-toggle="collapse"] {}
 }
 
 
 @include breakpoint($md) {
-  @include resize-headings(42px, 40px, 36px, 32px, 28px, 25px);
+  @include resize-headings(45px, 40px, 36px, 32px, 28px, 25px);
   .panel-heading [data-toggle="collapse"] {}
 }
 
@@ -113,9 +115,17 @@ $border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
 *  Bootstrap Style Overrides:
 */
 
+h3 {
+  font-family: $font-avenir-next-light-sc;
+}
+
 code,
 pre code {
   font-size: 85%;
+}
+
+ul {
+  padding-left: 0;
 }
 
 /* Panels */
@@ -142,7 +152,7 @@ pre code {
 
 /* Navbar */
 .navbar-default {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   border-bottom: none;
   margin-bottom: 5px;
   .navbar-nav li a {

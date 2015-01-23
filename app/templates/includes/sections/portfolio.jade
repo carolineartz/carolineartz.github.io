@@ -1,13 +1,45 @@
 +section('projects', '#projects')
   .content
-    include ./projects/p1-ohey.jade
+    +project('ohey', 'Ohey', 'right')
+      .content Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      +technology('angular', 'bootstrap', 'django', 'python')
+      .links
+        .div Code available upon request.
+        //- a.repo(href='#') <svg class="icon-github-1"><use xlink:href="#icon-github-1"></use></svg> project
+        //- a.live(href='#') <svg class="icon-link"><use xlink:href="#icon-link"></use></svg> live
     hr
-    include ./projects/p2-sudoku-solver.jade
+    +project('sudoku', 'Sudoku Solver', 'left')
+      .content Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      +technology('sinatra', 'compass', 'ruby')
+      .links
+        a.repo(href='https://github.com/zmitton/sudoku') <svg class="icon-github-1"><use xlink:href="#icon-github-1"></use></svg> project
+        a.live(href='http://sudoku-puzzle-solver.herokuapp.com/') <svg class="icon-link"><use xlink:href="#icon-link"></use></svg> live
+
     hr
-    include ./projects/p3-devbootcat.jade
+    +project('devbootcat', 'Dev BootCat', 'right')
+      .content Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      +technology('rails', 'sass', 'ruby')
+      .links
+        a.repo(href='#') <svg class="icon-github-1"><use xlink:href="#icon-github-1"></use></svg> project
+        a.live(href='#') <svg class="icon-link"><use xlink:href="#icon-link"></use></svg> live
     hr
-    include ./projects/p4-devpizzacamp.jade
+    +project('devpizzacamp', 'Dev PizzaCamp', 'left')
+      .content Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      +technology('pureCSS')
+      .links
+        a.repo(href='#') <svg class="icon-github-1"><use xlink:href="#icon-github-1"></use></svg> project
+        a.live(href='#') <svg class="icon-link"><use xlink:href="#icon-link"></use></svg> live
     hr
-    include ./projects/p5-polity.jade
+    +project('polity', 'Polity Chicago', 'right')
+      .content Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      +technology('rails', 'sass')
+      .links
+        a.repo(href='#') <svg class="icon-github-1"><use xlink:href="#icon-github-1"></use></svg> project
+        a.live(href='#') <svg class="icon-link"><use xlink:href="#icon-link"></use></svg> live
     hr
-    include ./projects/p6-devref.jade
+    +project('devref', 'DevRef for Rails Developers', 'left')
+      .content Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      +technology('pureCSS')
+      .links
+        a.repo(href='#') <svg class="icon-github-1"><use xlink:href="#icon-github-1"></use></svg> project
+        a.live(href='#') <svg class="icon-link"><use xlink:href="#icon-link"></use></svg> live
