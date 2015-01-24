@@ -12,7 +12,7 @@
     font-family: $font-family-intro;
   }
   h1 {
-    padding: 0 40px;
+    padding: 80px 40px 0;
     margin-top: 0;
     @include breakpoint($mobile-landscape) {
       padding: 0;
@@ -102,6 +102,8 @@ $color-3: #0d0d0d;
     white-space: nowrap;
     left: 0;
     top: 0;
+    font-family: $font-family-intro !important;
+    font-weight: normal;
     &.is-visible {
       position: relative;
     }

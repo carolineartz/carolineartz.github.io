@@ -124,6 +124,15 @@ pre code {
   font-size: 85%;
 }
 
+p b, div b {
+  font-family: $font-avenir-next-demi;
+}
+
+p em, div em {
+  font-family: $font-avenir-next-medium-italic;
+  font-style: normal;
+}
+
 ul {
   padding-left: 0;
 }

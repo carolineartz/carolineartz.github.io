@@ -2,16 +2,15 @@ extends ./base/layout.jade
 include ./includes/mixins.jade
 
 block content
-  include ../images/filters.svg
   .container-fluid
     header
       include ./includes/navigation.jade
       include ./includes/intro.jade
-    #accordion.panel-group.content-sections
+    #accordion.panel-group.content-sections(role='tablist')
       include ./includes/sections/about.jade
       include ./includes/sections/portfolio.jade
       include ./includes/sections/cv.jade
       include ./includes/sections/skills.jade
-    footer  
+    footer
       p &hearts; from caroline
-      
+

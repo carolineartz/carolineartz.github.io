@@ -12,125 +12,7 @@
     <script src="//fontastic.s3.amazonaws.com/yUUyimhStYWcjHQxYTrihd/icons.js"></script>
     <script src="../bower_components/modernizr/modernizr.js"></script>
   </head>
-  <body><svg width="0%" height="0%">
-    <defs>
-        <filter id="no_op">
-            <feComponentTransfer>
-                <feFuncR type="identity" />
-                <feFuncG type="identity" />
-                <feFuncB type="identity" />
-                <feFuncA type="identity" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="posterize">
-            <feComponentTransfer>
-                <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
-                <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
-                <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="css_brightness">
-            <feComponentTransfer>
-                <feFuncR type="linear" slope="0.5" />
-                <feFuncG type="linear" slope="0.5" />
-                <feFuncB type="linear" slope="0.5" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="brightness_threshold">
-            <feComponentTransfer>
-                <feFuncR type="linear" slope="1.5" intercept="-0.3" />
-                <feFuncG type="linear" slope="1.5" intercept="-0.3" />
-                <feFuncB type="linear" slope="1.5" intercept="-0.3" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="css_opacity">
-            <feComponentTransfer>
-                <feFuncA type="table" tableValues="0 0.5" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="css_invert">
-            <feComponentTransfer>
-                <feFuncR type="table" tableValues="1 0" />
-                <feFuncG type="table" tableValues="1 0" />
-                <feFuncB type="table" tableValues="1 0" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="gamma_correct">
-            <feComponentTransfer>
-                <feFuncG type="gamma" amplitude="1" exponent="0.5" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="gamma_correct2">
-            <feComponentTransfer>
-                <feFuncG type="gamma" amplitude="1" exponent="0.5" offset="-0.1" />
-            </feComponentTransfer>
-        </filter>
-
-        <filter id="css_grayscale">
-            <feColorMatrix type="saturate" values="0" />
-        </filter>
-
-        <filter id="WashoutFilter" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
-            <feFlood flood-color="#ffffff" flood-opacity="0.5" result="flood" />
-            <feBlend mode="screen" in2="flood" in="SourceGraphic" />
-        </filter>
-
-        <filter id="css_saturate">
-            <feColorMatrix type="saturate" values="10" />
-        </filter>
-
-        <filter id="css_hue_rotate">
-            <feColorMatrix type="hueRotate" values="180" />
-        </filter>
-
-        <filter id="luminance_mask">
-            <feColorMatrix type="luminanceToAlpha" />
-        </filter>
-
-        <filter id="css_sepia">
-            <feColorMatrix type="matrix" values=".343 .669 .119 0 0
-            .249 .626 .130 0 0
-            .172 .334 .111 0 0
-            .000 .000 .000 1 0 " />
-        </filter>
-
-
-        <filter id="dusk">
-            <feColorMatrix type="matrix" values="1.0 0   0   0   0
-            0   0.2 0   0   0
-            0   0   0.2 0   0
-            0   0   0   1.0 0 " />
-        </filter>
-
-        <filter id="sepia_blur">
-            <feColorMatrix type="matrix" values=".343 .669 .119 0 0 .249 .626 .130 0 0 .172 .334 .111 0 0 .000 .000 .000 1 0" />
-            <feGaussianBlur stdDeviation="2" />
-        </filter>
-
-        <filter id="dilate_saturate">
-            <feMorphology operator="dilate" radius="4" />
-            <feColorMatrix type="saturate" values="2" />
-        </filter>
-
-        <filter id="rotate_hue">
-            <feColorMatrix type="saturate" values="0.9" />
-            <feColorMatrix type="hueRotate" values="91" />
-        </filter>
-
-        <filter id="erode_1">
-            <feMorphology operator="erode" radius="4" />
-        </filter>
-
-    </defs>
-</svg>
-
+  <body>
     <div class="container-fluid">
       <header>
         <div role="navigation" class="navbar navbar-default navbar-fixed-top">
@@ -140,10 +22,10 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="top-navigation-link">about</a></li>
+                <li><a href="#projects" class="top-navigation-link">projects</a></li>
+                <li><a href="#cv" class="top-navigation-link">cv</a></li>
+                <li><a href="#skills" class="top-navigation-link">skills</a></li>
               </ul>
             </div>
           </div>
@@ -153,12 +35,12 @@
           <h2 class="headline letters type"><span class="words-wrapper waiting"><b class="is-visible">Web Developer.</b><b>UI/UX Engineer.</b></span></h2>
         </section>
       </header>
-      <div id="accordion" class="panel-group content-sections">
-        <div id="section-about" class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title text-muted"><a data-parent="#accordion" data-toggle="collapse" href="#about" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>about</a></h2>
+      <div id="accordion" role="tablist" class="panel-group content-sections">
+        <div class="panel panel-default">
+          <div id="section-about" role="tab" class="panel-heading">
+            <h2 class="panel-title text-muted"><a data-toggle="collapse" data-parent="#accordion" href="#about" aria-expanded="false" aria-controls="about" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>about</a></h2>
           </div>
-          <div id="about" class="panel-collapse collapse">
+          <div id="about" role="tabpanel" aria-labelledby="section-about" class="panel-collapse collapse">
             <div class="panel-body">
               <div class="content">
                 <div class="col-sm-7 col-sm-push-5">
@@ -201,11 +83,11 @@
             </div>
           </div>
         </div>
-        <div id="section-projects" class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title text-muted"><a data-parent="#accordion" data-toggle="collapse" href="#projects" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>projects</a></h2>
+        <div class="panel panel-default">
+          <div id="section-projects" role="tab" class="panel-heading">
+            <h2 class="panel-title text-muted"><a data-toggle="collapse" data-parent="#accordion" href="#projects" aria-expanded="false" aria-controls="projects" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>projects</a></h2>
           </div>
-          <div id="projects" class="panel-collapse collapse">
+          <div id="projects" role="tabpanel" aria-labelledby="section-projects" class="panel-collapse collapse">
             <div class="panel-body">
               <div class="content">
                 <div id="ohey" class="row">
@@ -238,7 +120,7 @@
                         </li>
                       </ul>
                       <div class="links">
-                        <div class="div">Code available upon request.</div>
+                        <div class="div">Please inquire about source code.</div>
                       </div>
                     </div>
                   </div>
@@ -397,11 +279,11 @@
             </div>
           </div>
         </div>
-        <div id="section-cv" class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title text-muted"><a data-parent="#accordion" data-toggle="collapse" href="#cv" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>cv</a></h2>
+        <div class="panel panel-default">
+          <div id="section-cv" role="tab" class="panel-heading">
+            <h2 class="panel-title text-muted"><a data-toggle="collapse" data-parent="#accordion" href="#cv" aria-expanded="false" aria-controls="cv" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>cv</a></h2>
           </div>
-          <div id="cv" class="panel-collapse collapse">
+          <div id="cv" role="tabpanel" aria-labelledby="section-cv" class="panel-collapse collapse">
             <div class="panel-body">
               <div id="education" class="content">
                 <h2>Education</h2>
@@ -417,7 +299,7 @@
                         <div class="timeline-body">
                           <h4>Selected Course Work</h4>
                           <div class="course-container">
-                            <div id="machine-learning" class="course">Data Mining & Data Warehousing. <span class="description">Comparing machine learning classification algorithms on wine composition dataset <a target="_blank"  href="/docs/Artz_Assignment_Comparing_Classifiers_Data_Mining.pdf">preliminary work</a> and <a href="/docs/Artz_FinalPaper_Comparing_Classifiers_Data_Mining.pdf" target="_blank">final paper</a>.</span></div>
+                            <div id="machine-learning" class="course">Data Mining & Data Warehousing. <span class="description">Comparing <b>machine learning classification algorithms</b> on wine composition dataset <a target="_blank"  href="/docs/Artz_Assignment_Comparing_Classifiers_Data_Mining.pdf">preliminary work</a> and <a href="/docs/Artz_FinalPaper_Comparing_Classifiers_Data_Mining.pdf" target="_blank">final paper</a>.</span></div>
                           </div>
                           <div class="divider-short"></div>
                           <div class="course-container">
@@ -425,7 +307,7 @@
                           </div>
                           <div class="divider-short"></div>
                           <div class="course-container">
-                            <div id="object-oriented-programming" class="course">Object Oriented Programming. <span class="description"> Cash for Metals program in Java. <a href="https://github.com/carolineartz/CashforMetals">Source on GitHub</a>.</span></div>
+                            <div id="object-oriented-programming" class="course">Object Oriented Programming. <span class="description"> Cash for Metals program in <b>Java</b>. <a href="https://github.com/carolineartz/CashforMetals">Source on GitHub</a>.</span></div>
                           </div>
                         </div>
                       </div>
@@ -436,6 +318,9 @@
                         <div class="timeline-header">
                           <h3>Web Development: Ruby on Rails</h3>
                           <div class="place">Dev Bootcamp </div>
+                        </div>
+                        <div class="timeline-body">
+                          <p>Code samples available on <a href="https://github.com/carolineartz/dbc-work">GitHub</a>.</p>
                         </div>
                       </div>
                     </div>
@@ -463,7 +348,7 @@
                           <div class="place">Dev Bootcamp <span class="time">2014 - ongoing</span></div>
                         </div>
                         <div class="timeline-body">
-                          <p>Teach students web-development fundamentals (Ruby, JavaScript, Git, HTML/CSS) as they prepare for the on-campus phase of Dev Bootcamp.</p>
+                          <p>Teach students web-development fundamentals (<b>Ruby</b>, <b>JavaScript</b>, <b>Git</b>, <b>HTML and CSS</b>) as they prepare for the on-campus phase of Dev Bootcamp.</p>
                         </div>
                       </div>
                     </div>
@@ -487,7 +372,7 @@
                           <div class="place">Startup Institute <span class="time">2014</span></div>
                         </div>
                         <div class="timeline-body">
-                          <p>Instructed the full curriculum for the Web Dev track (Ruby on Rails).</p>
+                          <p>Instructed the full curriculum for the <b>Ruby on Rails</b> Web Development track.</p>
                         </div>
                       </div>
                     </div>
@@ -499,7 +384,7 @@
                           <div class="place">Motts58 Foundation <span class="time">2012-2013</span></div>
                         </div>
                         <div class="timeline-body">
-                          <p>Developed and maintained the non-profit's website and digital media presence (Wordpress &amp; Graphic Design).</p>
+                          <p>Developed and maintained the non-profit's website and digital media presence, primarily working with <b>HTML</b>, <b>CSS</b>, <b>jQuery</b>, <b>Wordpress</b> &amp; <b>graphic design</b>).</p>
                         </div>
                       </div>
                     </div>
@@ -511,7 +396,7 @@
                           <div class="place">Northwestern University Division of Gastroenterology <span class="time">2009-2014</span></div>
                         </div>
                         <div class="timeline-body">
-                          <p>Designed and developed a clinical research database system for Division. Initiated and coordinated the implementation of a increasingly scalable division-wide integrated database management and electronic data capture research platform.</p>
+                          <p>Designed and developed a clinical <b>relational database management systems</b> for Division. Initiated and coordinated the implementation of a increasingly scalable division-wide integrated database management and electronic data capture research platform.</p>
                           <h4>Publications in Peer-Reviewed Journals</h4>
                           <ul class="publications">
                             <li><a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/21351218">Optimizing management of Crohn&rsquo;s disease within a project management framework: results of a pilot study</a></li>
@@ -528,11 +413,11 @@
             </div>
           </div>
         </div>
-        <div id="section-skills" class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title text-muted"><a data-parent="#accordion" data-toggle="collapse" href="#skills" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>skills</a></h2>
+        <div class="panel panel-default">
+          <div id="section-skills" role="tab" class="panel-heading">
+            <h2 class="panel-title text-muted"><a data-toggle="collapse" data-parent="#accordion" href="#skills" aria-expanded="false" aria-controls="skills" class="collapsed"><span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>skills</a></h2>
           </div>
-          <div id="skills" class="panel-collapse collapse">
+          <div id="skills" role="tabpanel" aria-labelledby="section-skills" class="panel-collapse collapse">
             <div class="panel-body">
               <div class="content">
                 <ul class="skills-container">
@@ -560,7 +445,7 @@
           </div>
         </div>
       </div>
-      <footer> 
+      <footer>
         <p>&hearts; from caroline</p>
       </footer>
     </div>

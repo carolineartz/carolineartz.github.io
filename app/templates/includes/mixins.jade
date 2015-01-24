@@ -1,10 +1,16 @@
-mixin section(title, target)
-  .panel.panel-default(id="section-#{title}")
-    .panel-heading
+mixin top-nav-list(...targets)
+  ul.nav.navbar-nav
+    each target in targets
+      li
+        a.top-navigation-link(href="#" + "#{target.toLowerCase()}")= target
+
+mixin section(target)
+  .panel.panel-default
+    .panel-heading(id="section-#{target}", role="tab")
       h2.panel-title.text-muted
-        a(data-parent='#accordion', class='collapsed', data-toggle='collapse', href=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
-            =title
-    div(class='panel-collapse collapse', id=title)
+        a(data-toggle='collapse', data-parent='#accordion', href="#" + "#{target}", class='collapsed', aria-expanded='false', aria-controls=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+            =target
+    div(id=target, class='panel-collapse collapse', role="tabpanel" aria-labelledby="section-#{target}")
       .panel-body
         block
 

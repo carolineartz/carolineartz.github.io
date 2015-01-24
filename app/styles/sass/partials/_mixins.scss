@@ -116,6 +116,7 @@
       background: $color;
     }
     .timeline-content {
+      border: 2px solid $color;
       &::before {
         border-left-color: $color !important;
         @include breakpoint($timeline) {

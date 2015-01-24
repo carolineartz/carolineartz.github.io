@@ -35,7 +35,6 @@
     }
     .timeline-content {
       width: 45%;
-      background: $white-smoke;
       padding: 20px 20px 0;
       border-radius: 5px;
       @include transition(all 0.3s ease);
@@ -151,10 +150,6 @@
   @include breakpoint($md) {
     font-size: 43px !important;
   }
-
-  // &:last-of-type {
-  //   margin-top: 2em;
-  // }
 }
 
 #cv h3 {
@@ -193,28 +188,11 @@
     border-bottom: 2px solid $tangerine;
     padding-bottom: .4em;
     margin: 0 .5em .3em;
-    // margin-left: 15px;
-    // margin-right: 15px;
     padding-left: 0;
   }
-  @include breakpoint($sm) {
-    // .title, .position {
-    //   > span:first-of-type {
-    //     border-bottom: 2px solid $tangerine;
-    //   }
-    // }
-  }
-
   .institution, .location {
     color: $text-muted;
-    // white-space: nowrap;
     font-family: $font-avenir-next-light-sc;
-    // font-size: .7em;
-
-  }
-  .time {
-    // color: $gray-dark;
-
   }
 }
 
@@ -232,7 +210,7 @@
 }
 
 .course {
-  font-family: $font-avenir-next-medium-italic;
+  font-family: $font-avenir-next-demi;
   .description {
     font-family: $font-avenir-next-light;
   }
