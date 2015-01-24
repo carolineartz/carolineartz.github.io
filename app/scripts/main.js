@@ -26,8 +26,6 @@
 
     function navToElement(e) {
         var target = $(e.target);
-        console.log($(target));
-
         if ($(target).hasClass('panel-collapse')) {
             var $section = $(target).prev('.panel-heading').parent();
             $('html, body').animate({
@@ -47,13 +45,8 @@
 
 
 
-
-
-
-
-    $('#accordion').on('shown.bs.collapse', navToElement);
     $('.top-navigation-link, .panel-collapse').on('click', navToElement);
-
+    $('#accordion').on('shown.bs.collapse', navToElement);
 
 })();
 
