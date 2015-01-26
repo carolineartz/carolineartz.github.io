@@ -48,8 +48,6 @@ gulp.task('html', ['styles'], function () {
     .pipe($.if('*.css', cssChannel()))
     .pipe(assets.restore())
     .pipe($.useref())
-   // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
-  //.pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -107,6 +105,11 @@ gulp.task('connect', ['styles'], function () {
 
 gulp.task('serve', ['connect', 'watch'], function () {
   require('opn')('http://localhost:9000');
+});
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src(".dist/**/*")
+    .pipe(deploy())
 });
 
 // inject bower components
