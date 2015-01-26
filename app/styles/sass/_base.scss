@@ -42,6 +42,7 @@ $md: min-width 992px;
 $lg: min-width 1200px;
 
 $mobile-landscape: (max-width 768px) (orientation landscape);
+$mobile-portrait: (max-width: 768px) (orientation portrait);
 $timeline: max-width 768px;
 
 @include breakpoint($xxs) {
@@ -166,13 +167,13 @@ ul {
   margin-bottom: 5px;
   .navbar-nav li a {
     @include transition(0.2s ease);
-    color: $gray-lighter;
+    color: $gray-light;
     font-style: normal;
     border-bottom: none;
   }
   .navbar-nav li.active a {
     background: none;
-    color: $gray-light;
+    color: $gray;
     &:hover {
       background: none;
     }
@@ -215,7 +216,7 @@ body {
 
 /* Style links */
 div > a {
-  @include reveal-underline;
+  // @include reveal-underline;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

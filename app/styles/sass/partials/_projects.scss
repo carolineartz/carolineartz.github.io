@@ -28,7 +28,7 @@
   }
   @include breakpoint($xs) {
     .description {
-      .content {
+      .content, .tech-list {
         margin-left: 10px;
       }
     }

@@ -4,20 +4,30 @@
     .col-sm-7.col-sm-push-5
       .row
         .col-md-5
-          #about-img
-            img(src="/images/carolinemesm.jpg")
-          h2 Caroline Artz
+          .profile-container
+            .profile-text
+              #about-img
+                img(src="/images/carolinemesm.jpg")
+              h2 Caroline Artz
         .col-md-7
-            .name
-              h3 Let's Connect
-            .social-icons
-              ul.icons
-                +social-icon('twitter', 'http://www.twitter.com/carolineartz')
-                +social-icon('linkedin', 'http://www.linkedin.com/in/carolineartz')
-                +social-icon('github', 'https://github.com/carolineartz')
-                +social-icon('facebook', 'http://www.facebook.com/caroline.artz')
-                +social-icon('email', 'mailto:ceartz@gmail.com')
+            .social-container
+              .social-text
+                .name
+                  h3 Let's Connect
+                .social-icons
+                  ul.icons
+                    +social-icon('twitter', 'http://www.twitter.com/carolineartz')
+                    +social-icon('linkedin', 'http://www.linkedin.com/in/carolineartz')
+                    +social-icon('github', 'https://github.com/carolineartz')
+                    +social-icon('facebook', 'http://www.facebook.com/caroline.artz')
+                    +social-icon('email', 'mailto:ceartz@gmail.com')
 
     .col-sm-5.col-sm-pull-7
-      p Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.
-      p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet m nec elit.
+      .about-container
+        .about-text
+          p.
+            I'm a passionate and enthusiastic web-developer experienced in both Front-end and Back-end development.
+            I'm currently living in Chicago but ready to move and looking for opportunities in San Francisco/Bay Area.
+          p.
+            I wake up every day excited to code. I love constantly learning new things, and teaching others what I know.
+            Thanks for checking out my site and please <a href="mailto:ceartz@gmail.com">email me</a> about any job opportunities...or just to say hello!

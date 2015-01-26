@@ -2,27 +2,6 @@
 /* jshint node:true */
 (function() {
     'use strict';
-    // var $section;
-
-
-
-
-
-    // function navToElement(e) {
-    //     var $target = $(e.target);
-
-    //     if ($target.hasClass('top-navigation-link')) {
-    //         $section = $($target.attr('href')).collapse('show');
-    //     }
-    //     // else: target has class .panel-collapse
-    //     else {
-    //         $section = $target.prev('.panel-heading').parent();
-    //     }
-
-    //     $('html, body').animate({
-    //         scrollTop: $section.offset().top - 30
-    //     }, 100);
-    // }
 
     function navToElement(e) {
         var target = $(e.target);
