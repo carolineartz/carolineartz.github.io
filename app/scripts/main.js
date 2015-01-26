@@ -5,8 +5,9 @@
 
     function navToElement(e) {
         var target = $(e.target);
+        var $section;
         if ($(target).hasClass('panel-collapse')) {
-            var $section = $(target).prev('.panel-heading').parent();
+            $section = $(target).prev('.panel-heading').parent();
             $('html, body').animate({
                 scrollTop: $section.offset().top - 30
             }, 100);
@@ -14,7 +15,7 @@
             var sectionId = $(target).attr('href');
             $('#accordion').find('.collapse.in').removeClass('in');
 
-            var $section = $(sectionId).collapse('show');
+            $section = $(sectionId).collapse('show');
             $('html, body').animate({
                 scrollTop: $section.offset().top - 30
             }, 100);

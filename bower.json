@@ -9,6 +9,7 @@
     "neat": "1.7.1",
     "scroll-up-bar": "~0.3.0",
     "underscore": "~1.7.0",
-    "compass-breakpoint": "~2.5.0"
+    "compass-breakpoint": "~2.5.0",
+    "bootstrap-autohidingnavbar": "~1.0.0"
   }
 }

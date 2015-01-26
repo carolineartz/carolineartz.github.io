@@ -27,7 +27,7 @@ $bottom-skills-fill: $iris-blue;
 $top-skills-fill: $tangerine;
 $timeline-color: $iris-blue;
 
-@import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
+@import "../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 @import "partials/mixins";
 
 /*
@@ -84,13 +84,13 @@ $timeline: max-width 768px;
 
 @import "bootstrap_custom";
 
-$icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-@import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
-@import "../../../bower_components/neat/app/assets/stylesheets/_neat";
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
+@import "../../bower_components/neat/app/assets/stylesheets/_neat";
 
 //override neat's breakpoint mixin, have to import again TODO: fix this. find out: does neat's breakpoint mixin replace the need for this?
-@import "../../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
+@import "../../bower_components/compass-breakpoint/stylesheets/_breakpoint";
 @import "partials/fonts";
 @import "partials/social-icons";
 @import "partials/hover";

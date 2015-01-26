@@ -1,19 +1,16 @@
 /* jshint node:true */
 'use strict';
-// generated on 2015-01-09 using generator-gulp-webapp 0.2.0
+// generated on 2015-01-26 using generator-gulp-webapp 0.2.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
-
 gulp.task('styles', function () {
-  //var replace = require('gulp-replace');
   return gulp.src('app/styles/main.scss')
     .pipe($.plumber())
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10
     }))
-    //.pipe(replace(/..\/fonts/gm, 'fonts'))
     .pipe($.autoprefixer({browsers: ['last 1 version']}))
     .pipe(gulp.dest('.tmp/styles'));
 });
@@ -23,16 +20,6 @@ gulp.task('jshint', function () {
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.jshint.reporter('fail'));
-});
-
-gulp.task('templates', function() {
-  var jade = require('gulp-jade');
-  return gulp.src('app/templates/*.jade')
-    .pipe($.plumber())
-    .pipe($.jade({
-      pretty: true
-    }))
-    .pipe(gulp.dest('app'));
 });
 
 gulp.task('html', ['styles'], function () {
@@ -48,23 +35,17 @@ gulp.task('html', ['styles'], function () {
     .pipe($.if('*.css', cssChannel()))
     .pipe(assets.restore())
     .pipe($.useref())
-   // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
-  //.pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
-   .pipe($.imagemin({
+    .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
-    }))
+    })))
     .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('docs', function () {
-  return gulp.src('app/docs/**/*')
-    .pipe(gulp.dest('dist/docs'));
 });
 
 gulp.task('fonts', function () {
@@ -134,11 +115,10 @@ gulp.task('watch', ['connect'], function () {
   ]).on('change', $.livereload.changed);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/templates/**/*.jade', ['templates']);
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'templates', 'html', 'images', 'fonts', 'extras', 'docs'], function () {
+gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
