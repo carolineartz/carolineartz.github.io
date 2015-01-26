@@ -1,0 +1,145 @@
+.skills-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  margin: 0 auto;
+  -webkit-padding-start: 0;
+  list-style-type: none;
+  &::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+$icon-large-width: 420px;
+$icon-large-height: 324px;
+$icon-small-width: 56px;
+$icon-small-height: 56px;
+
+#skills {
+  h2 {
+    margin-top: 0;
+  }
+  .panel-body {
+    padding-top: 0;
+  }
+}
+
+/* the 2 underneath colored sections */
+#skills .content {
+  background-attachment: fixed;
+  @include background-image(linear-gradient(bottom, $bottom-skills-fill 0%, $bottom-skills-fill 50%, $top-skills-fill 50%, $top-skills-fill 100%));
+
+  .skill {
+    position: relative;
+    z-index: 2;
+    min-height: $icon-small-height;
+    margin-left: $icon-small-width;
+    background-color: white;
+    padding: 1em 1em 4em;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: $icon-small-width;
+      right: 100%;
+      z-index: 2;
+    }
+    &::before {
+      top: 0;
+      height: $icon-small-height;
+      background-repeat: no-repeat;
+    }
+    &::after {
+      top: $icon-small-height;
+      bottom: 0;
+      background-image: url("../images/skills/sm-divider.svg");
+      background-repeat: repeat-y;
+    }
+    &.skill-divider::after {
+      top: 0;
+    }
+    &.skill-divider:last-child {
+      display: none;
+    }
+    &.skill-1::before {
+      background-image: url("../images/skills/1-skills-frontend-sm.svg");
+    }
+    &.skill-2::before {
+      background-image: url("../images/skills/2-skills-ux-sm.svg");
+    }
+    &.skill-3::before {
+      background-image: url("../images/skills/3-skills-backend-sm.svg");
+    }
+    &.skill-4::before {
+      background-image: url("../images/skills/4-skills-internet-db-sm.svg");
+    }
+    @include breakpoint($sm) {
+      min-height: ($icon-large-height + 200px) / 2;
+      margin-left: $icon-large-width / 2;
+      padding: 2em 2em;
+      &::before, &::after {
+        width: $icon-large-width /2;
+      }
+      &::before {
+        height: $icon-large-height / 2;
+      }
+      &::after {
+        top: $icon-large-height / 2;
+        width: 210px;
+        background-image: url("../images/skills/md-divider.svg");
+      }
+      &.skill-divider:first-child, &.skill-divider:last-child {
+        min-height: 50px;
+        padding: 0;
+      }
+      &.skill-divider:last-child {
+        display: block;
+      }
+      &.skill-1::before {
+        background-image: url("../images/skills/1-skills-frontend-md1.svg");
+      }
+      &.skill-2::before {
+        background-image: url("../images/skills/2-skills-ux-md1.svg");
+      }
+      &.skill-3::before {
+        background-image: url("../images/skills/3-skills-backend-md1.svg");
+      }
+      &.skill-4::before {
+        background-image: url("../images/skills/4-skills-internet-db-md1.svg");
+      }
+    }
+
+    @include breakpoint($lg) {
+      min-height: $icon-large-height + 200px;
+      margin-left: $icon-large-width;
+      padding: 6em 2em;
+      &::before, &::after {
+        width: $icon-large-width;
+      }
+      &::before {
+        height: $icon-large-height;
+      }
+      &::after {
+        top: $icon-large-height;
+        background-image: url("../images/skills/lg-divider.svg");
+      }
+      &.skill-1::before {
+        background-image: url("../images/skills/1-skills-frontend-lg.svg");
+      }
+      &.skill-2::before {
+        background-image: url("../images/skills/2-skills-ux-lg.svg");
+      }
+      &.skill-3::before {
+        background-image: url("../images/skills/3-skills-backend-lg.svg");
+      }
+      &.skill-4::before {
+        background-image: url("../images/skills/4-skills-internet-db-lg.svg");
+      }
+    }
+  }
+}

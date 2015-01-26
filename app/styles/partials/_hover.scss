@@ -1,0 +1,78 @@
+// Extracted from:
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.0.0
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ * Hover.css Copyright Ian Lunn 2014. Generated with Sass.
+ */
+
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+// Find out more here: https://github.com/IanLunn/Hover/wiki/Hacks-Explained
+
+@mixin hardwareAccel {
+  // Improve performance on mobile/tablet devices
+  @include transform(translateZ(0));
+//  @include prefixed(transform, translateZ(0));
+}
+
+@mixin improveAntiAlias {
+  // Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin fontSmooth {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin forceBlockLevel {
+  // Transforms need to be block-level to work
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+@mixin hacks {
+  @include forceBlockLevel;
+  @include hardwareAccel;
+  @include improveAntiAlias;
+  @include fontSmooth;
+}
+
+/* Reveal */
+@mixin reveal-underline {
+  $duration: 0.3s;
+  @include hacks();
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $pacific-blue;
+    height: 2px;
+    @include transform(translateY(4px));
+    @include transition(transform $duration ease-out);
+//    @include prefixed(transition-property, border-width);
+//    @include prefixed(transition-duration, #{$duration});
+//    @include prefixed(transition-timing-function, ease-out);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      @include transform(translateY(0));
+    }
+  }
+}
