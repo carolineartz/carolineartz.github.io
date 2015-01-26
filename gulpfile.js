@@ -108,6 +108,7 @@ gulp.task('serve', ['connect', 'watch'], function () {
 });
 
 gulp.task('deploy', ['build'], function() {
+  var deploy      = require('gulp-gh-pages');
   return gulp.src(".dist/**/*")
     .pipe(deploy())
 });
