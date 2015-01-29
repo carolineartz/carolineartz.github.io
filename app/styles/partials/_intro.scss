@@ -75,8 +75,7 @@
 
 /* --------------------------------
 
-typing effect
-adapted from: http://codyhouse.co/gem/css-animated-headlines/
+typing effect adapted from: http://codyhouse.co/gem/css-animated-headlines/
 
 -------------------------------- */
 
@@ -178,4 +177,31 @@ $color-3: #0d0d0d;
     @include transform(translateY(-50%) scale(0));
     opacity: 0;
   }
+}
+
+
+/*
+* ripple button
+*
+*/
+
+.more {
+  position: relative;
+  height: 40%;
+}
+
+.icon-arrow-dot-round {
+  color: $gray;
+  font-size: 2em;
+  position: relative;
+}
+
+.scroll-more {
+  text-decoration: none;
+  display: block;
+  position: absolute;
+  @include center(xy);
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
 }

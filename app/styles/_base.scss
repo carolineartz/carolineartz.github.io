@@ -209,21 +209,17 @@ ul {
 /* Space out content a bit */
 body {
   padding-top: 60px;
-  padding-bottom: 40px;
   font-weight: $body-font-weight;
   overflow-x: hidden;
+}
+
+.cont {
+  @include outer-container;
 }
 
 /* Style links */
 div > a {
   // @include reveal-underline;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 /* Custom page header */
@@ -239,14 +235,21 @@ div > a {
 }
 
 /* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: none;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
+footer {
+  @include outer-container;
+  .copy, .contact {
+    @include span-columns(6);
+  }
+  .copy {
+    font-size: .9em;
+  }
+  ul {
+    list-style: none;
+    float: right;
+    li {
+      display: inline;
+    }
+  }
 }
 
 /* Responsive: Portrait tablets and up */

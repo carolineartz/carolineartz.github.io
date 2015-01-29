@@ -65,6 +65,11 @@ gulp.task('docs', function () {
     .pipe(gulp.dest('dist/docs'));
 });
 
+gulp.task('dbc-files', function() {
+  return gulp.src('app/dbc-portfolio/**/*')
+    .pipe(gulp.dest('dist/dbc-portfolio'));
+  })
+
 gulp.task('fonts', function () {
   return gulp.src(require('main-bower-files')().concat('app/fonts/**/*'))
     .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
@@ -107,13 +112,17 @@ gulp.task('serve', ['connect', 'watch'], function () {
   require('opn')('http://localhost:9000');
 });
 
-gulp.task('deploy', ['build'], function() {
-  var deploy      = require('gulp-gh-pages');
-  return gulp.src(".dist/**/*")
-    .pipe(deploy({
-      branch: 'master'
-    }))
-});
+
+
+var options = {
+  remoteUrl: "https://github.com/carolineartz/carolineartz.github.io",
+  branch: "master"
+};
+  gulp.task('deploy', function () {
+    var deploy      = require('gulp-gh-pages');
+      gulp.src(["dist/**/*.*", "dist/CNAME"])
+          .pipe(deploy(options));
+  });
 
 // inject bower components
 gulp.task('wiredep', function () {
@@ -144,7 +153,7 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'templates', 'html', 'images', 'fonts', 'extras', 'docs'], function () {
+gulp.task('build', ['jshint', 'templates', 'html', 'images', 'fonts', 'extras', 'docs', 'dbc-files'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

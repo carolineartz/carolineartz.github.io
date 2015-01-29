@@ -2,7 +2,7 @@ extends ./base/layout.jade
 include ./includes/mixins.jade
 
 block content
-  .container-fluid
+  .container-fluid.cont
     header
       include ./includes/navigation.jade
       include ./includes/intro.jade
@@ -12,5 +12,5 @@ block content
       include ./includes/sections/cv.jade
       include ./includes/sections/skills.jade
     footer
-      p &hearts; from caroline
+      include ./includes/footer.jade
 
