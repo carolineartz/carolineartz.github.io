@@ -13,7 +13,7 @@
             }, 1000, 'swing', function() {
                 window.location.hash = '#' + $section.find('.panel-collapse').attr('id');
             });
-        } else if ($(target).hasClass('top-navigation-link')) {
+        } else if ($(target).parent().hasClass('nav-link')) {
             var sectionId = $(target).attr('href');
             $('#accordion').find('.collapse.in').removeClass('in');
             $section = $(sectionId).collapse('show');
@@ -29,7 +29,7 @@
                 selector: 'a.scroll-on-page-link'
             };
             if (typeof options === 'string') {
-              defaults.selector = options;
+                defaults.selector = options;
             }
             options = $.extend(defaults, options);
             return $(options.selector).click(function(e) {
@@ -45,20 +45,80 @@
         }
     };
 
+    /*
+     *    Top Navigation- Refills
+     *
+     */
+
+    var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
+    $('#js-centered-navigation-menu').removeClass("show");
+
+    menuToggle.on('click', function(e) {
+        e.preventDefault();
+        $('#js-centered-navigation-menu').slideToggle(function() {
+            if ($('#js-centered-navigation-menu').is(':hidden')) {
+                $('#js-centered-navigation-menu').removeAttr('style');
+            }
+        });
+    });
+
+
+
     $(function() {
         $.mark.jump();
     });
-    $('.top-navigation-link, .panel-collapse').on('click', navToElement);
+    $('.nav-link a, .panel-collapse').on('click', navToElement);
     $('#accordion').on('shown.bs.collapse', navToElement);
 
+
+    if ($('body').scrollTop() === 0) {
+        $('header').not('.nav-down').css('top', '-60px');
+    } else {
+      $('header').css('top', '0')
+    }
+
+    // $('.nav-up').css('top', '-60px');
+    $('.nav-down').css('top', '0');
 })();
 
 
-// (function() {
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
 
-// })();
+$(window).scroll(function(event) {
+    didScroll = true;
+});
 
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
 
+function hasScrolled() {
+    var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if (Math.abs(lastScrollTop - st) <= delta) return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight) {
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if (st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+
+    lastScrollTop = st;
+}
 
 
 
@@ -74,15 +134,15 @@ $(function() {
 
     'use strict';
 
-    if ($('body').scrollTop() === 0) {
-        $('.navbar-fixed-top').css('top', '-50px');
-    }
 
 
-    $('.navbar-fixed-top').autoHidingNavbar({
-        'animationDuration': 300,
-        'showOnBottom': false
-    });
+    // $('.navbar-fixed-top').autoHidingNavbar({
+    //     'animationDuration': 300,
+    //     'showOnBottom': false
+    // });
+
+
+
 
 
     //calculate size of intro

@@ -7,7 +7,7 @@
   $base-background-color: white !default;
   $large-screen: em(860) !default;
   $browser-top-bar-height: 1.5em;
-  $browser-circle-size: .5em;
+  $browser-circle-size: 0.5em;
   $browser-circle-margin: ($browser-top-bar-height - $browser-circle-size) / 2;
   $browser-top-bar-background: lighten(#DFDFDF, 5);
   $browser-border: 0px;
@@ -18,8 +18,6 @@
   $browser-circle-full-screen: #51B151;
   $browser-circle-minimize: #F5B01D;
   $browser-circle-close: #FF6F55;
-
-  
   display: inline-block;
   padding-top: 0;
   text-align: center;
@@ -27,22 +25,24 @@
   @include breakpoint($sm) {
     margin-bottom: 3em;
   }
+
   @include media($large-screen) {
     padding-top: 4em;
   }
+
   .browser-top-bar {
     @include linear-gradient($browser-top-bar-background, darken($browser-top-bar-background, 2));
     border-top-left-radius: $base-border-radius;
     border-top-right-radius: $base-border-radius;
     border: $browser-border;
-    box-shadow: inset 0 1px 0 transparentize(white, .6);
+    box-shadow: inset 0 1px 0 transparentize(white, 0.6);
     height: $browser-top-bar-height;
     width: 100%;
   }
   .browser-circle {
     @include size($browser-circle-size);
     border-radius: $browser-circle-size * 2;
-    box-shadow: 0 1px 0px transparentize(white, .5), inset 0 1px 1px transparentize(black, 0.8);
+    box-shadow: 0 1px 0px transparentize(white, 0.5), inset 0 1px 1px transparentize(black, 0.8);
     display: inline-block;
     margin: $browser-circle-margin 0;
   }
@@ -58,12 +58,11 @@
     background: $browser-circle-full-screen;
     margin-left: $browser-circle-margin / 3;
   }
-
   .browser {
     border-bottom: none;
     border-top-left-radius: $base-border-radius;
     border-top-right-radius: $base-border-radius;
-    box-shadow: 0 3px 5px transparentize(black, .7);
+    box-shadow: 0 3px 5px transparentize(black, 0.7);
     display: inline-block;
     text-align: left;
     width: 20%;
@@ -77,5 +76,162 @@
   }
 }
 
+/*
+*     Top Navigation: Adapted from Bourbon Refills
+*/
 
-
+.centered-navigation {
+  $base-border-radius: 3px !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $centered-navigation-padding: 1em;
+  $centered-navigation-logo-height: 2em;
+  $centered-navigation-background: transparentize(white, 0.2);
+  $centered-navigation-color: transparentize($base-font-color, 0.3);
+  $centered-navigation-color-hover: $base-font-color;
+  $centered-navigation-height: 60px;
+  $centered-navigation-item-padding: 1em;
+  $centered-navigation-submenu-padding: 1em;
+  $centered-navigation-item-nudge: 2.2em;
+  $horizontal-bar-mode: $large-screen;
+  /* Space out content a bit */
+  background-color: $centered-navigation-background;
+  // border-bottom: 1px solid darken($centered-navigation-background, 6%);
+  min-height: $centered-navigation-height;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  @include transition(top 0.2s ease-in-out);
+  &.nav-up {
+    top: -$centered-navigation-height;
+  }
+  &.nav-down {
+    top: 0 !important;
+  }
+  // Mobile view
+  .mobile-logo {
+    display: inline;
+    float: left;
+    max-height: $centered-navigation-height;
+    padding-left: $centered-navigation-padding;
+    img {
+      max-height: $centered-navigation-height;
+      opacity: .6;
+      padding: .8em 0;
+    }
+  }
+  .centered-navigation-mobile-menu {
+    color: $centered-navigation-color;
+    display: block;
+    float: right;
+    font-weight: 700;
+    line-height: $centered-navigation-height;
+    margin: 0;
+    padding-right: $centered-navigation-submenu-padding;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:focus, &:hover {
+      color: $centered-navigation-color-hover;
+    }
+  }
+  // Nav menu
+  .centered-navigation-wrapper {
+    @include outer-container;
+    @include clearfix;
+    position: relative;
+    z-index: 999;
+  }
+  ul.centered-navigation-menu {
+    -webkit-transform-style: preserve-3d;
+    // stop webkit flicker
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 99999;
+    &.show {
+      display: block;
+    }
+  }
+  ul li.nav-link {
+    background: $centered-navigation-background;
+    display: block;
+    line-height: $centered-navigation-height;
+    overflow: hidden;
+    padding-right: $centered-navigation-submenu-padding;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+    a {
+      color: $centered-navigation-color;
+      display: inline-block;
+      outline: none;
+      text-decoration: none;
+      &:focus, &:hover {
+        color: $centered-navigation-color-hover;
+      }
+    }
+  }
+  li.logo.nav-link {
+    display: none;
+    line-height: 0;
+  }
+  .logo img {
+    margin-bottom: -$centered-navigation-logo-height / 3;
+    max-height: $centered-navigation-logo-height;
+    opacity: 0.6;
+  }
+  li.more {
+    overflow: visible;
+    padding-right: 0;
+    a {
+      padding-right: $centered-navigation-submenu-padding;
+    }
+    > a {
+      padding-right: 1.6em;
+      position: relative;
+      &:after {
+        content: "›";
+        font-size: 1.2em;
+        position: absolute;
+        right: $centered-navigation-submenu-padding / 2;
+      }
+    }
+  }
+  @include media($horizontal-bar-mode) {
+    .mobile-logo,
+    .centered-navigation-mobile-menu {
+      display: none;
+    }
+    ul.centered-navigation-menu {
+      display: block;
+      text-align: center;
+    }
+    // The nav items
+    .nav-link:first-child {
+      margin-left: $centered-navigation-item-nudge;
+    }
+    ul li.nav-link {
+      background: transparent;
+      display: inline;
+      line-height: $centered-navigation-height;
+      a {
+        padding-right: $centered-navigation-item-padding;
+      }
+    }
+    li.more {
+      padding-right: $centered-navigation-submenu-padding;
+      position: relative;
+    }
+    li.more > a {
+      margin-right: $centered-navigation-submenu-padding;
+    }
+    li.logo.nav-link {
+      display: inline;
+    }
+  }
+}

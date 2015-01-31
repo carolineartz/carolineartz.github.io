@@ -2,10 +2,10 @@ extends ./base/layout.jade
 include ./includes/mixins.jade
 
 block content
-  .container-fluid.cont
-    header
-      include ./includes/navigation.jade
-      include ./includes/intro.jade
+  .cont
+    header.centered-navigation(role="banner")
+      include ./includes/bourbon-nav.jade
+    include ./includes/intro.jade
     #accordion.panel-group.content-sections(role='tablist')
       include ./includes/sections/about.jade
       include ./includes/sections/portfolio.jade

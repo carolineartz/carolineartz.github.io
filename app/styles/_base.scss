@@ -93,7 +93,6 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 @import "../../bower_components/compass-breakpoint/stylesheets/_breakpoint";
 @import "partials/fonts";
 @import "partials/social-icons";
-@import "partials/hover";
 
 /*
 *  custom variables
@@ -215,12 +214,10 @@ body {
 
 .cont {
   @include outer-container;
+  max-width: none;
 }
 
 /* Style links */
-div > a {
-  // @include reveal-underline;
-}
 
 /* Custom page header */
 .header {
