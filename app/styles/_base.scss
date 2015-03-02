@@ -209,12 +209,11 @@ ul {
 body {
   padding-top: 60px;
   font-weight: $body-font-weight;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
-.cont {
-  @include outer-container;
-  max-width: none;
+.content {
+  @include row;
 }
 
 /* Style links */

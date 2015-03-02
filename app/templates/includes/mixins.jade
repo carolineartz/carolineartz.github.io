@@ -5,14 +5,23 @@ mixin top-nav-list(...targets)
         a.top-navigation-link(href="#" + "#{target.toLowerCase()}")= target
 
 mixin section(target)
-  .panel.panel-default
-    .panel-heading(id="section-#{target}", role="tab")
-      h2.panel-title.text-muted
-        a(data-toggle='collapse', data-parent='#accordion', href="#" + "#{target}", class='collapsed', aria-expanded='false', aria-controls=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+    li
+      div(id="section-#{target}")
+        a.js-accordion-trigger(href="javascript:void(0)")
+          h2<span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
             =target
-    div(id=target, class='panel-collapse collapse', role="tabpanel" aria-labelledby="section-#{target}")
-      .panel-body
-        block
+        div(id=target)
+          block
+
+//- mixin section1(target)
+//-   .panel.panel-default
+//-     .panel-heading(id="section-#{target}", role="tab")
+//-       h2.panel-title.text-muted
+//-         a(data-toggle='collapse', data-parent='#accordion', href="#" + "#{target}", class='collapsed', aria-expanded='false', aria-controls=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+//-             =target
+//-     div(id=target, class='panel-collapse collapse', role="tabpanel" aria-labelledby="section-#{target}")
+//-       .panel-body
+//-         block
 
 
 mixin project(iden, title, imageside)

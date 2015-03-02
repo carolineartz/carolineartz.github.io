@@ -3,10 +3,9 @@ include ./includes/mixins.jade
 
 block content
   .cont
-
     include ./includes/bourbon-nav.jade
     include ./includes/intro.jade
-    #accordion.panel-group.content-sections(role='tablist')
+    #accordion
       include ./includes/sections/about.jade
       include ./includes/sections/portfolio.jade
       include ./includes/sections/cv.jade
