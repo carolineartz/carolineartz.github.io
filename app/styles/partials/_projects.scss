@@ -1,17 +1,42 @@
-#projects .content > .row {
-  @include breakpoint($lg) {
-    margin-right: 20px;
-    &:nth-of-type(2n+1) {
-      margin-left: 20px;
-      margin-right: -15px;
+#section-projects .content {
+  @include breakpoint($md) {
+    .project {
+      .visual {
+        @include span-columns(8);
+      }
+      .text {
+        @include span-columns(4);
+      }
+      &:nth-of-type(even) {
+        @include row($direction: RTL);
+        .visual, .text {
+          float: right;
+        }
+        .visual {
+          margin-right: 0;
+        }
+      }
+      &:nth-of-type(odd) {
+        .text {
+          margin-right: 2.3576515979%;
+        }
+        .visual {
+          margin-right: 0;
+        }
+        @include row($direction: LTR);
+      }
     }
   }
 }
 
 #projects {
   .description {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    @include breakpoint($md) {
+      padding: 0 1em;
+    }
+
     @include breakpoint($lg) {
       padding: 0;
     }
@@ -81,7 +106,7 @@
 /*
 * Projects
 */
-#ohey, #sudoku, #devbootcat, #devpizzacamp, #polity, #devref {
+.project {
   @include project-theme($tangerine);
 }
 
@@ -127,9 +152,6 @@
   }
 }
 
-/*
-*    Media Breakpoints
-*/
 @include breakpoint($xxs) {
   #devbootcamp .browser-content {
     height: 25em;

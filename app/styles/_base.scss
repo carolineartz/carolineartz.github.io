@@ -27,6 +27,7 @@ $bottom-skills-fill: $iris-blue;
 $top-skills-fill: $tangerine;
 $timeline-color: $iris-blue;
 
+@import "variables";
 @import "../../bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
 @import "partials/mixins";
 
@@ -45,46 +46,11 @@ $mobile-landscape: (max-width 768px) (orientation landscape);
 $mobile-portrait: (max-width: 768px) (orientation portrait);
 $timeline: max-width 768px;
 
-@include breakpoint($xxs) {
-  $font-size-base: 17px;
-  @include resize-headings(32px, 28px, 25px, 22px, 20px, 18px);
-}
-
-
-@include breakpoint($xs) {
-  $font-size-base: 17px;
-  @include resize-headings(40px, 37px, 30px, 25px, 20px, 18px);
-  .panel-heading [data-toggle="collapse"] {}
-}
-
-
-@include breakpoint($sm) {
-  $font-size-base: 18px;
-  @include resize-headings(42px, 39px, 33px, 29px, 23px, 20px);
-  .panel-heading [data-toggle="collapse"] {}
-}
-
-
-@include breakpoint($md) {
-  @include resize-headings(45px, 40px, 36px, 32px, 28px, 25px);
-  .panel-heading [data-toggle="collapse"] {}
-}
-
-
-@include breakpoint($lg) {
-  @include resize-headings(48px, 43px, 40px, 37px, 32px, 28px);
-  $font-size-base: 32px;
-  .panel-heading [data-toggle="collapse"] {}
-}
-
-
 /*
-*  bootstrap & other library imports here
+*  library imports here
 */
 
-@import "bootstrap_custom";
-
-$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "partials/type";
 
 @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 @import "../../bower_components/neat/app/assets/stylesheets/_neat";
@@ -93,6 +59,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 @import "../../bower_components/compass-breakpoint/stylesheets/_breakpoint";
 @import "partials/fonts";
 @import "partials/social-icons";
+@import "partials/reset-extended";
 
 /*
 *  custom variables
@@ -100,7 +67,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 
 $font-family-intro: "CutiveMonoRegular", "Source Code Pro", monospace;
 $panel-default-heading-size: $font-size-h2;
-$padding-larger-vertical: $padding-large-vertical * 2;
+$padding-larger-vertical: 20px;
 $body-font-weight: 200;
 $border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
 
@@ -111,9 +78,53 @@ $border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
 */
 @import "partials/components";
 
-/*
-*  Bootstrap Style Overrides:
-*/
+//
+// Extended Reset
+// --------------------------------------------------
+
+// Reset the box-sizing
+//
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// Body reset
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+}
+
+// Reset fonts for relevant elements
+// input,
+// button,
+// select,
+// textarea {
+//   font-family: inherit;
+//   font-size: inherit;
+//   line-height: inherit;
+// }
 
 h3 {
   font-family: $font-avenir-next-light-sc;
@@ -137,51 +148,47 @@ ul {
   padding-left: 0;
 }
 
-/* Panels */
-.panel {
-  background: none;
-}
-
-.panel-body {
-  border: none !important;
-}
-
-.panel-heading {
-  padding: 10px 0;
-}
-
-.panel-group .panel-heading {
-  border-bottom: $border-bottom-light;
-}
-
-.panel-title a {
-  border-bottom: none;
-  font-style: normal;
-}
-
-/* Navbar */
-.navbar-default {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-bottom: none;
-  margin-bottom: 5px;
-  .navbar-nav li a {
-    @include transition(0.2s ease);
-    color: $gray-light;
-    font-style: normal;
-    border-bottom: none;
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: $line-height-computed / 2;
+  ul,
+  ol {
+    margin-bottom: 0;
   }
-  .navbar-nav li.active a {
-    background: none;
-    color: $gray;
-    &:hover {
-      background: none;
-    }
-  }
+}
+
+img {
+  vertical-align: middle;
 }
 
 /*
 *  global styles
 */
+
+hr {
+  margin-top: $line-height-computed;
+  margin-bottom: $line-height-computed;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:focus {
+    @include tab-focus;
+  }
+}
 
 [class^="icon-"], [class*=" icon-"] {
   height: 32px;
@@ -212,6 +219,13 @@ body {
   overflow-x: hidden !important;
 }
 
+.cont {
+    margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .content {
   @include row;
 }
@@ -232,6 +246,7 @@ body {
 
 /* Custom page footer */
 footer {
+  clear: both;
   @include outer-container;
   .copy, .contact {
     @include span-columns(6);

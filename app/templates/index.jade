@@ -5,11 +5,12 @@ block content
   .cont
     include ./includes/bourbon-nav.jade
     include ./includes/intro.jade
-    #accordion
-      include ./includes/sections/about.jade
-      include ./includes/sections/portfolio.jade
-      include ./includes/sections/cv.jade
-      include ./includes/sections/skills.jade
+    #accordion.accordion
+      ul
+        include ./includes/sections/about.jade
+        include ./includes/sections/portfolio.jade
+        include ./includes/sections/cv.jade
+        include ./includes/sections/skills.jade
     footer
       include ./includes/footer.jade
 

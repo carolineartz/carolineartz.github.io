@@ -1,0 +1,69 @@
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: $line-height-computed;
+  margin-bottom: $line-height-computed / 2;
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: $line-height-computed / 2;
+  margin-bottom: $line-height-computed / 2;
+  small,
+  .small {
+    font-size: 75%;
+  }
+}
+
+// Responsive Type
+@include breakpoint($xxs) {
+  $font-size-base: 17px;
+  @include resize-headings(32px, 28px, 25px, 22px, 20px, 18px);
+}
+
+
+@include breakpoint($xs) {
+  $font-size-base: 17px;
+  @include resize-headings(40px, 37px, 30px, 25px, 20px, 18px);
+}
+
+
+@include breakpoint($sm) {
+  $font-size-base: 18px;
+  @include resize-headings(42px, 39px, 33px, 29px, 23px, 20px);
+}
+
+
+@include breakpoint($md) {
+  @include resize-headings(45px, 40px, 36px, 32px, 28px, 25px);
+}
+
+
+@include breakpoint($lg) {
+  @include resize-headings(48px, 43px, 40px, 37px, 32px, 28px);
+  $font-size-base: 32px;
+}
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 ($line-height-computed / 2);
+}

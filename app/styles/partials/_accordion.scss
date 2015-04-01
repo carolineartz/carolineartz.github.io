@@ -1,20 +1,30 @@
 #accordion {
-  div {
-    &:not(.is-expanded) {
+  > ul > li {
+    // background: white;
+    margin: 30px 0;
+    // padding: 10px 0;
+    min-height: 100px;
+    list-style-type: none;
+    line-height: 100px;
+    &:not(.accordion-open) {
       span svg {
         @include transition(0.3s ease);
         @include transform(rotate(0deg));
       }
     }
-    &.is-expanded {
+    &.accordion-open {
       span svg {
         @include transition(0.3s ease);
         @include transform(rotate(45deg));
       }
     }
-    .js-accordion-trigger {
+    > a {
       display: block;
-      padding: 10px 0;
+      cursor: pointer;
+
+      // padding: 20px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      // line-height: 60px;
       h2 {
         display: inline;
         font-size: 30px;
@@ -34,7 +44,7 @@
 
         @include breakpoint($lg) {
           padding: 20px 0;
-          font-size: 60px;
+          font-size: 60px !important;
         }
 
         color: $text-muted;
@@ -49,28 +59,41 @@
 }
 
 // new
-#accordion {
-  li {
-    list-style: none;
-    > a {
-      display: block;
-    }
-    &:last-child {
-      border: none;
-    }
-    &:focus,
-    &:hover {}
-  }
-  .content {
-    display: none;
-    li {
-      &:first-child {}
-      &:focus,
-      &:hover {}
-    }
-  }
-  .is-expanded .content {
-    display: block;
-    padding-bottom: 0;
-  }
+// #accordion {
+//   li {
+//     list-style: none;
+//     > a {
+//       display: block;
+//     }
+//     &:last-child {
+//       border: none;
+//     }
+//     &:focus,
+//     &:hover {}
+//   }
+//   .content {
+//     display: none;
+//     li {
+//       &:first-child {}
+//       &:focus,
+//       &:hover {}
+//     }
+//   }
+//   .is-expanded .content {
+//     display: block;
+//     padding-bottom: 0;
+//   }
+// }
+
+
+.accordion ul li{
+  height:auto;
+  overflow: visible !important;
+}
+.accordion ul li > a span{
+  // visibility:hidden;
+}
+
+.accordion-content {
+  line-height: $line-height-base;
 }

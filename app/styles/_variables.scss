@@ -1,5 +1,5 @@
 /*
-*  Bootstrap Variable Overrides
+*  Globals Variables
 */
 
 @import "partials/fonts";
@@ -26,11 +26,11 @@ $body-bg: #fff;
 
 //** Global text color on `<body>`.
 $text-color: $gray-dark;
+$text-muted: $gray-light !default;
 
 //** Global textual link color.
-//$link-color:            saturate(lighten($eggplant, 15%), 5%);
-$link-color: $iris-blue;
 
+$link-color: $iris-blue;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: none;
 
@@ -53,17 +53,14 @@ $font-avenir-next-bold-italic: "AvenirNextLTW01-BoldIta", "Helvetica Neue", Helv
 
 $font-family-sans-serif: $font-avenir-next-light;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-base: $font-family-sans-serif !default;
 
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 
 $font-size-base: 17px;
 $font-size-large: ceil($font-size-base * 1.45);
 
-// ~18px
 $font-size-small: ceil($font-size-base * 0.85);
-
-// ~12px
 
 $font-size-h1: floor($font-size-base * 2.7);
 $font-size-h2: floor($font-size-base * 2.5);
@@ -87,50 +84,4 @@ $headings-font-weight: 400;
 $headings-line-height: 1.1;
 $headings-color: inherit;
 
-//-- Iconography
-//== Components
-//== Tables
-//== Buttons
-//== Forms
-//== Dropdowns
-//-- Z-index master list
-//== Media queries breakpoints
-
-//== Grid system
-
-//** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint: 200px;
-
-//** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: $grid-float-breakpoint - 1;
-
-//== Container sizes
-//== Navbar
-//== Navs
-//== Pills
-//== Pagination
-//== Pager
-//== Jumbotron
-//== Form states and alerts
-//== Tooltips
-//== Popovers
-//== Labels
-//== Modals
-//== Alerts
-//== Progress bars
-//== List group
-
-//== Panels
-
-$panel-default-heading-bg: #ffffff;
-
-//== Thumbnails
-//== Wells
-//== Badges
-//== Breadcrumbs
-//== Carousel
-//== Close
-//== Code
-//== Type
-//== Miscellaneous
-//
+$hr-border: $gray-lighter !default;

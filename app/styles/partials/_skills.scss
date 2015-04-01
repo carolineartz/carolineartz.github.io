@@ -11,9 +11,9 @@
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 $icon-large-width: 420px;
@@ -31,7 +31,7 @@ $icon-small-height: 56px;
 }
 
 /* the 2 underneath colored sections */
-#skills .content {
+#section-skills .content {
   background-attachment: fixed;
   @include background-image(linear-gradient(bottom, $bottom-skills-fill 0%, $bottom-skills-fill 50%, $top-skills-fill 50%, $top-skills-fill 100%));
 
