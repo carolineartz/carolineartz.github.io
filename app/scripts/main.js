@@ -157,6 +157,32 @@ $(window).scroll(function(){
    }
 });
 /*-----  End of scrollspy  ------*/
+/*========================================
+=            Simple Accordion            =
+========================================*/
+
+var accordionHeader = $('.accordion-header'),
+    accordionContent = $('.accordion-content'),
+    accordionIcon = $('.accordion-header span');
+
+$(accordionHeader).click(function () {
+  if ($(this).hasClass('is-active')){
+      $(this).next(accordionContent).slideUp('slow');
+      $(this).removeClass('is-active');
+  }
+  else {
+    // close other content
+    $(accordionHeader).not(this).next(accordionContent).slideUp('slow');
+    $(accordionHeader).not(this).removeClass('is-active');
+    $(this).next(accordionContent).slideDown('slow');
+    $(this).addClass('is-active');
+  }
+});
+
+
+/*-----  End of Simple Accordion  ------*/
+
+
 
 $(function() {
   $('#accordion').accordion({
@@ -164,54 +190,4 @@ $(function() {
   });
 });
 
-
-
-
-
-
-
-
-/*
- *
- *          TYPING INTRO
- *
- */
-
-/*-----  End of Section comment block  ------*/
-
-// Instantiation
-// var theater = new TheaterJS();
-
-// // Describe actors
-// theater
-//     .describe("Intro", .8, "#typing");
-
-// // Write the scenario
-// theater
-//     .write("Intro:Full Stack Web Developer", 600)
-//     .write(400)
-//     .write("Intro:UX/UI Engineer", 600)
-//     .write(function () {
-//         // loop on the scenario
-//         this.play(true);
-//     })
-//     .write(400)
-//     .play(true);
-
-// // Listen to theater's events
-// theater
-//     .on("say:start, erase:start", function () {
-//         var self = this,
-
-//             current = self.current.voice;
-
-//         self.utils.addClass(current, "saying");
-//     })
-//     .on("say:end, erase:end", function () {
-//         // remove blinking caret
-//         // self.utils.addClass(current, "saying");
-//     })
-//     .on("*", function () {
-
-//     });
 
