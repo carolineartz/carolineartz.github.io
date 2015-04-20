@@ -116,23 +116,8 @@ body {
   background-color: $body-bg;
 }
 
-// Reset fonts for relevant elements
-// input,
-// button,
-// select,
-// textarea {
-//   font-family: inherit;
-//   font-size: inherit;
-//   line-height: inherit;
-// }
-
 h3 {
   font-family: $font-avenir-next-light-sc;
-}
-
-code,
-pre code {
-  font-size: 85%;
 }
 
 p b, div b {
@@ -217,31 +202,16 @@ body {
   padding-top: 60px;
   font-weight: $body-font-weight;
   overflow-x: hidden !important;
-}
-
-.cont {
+  > .content {
     margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  }
 }
 
 .content {
   @include row;
-}
-
-/* Style links */
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
 }
 
 /* Custom page footer */

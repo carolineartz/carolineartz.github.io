@@ -6,13 +6,12 @@ mixin top-nav-list(...targets)
         a.top-navigation-link(href="#" + "#{target.toLowerCase()}")= target
 
 mixin section(target)
-    li
-      a(id=target)
-        h2<span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+  section.accordion-section(id=target)
+    header.accordion-header
+      h2.accordion-heading<span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
           =target
-      div.accordion-content(id="section-#{target}")
-        div
-          block
+    .accordion-content(id="section-#{target}")
+      block
 
 mixin project(iden, title, imageside)
   .project(id=iden)

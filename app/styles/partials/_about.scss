@@ -1,8 +1,6 @@
-#section-about {
+#about .accordion-content {
   margin-left: -15px;
   margin-right: -15px;
-}
-#about + .accordion-content {
   background-position: 50% 50%;
   background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../images/carolineartz-bg.jpg");
   background-attachment: fixed;

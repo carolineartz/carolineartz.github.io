@@ -1,33 +1,27 @@
-#section-projects .content {
-  @include breakpoint($md) {
-    .project {
-      .visual {
-        @include span-columns(8);
+@include breakpoint($md) {
+  .project {
+    .visual {
+      @include span-columns(8);
+      margin-right: 0;
+    }
+    .text {
+      @include span-columns(4);
+    }
+    &:nth-of-type(even) {
+      @include row($direction: RTL);
+      .visual, .text {
+        float: right;
       }
+    }
+    &:nth-of-type(odd) {
+      @include row($direction: LTR);
       .text {
-        @include span-columns(4);
-      }
-      &:nth-of-type(even) {
-        @include row($direction: RTL);
-        .visual, .text {
-          float: right;
-        }
-        .visual {
-          margin-right: 0;
-        }
-      }
-      &:nth-of-type(odd) {
-        .text {
-          margin-right: 2.3576515979%;
-        }
-        .visual {
-          margin-right: 0;
-        }
-        @include row($direction: LTR);
+        margin-right: 2.3576515979%;
       }
     }
   }
 }
+
 
 #projects {
   .description {

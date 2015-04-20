@@ -1,99 +1,58 @@
-#accordion {
-  > ul > li {
-    // background: white;
-    margin: 30px 0;
-    // padding: 10px 0;
-    min-height: 100px;
-    list-style-type: none;
-    line-height: 100px;
-    &:not(.accordion-open) {
-      span svg {
-        @include transition(0.3s ease);
-        @include transform(rotate(0deg));
-      }
+.accordion-header {
+  min-height: 100px;
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  .accordion-heading {
+    display: inline-block;
+    font-size: 30px;
+    @include breakpoint($xxs) {
+      padding: 13px 0;
+      font-size: 40px;
     }
-    &.accordion-open {
-      span svg {
-        @include transition(0.3s ease);
-        @include transform(rotate(45deg));
-      }
+
+    @include breakpoint($sm) {
+      font-size: 45px;
     }
-    > a {
-      display: block;
-      cursor: pointer;
 
-      // padding: 20px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      // line-height: 60px;
-      h2 {
-        display: inline;
-        font-size: 30px;
-        @include breakpoint($xxs) {
-          padding: 13px 0;
-          font-size: 40px;
-        }
+    @include breakpoint($md) {
+      padding: 15px 0;
+      font-size: 50px;
+    }
 
-        @include breakpoint($sm) {
-          font-size: 45px;
-        }
+    @include breakpoint($lg) {
+      padding: 20px 0;
+      font-size: 60px !important;
+    }
 
-        @include breakpoint($md) {
-          padding: 15px 0;
-          font-size: 50px;
-        }
-
-        @include breakpoint($lg) {
-          padding: 20px 0;
-          font-size: 60px !important;
-        }
-
-        color: $text-muted;
-      }
-      svg path {
-        stroke-width: 15;
-        fill: $text-muted;
-        stroke: white;
-      }
+    color: $text-muted;
+  }
+  svg {
+    @include transition(0.3s ease);
+    path {
+      stroke-width: 15;
+      fill: $text-muted;
+      stroke: white;
+    }
+  }
+  &:not(.is-active) {
+    + .accordion-content {
+     display: none;
+   }
+    svg {
+      @include transform(rotate(0deg));
+    }
+  }
+  &.is-active {
+    border-bottom: none;
+    svg {
+      @include transform(rotate(45deg));
     }
   }
 }
 
-// new
-// #accordion {
-//   li {
-//     list-style: none;
-//     > a {
-//       display: block;
-//     }
-//     &:last-child {
-//       border: none;
-//     }
-//     &:focus,
-//     &:hover {}
-//   }
-//   .content {
-//     display: none;
-//     li {
-//       &:first-child {}
-//       &:focus,
-//       &:hover {}
-//     }
-//   }
-//   .is-expanded .content {
-//     display: block;
-//     padding-bottom: 0;
-//   }
-// }
-
-
-.accordion ul li{
-  height:auto;
-  overflow: visible !important;
-}
-.accordion ul li > a span{
-  // visibility:hidden;
-}
-
 .accordion-content {
+  display: block;
   line-height: $line-height-base;
 }
