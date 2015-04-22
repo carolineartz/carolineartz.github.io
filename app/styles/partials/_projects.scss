@@ -1,26 +1,60 @@
+/* --------------------------------
+
+projects for quick update
+
+-------------------------------- */
 @include breakpoint($md) {
   .project {
     .visual {
       @include span-columns(8);
       margin-right: 0;
+      &.codepen-v {
+        @include span-columns(5.5);
+      }
     }
     .text {
       @include span-columns(4);
+      &.codepen-t {
+        @include span-columns(6.5);
+      }
     }
     &:nth-of-type(even) {
       @include row($direction: RTL);
       .visual, .text {
         float: right;
+        &.codepen-t {
+          padding: 0 2.3576515979%;
+        }
       }
     }
     &:nth-of-type(odd) {
       @include row($direction: LTR);
       .text {
         margin-right: 2.3576515979%;
+        &.codepen-t {
+          padding-right: 2.3576515979%;
+        }
+      }
+      .visual {
+        &.codepen-v {
+          padding-left: 2.3576515979%;
+        }
       }
     }
   }
 }
+
+.project {
+  .codepen-v {
+    margin: 0 -15px;
+    @include breakpoint($xs) {
+      margin: 0;
+    }
+  }
+}
+/* --------------------------------*/
+
+
 
 
 #projects {

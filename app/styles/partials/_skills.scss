@@ -21,14 +21,6 @@ $icon-large-height: 324px;
 $icon-small-width: 56px;
 $icon-small-height: 56px;
 
-// #skills {
-//   h2 {
-//     margin-top: 0;
-//   }
-//   .panel-body {
-//     padding-top: 0;
-//   }
-// }
 
 /* the 2 underneath colored sections */
 #section-skills .content {
@@ -39,9 +31,13 @@ $icon-small-height: 56px;
     position: relative;
     z-index: 2;
     min-height: $icon-small-height;
+    max-height: 130px;
     margin-left: $icon-small-width;
     background-color: white;
     padding: 1em 1em 4em;
+    h2 {
+      margin-top: 0;
+    }
     &::before, &::after {
       content: '';
       position: absolute;
@@ -75,8 +71,15 @@ $icon-small-height: 56px;
     &.skill-3::before {
       background-image: url("../images/skills/3-skills-backend-sm.svg");
     }
-    &.skill-4::before {
-      background-image: url("../images/skills/4-skills-internet-db-sm.svg");
+    &.skill-4 {
+      max-height: 0;
+      min-height: 0;
+      &::before {
+        background-image: url("../images/skills/4-skills-internet-db-sm.svg");
+      }
+      &::after {
+        background: white;
+      }
     }
     @include breakpoint($sm) {
       min-height: ($icon-large-height + 200px) / 2;
@@ -109,8 +112,16 @@ $icon-small-height: 56px;
       &.skill-3::before {
         background-image: url("../images/skills/3-skills-backend-md1.svg");
       }
-      &.skill-4::before {
+      &.skill-4 {
+        max-height: 162px;
+        min-height: 162px !important;
+        &::before {
         background-image: url("../images/skills/4-skills-internet-db-md1.svg");
+        }
+        &::after {
+          height: 0;
+          top: 0;
+        }
       }
     }
 
@@ -137,8 +148,16 @@ $icon-small-height: 56px;
       &.skill-3::before {
         background-image: url("../images/skills/3-skills-backend-lg.svg");
       }
-      &.skill-4::before {
+      &.skill-4 {
+        max-height: 324px;
+        min-height: 324px !important;
+        &::before {
         background-image: url("../images/skills/4-skills-internet-db-lg.svg");
+        }
+        &::after {
+          height: 0;
+          top: 0;
+        }
       }
     }
   }

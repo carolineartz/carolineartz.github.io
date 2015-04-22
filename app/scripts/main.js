@@ -1,8 +1,8 @@
 /* jshint node:true */
-(function () {
+(function() {
     'use strict';
 
-    $('.js-accordion-trigger').bind('click', function (e) {
+    $('.js-accordion-trigger').bind('click', function(e) {
         // apply the toggle to the ul
         jQuery(this).parent().toggleClass('is-expanded');
         e.preventDefault();
@@ -14,7 +14,7 @@
  *
  */
 
-$(function () {
+$(function() {
     'use strict';
     var iheight = $(window).height();
     $('.intro').css('height', iheight + 'px');
@@ -34,20 +34,20 @@ $(function () {
 });
 
 /*
- *    Top Navigation- Refills
+ *    Top Navigation- Scrollbar Hide
  *
  */
 
 
-$(function () {
+$(function() {
     'use strict';
     // Hide Header on on scroll down
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
-    var navbarHeight = $('header').outerHeight();
+    var navbarHeight = $('.header').outerHeight();
     var $window = $(window);
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         // 'use strict';
         didScroll = true;
     });
@@ -63,31 +63,31 @@ $(function () {
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop && st > navbarHeight) {
             // Scroll Down
-            $('header').removeClass('nav-down').addClass('nav-up');
+            $('.header').removeClass('nav-down').addClass('nav-up');
             if ($('#js-centered-navigation-menu').not(':hidden')) {
                 $('#js-centered-navigation-menu').removeAttr('style');
             }
         } else {
             // Scroll Up
             if (st + $(window).height() < $(document).height()) {
-                $('header').removeClass('nav-up').addClass('nav-down');
+                $('.header').removeClass('nav-up').addClass('nav-down');
             }
         }
         lastScrollTop = st;
     }
-    setInterval(function () {
+    setInterval(function() {
         // 'use strict';
         if (didScroll) {
             hasScrolled();
             didScroll = false;
         }
     }, 400);
-    (function () {
+    (function() {
         // 'use strict';
         if ($('body').scrollTop() === 0) {
-            $('header').not('.nav-down').css('top', '-60px');
+            $('.header').not('.nav-down').css('top', '-60px');
         } else {
-            $('header').css('top', '0');
+            $('.header').css('top', '0');
         }
     })();
 });
@@ -95,81 +95,124 @@ $(function () {
 
 
 
-/*=================================
-=            scrollspy            =
-=================================*/
+/*
+ *    Top Navigation- Smooth Scroll
+ *
+ */
 
 // Cache selectors
 var lastId,
-    topMenu = $("#js-navigation-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
+    topMenu = $('#js-navigation-menu'),
+    topMenuHeight = topMenu.outerHeight() + 15,
     // All list items
-    menuItems = topMenu.find("a"),
+    menuItems = topMenu.find('a'),
     // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) { return item; }
-    });
+    accordionSections = menuItems.map(function() {
+        'use strict';
+        var item = $($(this).attr('href'));
+        if (item.length) return item;
+    }),
+    accordionHeader = $('.accordion-header'),
+    accordionContent = $('.accordion-content');
+// activeSection = $('.is-active');
+
+
 
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
-menuItems.click(function(e){
-  'use strict';
-  var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-  $('html, body').stop().animate({
-      scrollTop: offsetTop
-  }, 500);
-  e.preventDefault();
+menuItems.click(function(event) {
+    'use strict';
+    event.preventDefault();
+    var href = $(this).attr('href'),
+        exp = $(href).find(accordionHeader),
+        offsetTop = $(href).offset().top,
+        active;
+    if (!exp.hasClass('is-active')) {
+        closeExpanded(exp);
+        openExpanded(exp);
+    }
+    setTimeout(function() {
+        active = $('.is-active');
+        adjustMove(active);
+    }, 500);
+});
+
+
+$(accordionHeader).click(function(event) {
+    'use strict';
+    event.preventDefault();
+    var offsetTop = $(this).offset().top,
+    active;
+    toggleExpandSection(this);
+    setTimeout(function() {
+        active = $('.is-active');
+        if (active && active.length) {adjustMove(active);}
+    }, 500);
 });
 
 // Bind to scroll
-$(window).scroll(function(){
-   // Get container scroll position
-   'use strict';
-   var fromTop = $(this).scrollTop()+topMenuHeight;
+$(window).scroll(function() {
+    // Get container scroll position
+    'use strict';
+    var fromTop = $(this).scrollTop() + topMenuHeight;
+    // Get id of current scroll item
+    var cur = accordionSections.map(function() {
+        if ($(this).offset().top < fromTop) return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length - 1];
+    var id = cur && cur.length ? cur[0].id : "";
 
-   // Get id of current scroll item
-   var cur = scrollItems.map(function(){
-     if ($(this).offset().top < fromTop) {
-       return this;
-     }
-   });
-   // Get the id of the current element
-   cur = cur[cur.length-1];
-   var id = cur && cur.length ? cur[0].id : "";
-
-   if (lastId !== id) {
-       lastId = id;
-       // Set/remove active class
-       menuItems
-         .parent().removeClass("active")
-         .end().filter("[href=#"+id+"]").parent().addClass("active");
-   }
+    if (lastId !== id) {
+        lastId = id;
+        // Set/remove active class
+        menuItems
+            .parent().removeClass('active')
+            .end().filter('[href=#' + id + ']').parent().addClass('active');
+    }
 });
-/*-----  End of scrollspy  ------*/
+
+
+
 /*========================================
 =            Simple Accordion            =
 ========================================*/
 
-var accordionHeader = $('.accordion-header'),
-    accordionContent = $('.accordion-content');
+function adjustMove(elem) {
+    $('html, body').stop().animate({
+        scrollTop: $(elem).offset().top
+    }, 500);
+}
 
-$(accordionHeader).click(function () {
-  'use strict';
-  if ($(this).hasClass('is-active')){
-      $(this).next(accordionContent).slideUp('slow');
-      $(this).removeClass('is-active');
-  }
-  else {
-    // close other content
-    $(accordionHeader).not(this).next(accordionContent).slideUp('slow');
-    $(accordionHeader).not(this).removeClass('is-active');
-    $(this).next(accordionContent).slideDown('slow');
-    $(this).addClass('is-active');
-  }
-});
 
+function topNavExpandSection(toExpand) {
+    if ($(toExpand).hasClass('is-active')) return;
+    else {
+        closeExpanded(toExpand);
+        opexnExpanded(toExpand);
+    }
+}
+
+function toggleExpandSection(toExpand) {
+    if ($(toExpand).hasClass('is-active')) {
+        $(toExpand).next(accordionContent).slideUp();
+        $(toExpand).removeClass('is-active');
+    } else {
+        closeExpanded(toExpand);
+        openExpanded(toExpand);
+    }
+}
+
+
+function closeExpanded(toExpand) {
+    $(accordionHeader).not(toExpand).next(accordionContent).slideUp();
+    $(accordionHeader).not(toExpand).removeClass('is-active');
+}
+
+function openExpanded(toExpand) {
+    $(toExpand).next(accordionContent).slideDown('slow');
+    $(toExpand).addClass('is-active');
+}
 
 /*-----  End of Simple Accordion  ------*/
 
@@ -177,7 +220,7 @@ $(accordionHeader).click(function () {
 =            Typing Animation            =
 ========================================*/
 
-$(function () {
+$(function() {
     'use strict';
     var animationDelay = 2500,
         typeLettersDelay = 150,
@@ -191,7 +234,7 @@ $(function () {
     initHeadline();
 
     function singleLetters($words) {
-        $words.each(function () {
+        $words.each(function() {
             var word = $(this),
                 letters = word.text().split(''),
                 selected = word.hasClass('is-visible');
@@ -209,7 +252,7 @@ $(function () {
         if (!headline.hasClass('type')) { //assign to .words-wrapper the width of its longest word
             var words = headline.find('.words-wrapper b'),
                 width = 0;
-            words.each(function () {
+            words.each(function() {
                 var wordWidth = $(this).width();
                 if (wordWidth > width) {
                     width = wordWidth;
@@ -217,7 +260,7 @@ $(function () {
             });
             headline.find('.words-wrapper').css('width', width);
         }
-        setTimeout(function () {
+        setTimeout(function() {
             hideWord(headline.find('.is-visible').eq(0));
         }, duration);
     }
@@ -227,11 +270,11 @@ $(function () {
         if ($word.parents('.headline').hasClass('type')) {
             var parentSpan = $word.parent('.words-wrapper');
             parentSpan.addClass('selected').removeClass('waiting');
-            setTimeout(function () {
+            setTimeout(function() {
                 parentSpan.removeClass('selected');
                 $word.removeClass('is-visible').addClass('is-hidden').children('i').removeClass('in').addClass('out');
             }, selectionDuration);
-            setTimeout(function () {
+            setTimeout(function() {
                 showWord(nextWord, typeLettersDelay);
             }, typeAnimationDelay);
         } else if ($word.parents('.headline').hasClass('letters')) {
@@ -240,7 +283,7 @@ $(function () {
             showLetter(nextWord.find('i').eq(0), nextWord, bool, typeLettersDelay);
         } else {
             switchWord($word, nextWord);
-            setTimeout(function () {
+            setTimeout(function() {
                 hideWord(nextWord);
             }, animationDelay);
         }
@@ -256,11 +299,11 @@ $(function () {
     function hideLetter($letter, $word, $bool, $duration) {
         $letter.removeClass('in').addClass('out');
         if (!$letter.is(':last-child')) {
-            setTimeout(function () {
+            setTimeout(function() {
                 hideLetter($letter.next(), $word, $bool, $duration);
             }, $duration);
         } else if ($bool) {
-            setTimeout(function () {
+            setTimeout(function() {
                 hideWord(takeNext($word));
             }, animationDelay);
         }
@@ -271,25 +314,25 @@ $(function () {
     }
 
     function showLetter($letter, $word, $bool, $duration) {
-        $letter.addClass('in').removeClass('out');
-        if (!$letter.is(':last-child')) {
-            setTimeout(function () {
-                showLetter($letter.next(), $word, $bool, $duration);
-            }, $duration);
-        } else {
-            if ($word.parents('.headline').hasClass('type')) {
-                setTimeout(function () {
-                    $word.parents('.words-wrapper').addClass('waiting');
-                }, 200);
-            }
-            if (!$bool) {
-                setTimeout(function () {
-                    hideWord($word);
-                }, animationDelay);
+            $letter.addClass('in').removeClass('out');
+            if (!$letter.is(':last-child')) {
+                setTimeout(function() {
+                    showLetter($letter.next(), $word, $bool, $duration);
+                }, $duration);
+            } else {
+                if ($word.parents('.headline').hasClass('type')) {
+                    setTimeout(function() {
+                        $word.parents('.words-wrapper').addClass('waiting');
+                    }, 200);
+                }
+                if (!$bool) {
+                    setTimeout(function() {
+                        hideWord($word);
+                    }, animationDelay);
+                }
             }
         }
-    }
-    /// UTILITIES
+        /// UTILITIES
     function takeNext($word) {
         return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
     }
@@ -302,6 +345,3 @@ $(function () {
 
 
 /*-----  End of Typing Animation  ------*/
-
-
-

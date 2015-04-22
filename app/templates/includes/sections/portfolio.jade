@@ -1,4 +1,31 @@
 +section('projects')
+  .project#particles
+    .visual.codepen-v
+      div.codepen-demo
+        <p data-height="374" data-theme-id="14346" data-slug-hash="NPZJVz" data-default-tab="result" data-user="carolineartz" class='codepen'>See the Pen <a href='http://codepen.io/carolineartz/pen/NPZJVz/'>p5js magnetic codepen logo </a> by Caroline Artz (<a href='http://codepen.io/carolineartz'>@carolineartz</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    .text.codepen-t
+      div.description
+        h2 Particles + CodePen Logo
+        .content A <a href="http://p5js.org/" title="p5js homepage" target="_blank">P5.js</a> demo I presented at the <a href="http://codepen.io/poopsplat/blog/first-codepen-chicago-meetup">April 2015 CodePen Chicago Meetup</a>. Hover the demo and click RERUN to start or reset the animation.
+        +technology('p5.js', 'canvas')
+        .links
+          a.live(href='http://codepen.io/carolineartz/pen/NPZJVz' target='_blank') <svg class='icon-codepen-o'><use xlink:href='#icon-codepen-o'></use></svg> project
+  hr
+  .project#something
+    .visual.codepen-v
+      div.codepen-demo
+        <p data-height="450" data-theme-id="14346" data-slug-hash="ogVXZj" data-default-tab="result" data-user="carolineartz" class='codepen'>See the Pen <a href='http://codepen.io/carolineartz/pen/ogVXZj/'>angular interactive box-model diagram</a> by Caroline Artz (<a href='http://codepen.io/carolineartz'>@carolineartz</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    .text.codepen-t
+      div.description
+        h2 Interactive Box Model Diagram: Learning Box-Sizing
+        .content An angular app to visualize the box-model and see how changing the value of box-sizing affects element size and which properties contribute.
+        +technology('angular', 'sass', 'bourbon', 'neat')
+        .links
+          a.repo(href='https://github.com/carolineartz/learning-box-model' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+          a.live(href='http://codepen.io/carolineartz/full/ogVXZj/' target='_blank') <svg class='icon-codepen-o'><use xlink:href='#icon-codepen-o'></use></svg> live
+  hr
   +project('ohey', 'Ohey', 'right')
     .content Ohey was a University of Chicago startup and social networking platform built primarily in Django and Angular.
     +technology('angular', 'bootstrap', 'django', 'python')

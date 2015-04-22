@@ -108,7 +108,6 @@
   &.nav-down {
     top: 0 !important;
   }
-
   // Nav menu
   .centered-navigation-wrapper {
     @include clearfix;
@@ -148,22 +147,19 @@
       }
     }
   }
-  @include media($horizontal-bar-mode) {
-
-    ul.centered-navigation-menu {
-      display: block;
-    }
-    // The nav items
-    .nav-link:first-child {
-      margin-left: $centered-navigation-item-nudge;
-    }
-    ul li.nav-link {
-      background: transparent;
-      display: inline;
-      line-height: $centered-navigation-height;
-      a {
-        padding-right: $centered-navigation-item-padding;
-      }
+  ul.centered-navigation-menu {
+    display: block;
+  }
+  // The nav items
+  .nav-link:first-child {
+    margin-left: $centered-navigation-item-nudge;
+  }
+  ul li.nav-link {
+    background: transparent;
+    display: inline;
+    line-height: $centered-navigation-height;
+    a {
+      padding-right: $centered-navigation-item-padding;
     }
   }
 }

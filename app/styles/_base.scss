@@ -217,6 +217,7 @@ body {
 /* Custom page footer */
 footer {
   clear: both;
+  margin-top: 70px;
   @include outer-container;
   .copy, .contact {
     @include span-columns(6);
@@ -253,3 +254,4 @@ footer {
   position: relative;
   bottom: 4px;
 }
+
