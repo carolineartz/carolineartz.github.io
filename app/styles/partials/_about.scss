@@ -10,6 +10,7 @@
   .about-me {
     @include span-columns(12);
     @include shift(0);
+    line-height: 1.5;
     .about-text {
       img {
         float: none;
@@ -35,7 +36,7 @@
     .about-me {
       @include span-columns(11);
       .about-text {
-        line-height: 1.7;
+        line-height: 1.5;
         display: table-cell;
         text-align: justify;
         font-size: 130%;

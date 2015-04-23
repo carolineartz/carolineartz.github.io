@@ -179,7 +179,9 @@ $(window).scroll(function() {
 
 
 $(document).ready(function() {
+   'use strict';
   $('.scroll-on-page-link').each(function() {
+   'use strict';
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
     && location.hostname == this.hostname
     && this.hash.replace(/#/,'') ) {
@@ -202,6 +204,7 @@ $(document).ready(function() {
 ========================================*/
 
 function adjustMove(elem) {
+   'use strict';
     $('html, body').stop().animate({
         scrollTop: $(elem).offset().top
     }, 500);
@@ -209,6 +212,7 @@ function adjustMove(elem) {
 
 
 function topNavExpandSection(toExpand) {
+   'use strict';
     if ($(toExpand).hasClass('is-active')) return;
     else {
         closeExpanded(toExpand);
@@ -217,6 +221,7 @@ function topNavExpandSection(toExpand) {
 }
 
 function toggleExpandSection(toExpand) {
+   'use strict';
     if ($(toExpand).hasClass('is-active')) {
         $(toExpand).next(accordionContent).slideUp();
         $(toExpand).removeClass('is-active');
@@ -228,11 +233,13 @@ function toggleExpandSection(toExpand) {
 
 
 function closeExpanded(toExpand) {
+   'use strict';
     $(accordionHeader).not(toExpand).next(accordionContent).slideUp();
     $(accordionHeader).not(toExpand).removeClass('is-active');
 }
 
 function openExpanded(toExpand) {
+   'use strict';
     $(toExpand).next(accordionContent).slideDown('slow');
     $(toExpand).addClass('is-active');
 }
@@ -257,6 +264,7 @@ $(function() {
     initHeadline();
 
     function singleLetters($words) {
+       'use strict';
         $words.each(function() {
             var word = $(this),
                 letters = word.text().split(''),
@@ -270,6 +278,7 @@ $(function() {
     }
 
     function animateHeadline($headline) {
+       'use strict';
         var duration = animationDelay;
         var headline = $headline;
         if (!headline.hasClass('type')) { //assign to .words-wrapper the width of its longest word
@@ -289,6 +298,7 @@ $(function() {
     }
 
     function hideWord($word) {
+       'use strict';
         var nextWord = takeNext($word);
         if ($word.parents('.headline').hasClass('type')) {
             var parentSpan = $word.parent('.words-wrapper');
