@@ -6,26 +6,6 @@ var $ = require('gulp-load-plugins')();
 var uncss = require('gulp-uncss');
 
 gulp.task('styles', function () {
-// <<<<<<< Updated upstream
-    //var replace = require('gulp-replace');
-    // return gulp.src('app/styles/main.scss')
-    //     .pipe($.plumber())
-    //     .pipe($.rubySass({
-    //         style: 'expanded',
-    //         precision: 10
-    //     }))
-        //.pipe(replace(/..\/fonts/gm, 'fonts'))
-        // .pipe($.autoprefixer({
-        //     browsers: ['last 1 version']
-        // }))
-        // .pipe(gulp.dest('.tmp/styles'));
-    // Concatenate And Minify Styles
-    //.pipe($.if('*.css', $.csso()))
-    //.pipe(gulp.dest('dist/styles'))
-    //.pipe($.size({
-    //    title: 'styles'
-    //}));
-// =======
   return gulp.src('app/styles/main.scss')
     .pipe($.plumber())
     .pipe($.rubySass({
@@ -34,7 +14,6 @@ gulp.task('styles', function () {
     }))
     .pipe($.autoprefixer({browsers: ['last 1 version']}))
     .pipe(gulp.dest('.tmp/styles'));
-// >>>>>>> Stashed changes
 });
 
 gulp.task('jshint', function () {

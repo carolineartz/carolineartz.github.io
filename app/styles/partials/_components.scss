@@ -87,7 +87,7 @@
   $base-font-color: $dark-gray !default;
   $centered-navigation-padding: 1em;
   $centered-navigation-background: transparentize(white, 0.2);
-  $centered-navigation-color: transparentize($base-font-color, 0.3);
+  $centered-navigation-color: $gray-light;
   $centered-navigation-color-hover: $base-font-color;
   $centered-navigation-height: 60px;
   $centered-navigation-item-padding: 1em;
@@ -101,7 +101,8 @@
   z-index: 9999;
   position: fixed;
   top: 0;
-  @include transition(top 0.2s ease-in-out);
+  margin-left: -15px;
+  @include transition(top 0.3s ease-in);
   &.nav-up {
     top: -$centered-navigation-height;
   }
@@ -143,7 +144,7 @@
       outline: none;
       text-decoration: none;
       &:focus, &:hover {
-        color: $centered-navigation-color-hover;
+        color: $gray-light
       }
     }
   }

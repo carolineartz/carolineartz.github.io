@@ -113,7 +113,7 @@
     font-size: $h1 !important;
   }
   h2, .h2 {
-    font-size: $h2 !important;
+    font-size: $h2;
   }
   h3, .h3 {
     font-size: $h3 !important;
@@ -231,4 +231,24 @@
       }
     }
   }
+}
+
+@mixin underline($pos, $width, $color:rgba(0,0,0,1), $bg:rgb(0,0,0) ) {
+  @include linear-gradient(top,
+    rgba($background,0) $pos,
+    $color $pos,
+    $color $pos+$width,
+    rgba($background,0) $pos+$width
+  );
+  display: inline-block;
+  background-size: 2px 2em;
+  background-repeat: repeat-x;
+  /* Set your wanted text-shadow here */
+  text-shadow:
+   2px  2px 0px $background,
+   2px -2px 0px $background,
+  -2px  2px 0px $background,
+  -2px -2px 0px $background,
+   0px  2px 0px $background,
+   0px -2px 0px $background;
 }

@@ -1,56 +1,58 @@
-#about .accordion-content {
-  margin-left: -15px;
-  margin-right: -15px;
-  background-position: 50% 50%;
-  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../images/carolineartz-bg.jpg");
-  background-attachment: fixed;
-  .about-content {
-    @include row($direction: RTL);
-    .about-img {
-      @include breakpoint($sm) {
-        margin-top: 0;
-        @include span-columns(5);
-        @include shift(0);
-        > div {}
+#section-about {
+  background-color: #242930;
+  margin: 0 -15px;
+}
+
+.about-content {
+  position: relative;
+  transform-style: preserve-3d;
+  @include row($direction: LTR);
+  .about-me {
+    @include span-columns(12);
+    @include shift(0);
+    .about-text {
+      img {
+        float: none;
+        width: 210px;
+        padding: 30px 0;
+        display: block;
+        margin: 0 auto;
       }
+      font-size: 120%;
+      line-height: 1.5;
+      @include pad(0 5%);
+    }
+  }
+  .contact-me {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    .about-icons {
+      margin-bottom: 25px;
+    }
+  }
+  @include breakpoint($sm) {
+    .about-me {
+      @include span-columns(11);
+      .about-text {
+        line-height: 1.7;
+        display: table-cell;
+        text-align: justify;
+        font-size: 130%;
+        .me-pic {
+          shape-outside: circle(50%);
+          shape-image-threshold: 0.5;
+          float: left;
+          width: 240px;
+          padding: 30px 15px 15px;
+          // width: 240px;
 
-      > div {
-        @include pad(($gutter * 1.5) 0 0);
-        text-align: center;
-        img {
-          @include breakpoint($sm) {
-            float: left;
-          }
-
-          @include breakpoint($md) {
-            float: none;
-          }
-
-          @include transition(all 0.4s ease-in-out);
-          border-radius: 50%;
-          max-width: 250px;
         }
       }
     }
-    .about-info {
-      @include omega;
-      @include pad(($gutter * 1.5) 0 0);
-      @include breakpoint($sm) {
-        @include span-columns(6);
-      }
-    }
-    .about-text {
-      @include pad(0 $gutter);
-      @include breakpoint($sm) {
-        padding: 0;
-        @include span-columns(5 of 6);
-        @include shift(1);
-      }
-    }
-    .about-icons {
-      @include breakpoint($md) {
-        @include shift(2);
-      }
+    .contact-me {
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
@@ -87,12 +89,11 @@ $caroline-social: "caroline-social";
     padding-left: 0;
     margin-bottom: 0;
     li {
-      display: inline-block;
       font-family: $caroline-social;
       line-height: 1;
       text-decoration: inherit;
-      margin-bottom: 10px;
-      font-size: 300%;
+      margin-bottom: -5px;
+      font-size: 220%;
       width: 55px;
       pointer-events: none;
       @include transition(all 0.3s ease);
