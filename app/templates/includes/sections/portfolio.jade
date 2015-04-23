@@ -1,42 +1,68 @@
 +section('projects')
-  .content
-    +project('ohey', 'Ohey', 'right')
-      .content Ohey was a University of Chicago startup and social networking platform built primarily in Django and Angular.
-      +technology('angular', 'bootstrap', 'django', 'python')
-      .links
-        .div Please inquire about source code.
-    hr
-    +project('sudoku', 'Sudoku Solver', 'left')
-      .content This Sudoku solver is an extension of a project built at Dev Bootcamp in which we took the original Ruby code and put it on the web using the Sinatra framework and custom styles.
-      +technology('sinatra', 'ruby', 'sass/compass')
-      .links
-        a.repo(href='https://github.com/zmitton/sudoku' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
-        a.live(href='http://sudoku-puzzle-solver.herokuapp.com/' target='_blank') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
+  .project#particles
+    .visual.codepen-v
+      div.codepen-demo
+        <p data-height="374" data-theme-id="14346" data-slug-hash="NPZJVz" data-default-tab="result" data-user="carolineartz" class='codepen'>See the Pen <a href='http://codepen.io/carolineartz/pen/NPZJVz/'>p5js magnetic codepen logo </a> by Caroline Artz (<a href='http://codepen.io/carolineartz'>@carolineartz</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    .text.codepen-t
+      div.description
+        h2 Particles + CodePen Logo
+        .content A <a href="http://p5js.org/" title="p5js homepage" target="_blank">P5.js</a> demo I presented at the <a href="http://codepen.io/poopsplat/blog/first-codepen-chicago-meetup">April 2015 CodePen Chicago Meetup</a>. Hover the demo and click RERUN to start or reset the animation.
+        +technology('p5.js', 'canvas')
+        .links
+          a.live(href='http://codepen.io/carolineartz/pen/NPZJVz' target='_blank') <svg class='icon-codepen-o'><use xlink:href='#icon-codepen-o'></use></svg> project
+  hr
+  .project#something
+    .visual.codepen-v
+      div.codepen-demo
+        <p data-height="374" data-theme-id="14346" data-slug-hash="ogVXZj" data-default-tab="result" data-user="carolineartz" class='codepen'>See the Pen <a href='http://codepen.io/carolineartz/pen/ogVXZj/'>angular interactive box-model diagram</a> by Caroline Artz (<a href='http://codepen.io/carolineartz'>@carolineartz</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        //- <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    .text.codepen-t
+      div.description
+        h2 Interactive Box Model Diagram: Teaching Box-Sizing
+        .content An Angular.js app to visualize the box-model. Controls for changing the value of box-sizing highlight its effects on element size and which properties contribute.
+        +technology('angular', 'sass', 'bourbon', 'neat')
+        .links
+          a.repo(href='https://github.com/carolineartz/learning-box-model' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+          a.live(href='http://codepen.io/carolineartz/full/ogVXZj/' target='_blank') <svg class='icon-codepen-o'><use xlink:href='#icon-codepen-o'></use></svg> live
+  hr
+  +project('ohey', 'Ohey', 'right')
+    .content Ohey was a University of Chicago startup and social networking platform built primarily in Django and Angular.
+    +technology('angular', 'bootstrap', 'django', 'python')
+    .links
+      .div Please inquire about source code.
+  hr
+  +project('sudoku', 'Sudoku Solver', 'left')
+    .content This Sudoku solver is an extension of a project built at Dev Bootcamp in which we took the original Ruby code and put it on the web using the Sinatra framework and custom styles.
+    +technology('sinatra', 'ruby', 'sass/compass')
+    .links
+      a.repo(href='https://github.com/zmitton/sudoku' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+      a.live(href='http://sudoku-puzzle-solver.herokuapp.com/' target='_blank') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
 
-    hr
-    +project('devbootcat', 'Dev BootCat', 'right')
-      .content Dev BootCat is the result of a 5-day group project and first rails web app.
-      +technology('rails', 'sass', 'ruby', 'devise')
-      .links
-        a.repo(href='https://github.com/fab9/devbootcat' target='blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
-        a.live(href='http://devbootcat.herokuapp.com/' target='_blank') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
-    hr
-    +project('devpizzacamp', 'Dev PizzaCamp', 'left')
-      .content This menu was a quick html/css challenge during prep phase for Dev Bootcamp. I utilized <a href="http://purecss.io/>">Pure.css</a> modules for styles.
-      +technology('html', 'css')
-      .links
-        a.repo(href='https://github.com/carolineartz/dbc-work/tree/master/phase0/dev_pizza_camp' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
-        a.live(href='http://www.carolineartz.me/dbc-portfolio/html-css-projects/dev-pizza-camp/menu.html' target='_blank') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
-    hr
-    +project('polity', 'Polity Chicago', 'right')
-      .content Polity is built on Rails and uses Bourbon, Neat, and Refills for styles.
-      +technology('rails', 'sass/bourbon')
-      .links
-        a.repo(href='https://github.com/carolineartz/Polity' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
-    hr
-    +project('devref', 'DevRef for Rails Developers', 'left')
-      .content This 'cheatsheet' was created for an html/css challenge during prep phase for Dev Bootcamp. I utilized <a href="http://purecss.io/>">Pure.css</a> modules for styles.
-      +technology('html', 'css')
-      .links
-        a.repo(href='') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
-        a.live(href='http://www.carolineartz.me/dbc-portfolio/cheatsheet/dev-cheatsheet.html') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
+  hr
+  +project('devbootcat', 'Dev BootCat', 'right')
+    .content Dev BootCat is the result of a 5-day group project and first rails web app.
+    +technology('rails', 'sass', 'ruby', 'devise')
+    .links
+      a.repo(href='https://github.com/fab9/devbootcat' target='blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+      a.live(href='http://devbootcat.herokuapp.com/' target='_blank') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
+  hr
+  +project('devpizzacamp', 'Dev PizzaCamp', 'left')
+    .content This menu was a quick html/css challenge during prep phase for Dev Bootcamp. I utilized <a href="http://purecss.io/>">Pure.css</a> modules for styles.
+    +technology('html', 'css')
+    .links
+      a.repo(href='https://github.com/carolineartz/dbc-work/tree/master/phase0/dev_pizza_camp' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+      a.live(href='http://www.carolineartz.me/dbc-portfolio/html-css-projects/dev-pizza-camp/menu.html' target='_blank') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live
+  hr
+  +project('polity', 'Polity Chicago', 'right')
+    .content Polity is built on Rails and uses Bourbon, Neat, and Refills for styles.
+    +technology('rails', 'sass/bourbon')
+    .links
+      a.repo(href='https://github.com/carolineartz/Polity' target='_blank') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+  hr
+  +project('devref', 'DevRef for Rails Developers', 'left')
+    .content This 'cheatsheet' was created for an html/css challenge during prep phase for Dev Bootcamp. I utilized <a href="http://purecss.io">Pure.css</a> modules for styles.
+    +technology('html', 'css')
+    .links
+      a.repo(href='') <svg class='icon-github-1'><use xlink:href='#icon-github-1'></use></svg> project
+      a.live(href='http://www.carolineartz.me/dbc-portfolio/cheatsheet/dev-cheatsheet.html') <svg class='icon-link'><use xlink:href='#icon-link'></use></svg> live

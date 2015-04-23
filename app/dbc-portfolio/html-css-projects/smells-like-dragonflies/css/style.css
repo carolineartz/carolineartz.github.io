@@ -1,0 +1,140 @@
+
+body {
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    color: #edfcca;
+    background-color: #353645;
+    background-attachment: fixed;
+    background-image: url("img/zenbg-1.png"), url("img/zenbg-2.png");
+    background-repeat: repeat-x, repeat;
+}
+a {
+    color: #b4c34f;
+    font-weight: 400;
+    text-decoration: none;
+        -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+a:hover {
+  color: #ae4b79;
+}
+h1, h2, h3 {
+    font-family:'Pompiere', cursive;
+}
+h1 {
+    font-size: 1.750em;
+    letter-spacing: -1.5px;
+}
+h2 {
+    font-size: 3em;
+    color: #75c0d2;
+}
+h3 {
+    font-size: 1.125em;
+    color: #ed6c85;
+}
+
+.nav li a, .btn {
+    color: #454758;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    font-family:'Pompiere', cursive;
+}
+
+.btn {
+    text-align: center;
+    padding: 5px 20px;
+    display: inline-block;
+    background: #a4617f;
+    margin: 0px 4px;
+    color: #454758;
+    font-size: 30px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.btn:hover {
+      background: #e49452;
+      color: #454758;
+}
+
+.btn-small {
+  font-size: 20px;
+}
+
+ul.nav {
+    margin: 0 auto;
+    padding: 0 0 0 0;
+    list-style: none;
+    position:relative;
+    top: -150px;
+}
+ul.nav li {
+    margin-top: 10px;
+    padding-left: 80px;
+}
+
+ul.nav li.last:hover {
+    background-color: #c62718;
+}
+ul.nav li a {
+    color: #454758;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    font-family:'Pompiere', cursive;
+}
+
+.nav li i {
+  text-align: left;
+  float: left;
+}
+
+#logo {
+    margin: 25px 0 0;
+}
+
+#logo img {
+    width: 200px;
+    position: relative;
+    bottom: 200px;
+    left: 120px;
+}
+#intro {
+    margin: 50px 0 15px 0;
+    max-height: 550px;
+}
+
+.featured img {
+  border: 12px solid #b4c34f;
+}
+
+
+#featured-bottom {
+  margin-top: 12px;
+}
+
+
+#connect {
+  margin-top: 20px;
+}
+#copyright {
+    border-top: 3px solid #75c0d2;
+    padding: 10px 0;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.fa-inverse {
+  color: #454758 !important;
+}
+
+
+

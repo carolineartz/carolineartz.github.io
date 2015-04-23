@@ -1,0 +1,273 @@
+body {
+  font-size: 87.5%;
+  color: #252e35;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  background: #f6f6f6;
+}
+
+header h1 {
+  text-align: center;
+  margin: 7px 0 0 0;
+  color: #465C7A;
+  font-weight: 300;
+}
+
+header, .divider {
+  background: #262F37;
+}
+
+.divider {
+  height: 2em;
+}
+
+/**
+*
+* COUNTDOWN
+*
+**/
+
+.time {
+  text-align: center;
+  font-size: 3em;
+  font-family: "Satisfy", "Open Sans", sans-serif;
+  margin-top: .25em;
+  color: #465d7a;
+}
+
+.clipped {
+  background: url("http://tympanus.net/Tutorials/TexturedText/img/watercolor_1.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  /*    padding:2em;*/
+  -moz-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  background-clip: text !important;
+  text-align: center;
+}
+
+.clipped #clock {
+  font-family: "Vast Shadow";
+  text-align: center;
+  font-size: 8em;
+  line-height: 1em;
+}
+
+#clock > span {
+  white-space: nowrap;
+}
+
+#clock span span {
+  font-family: "Oswald";
+  font-size: 25px;
+  background-clip: border-box;
+  color: #465C7A;
+  -webkit-text-fill-color: #465C7A;
+  /*  background: #262F37;*/
+  font-weight: 400;
+}
+
+/**
+*
+* BUTTONS
+*
+**/
+
+ul {
+  list-style-type: none;
+  -webkit-margin-before: 0;
+  margin-before: 0;
+  -moz-margin-before: 0;
+  -moz-padding-start: 0;
+  -webkit-margin-start: 0;
+  -webkit-padding-start: 0;
+}
+
+.button {
+  background: #262F37;
+  color: #465C7A;
+  height: 2.5em;
+  width: 100%;
+  line-height: 1;
+  font-size: 140%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.button:first-child {
+  margin-top: 1em;
+}
+
+.button:active {
+  background: #262F37;
+  top: 2px;
+}
+
+.button span {
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-transition: all 0.3s;
+  -moz-backface-visibility: hidden;
+  transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+.button:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 170%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -o-transition: all .3s;
+}
+
+.button:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.button:active:before {
+  color: #465C7A;
+}
+
+.button-horizontal:hover span {
+  -webkit-transform: translateX(200%);
+  -o-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+.button-horizontal:before {
+  left: -100%;
+  top: 0;
+  content: '✬';
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.button-horizontal:hover:before {
+  left: 0;
+  top: .2em;
+}
+
+.button-horizontal:hover span {
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  -o-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+/**
+*
+* OSCILATING BLOCK
+*
+**/
+
+#oscilating_block {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  zoom: 2;
+  font-family: 'Lato';
+}
+
+.no_move, .move_right, .move_left {
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-size: 3em;
+  line-height: 1;
+  -moz-transition: left .25s ease;
+  -webkit-transition: left .25s ease;
+  -ms-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left .25s ease;
+}
+
+.no_move {
+  -moz-text-stroke: .75px #35abb6;
+  -webkit-text-stroke: .75px #35abb6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  font-weight: 700;
+}
+
+.move_right {
+  -webkit-text-stroke: .75px #7bd541;
+  -moz-text-stroke: .75px #7bd541;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  font-weight: 400;
+}
+
+.move_left {
+  -webkit-text-stroke: .75px #434672;
+  -moz-text-stroke: .75px #434672;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  font-weight: 300;
+}
+
+/**
+*
+* MISC EFFECTS
+*
+**/
+
+#colorful_heading {
+  font-size: 5em;
+  text-align: center;
+  font-family: "Lato";
+}
+
+#character_block, #oscilating_block {
+  display: none;
+  line-height: 2em;
+  font-size: 2em;
+}
+
+#moving_dot {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  background: #7bd541;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}

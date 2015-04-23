@@ -1,0 +1,87 @@
+/*
+*  Globals Variables
+*/
+
+@import "partials/fonts";
+
+//== Colors
+
+$gray-base: #20262b;
+$gray-darker: lighten($gray-base, 13.5%);
+$gray-dark: #545e67;
+$gray: lighten($gray-base, 33.5%);
+$gray-light: lighten($gray-base, 46.7%);
+$gray-lighter: lighten($gray-base, 73.5%);
+
+$brand-primary: #f7d100;
+$brand-success: #ffe868;
+$brand-info: #90759e;
+$brand-warning: #ff8a6c;
+$brand-danger: #ff8a6c;
+
+//== Scaffolding
+
+//** Background color for `<body>`.
+$body-bg: #fff;
+
+//** Global text color on `<body>`.
+$text-color: $gray-dark;
+$text-muted: $gray-light !default;
+
+//** Global textual link color.
+
+$link-color: $iris-blue;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: none;
+
+//== Typography
+
+$font-avenir-next-light: "Avenir Next W01 Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-light-italic: "AvenirNextW01-LightItal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-light-sc: "AvenirNextW01SC-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-regular: "AvenirNextLTW01-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-italic: "AvenirNextLTW01-Italic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-regular-sc: "Avenir Next LT W01 SC", "AvenirNextLTW01-MediumS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-medium: "AvenirNextLTW01-Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-medium-italic: "AvenirNextLTW01-MediumI_721278", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-medium-sc: "AvenirNextLTW01-MediumS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-demi: "Avenir Next LT W01 Demi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-demi-italic: "AvenirNextLTW01-DemiIta", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-demi-sc: "AvenirNextLTW01-DemiSC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-bold: "Avenir Next LT W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-avenir-next-bold-italic: "AvenirNextLTW01-BoldIta", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-family-sans-serif: $font-avenir-next-light;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-family-monospace: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$font-size-base: 17px;
+$font-size-large: ceil($font-size-base * 1.45);
+
+$font-size-small: ceil($font-size-base * 0.85);
+
+$font-size-h1: floor($font-size-base * 2.7);
+$font-size-h2: floor($font-size-base * 2.5);
+$font-size-h3: ceil($font-size-base * 2);
+$font-size-h4: ceil($font-size-base * 1.75);
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil($font-size-base * 0.95);
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.82857;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor($font-size-base * $line-height-base);
+
+// ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family: "LagunaW26";
+
+$headings-font-weight: 400;
+$headings-line-height: 1.1;
+$headings-color: inherit;
+
+$hr-border: $gray-lighter !default;

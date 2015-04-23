@@ -1,0 +1,94 @@
+<!doctype html>
+<!-- This is an HTML5 file -->
+<html lang="en">
+
+<head>
+    <!-- Title, scripts & styles go here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DOM manipulation with JavaScript</title>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600|Vast+Shadow|Special+Elite|Satisfy|Oswald' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="layout.css">
+    <link type="text/css" rel="stylesheet" href="dom-js.css">
+    <script type="text/javascript" src="dom-js.js"></script>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-45765981-1', 'carolineartz.me');
+      ga('send', 'pageview');
+
+    </script>
+
+
+</head>
+
+<body class="cf">
+    <header class="span5">
+        <div class="inner cf">
+            <h1 class="welcome">Hello. Welcome to the JS DOM Manipulation Challenge!</h1>
+        </div>
+        <section class="span5">
+            <h1 class="time">Countdown to Dev Bootcamp</h1>
+            <div class="clipped">
+                <div id="clock"></div>
+            </div>
+        </section>
+
+
+    </header>
+
+    <main id="container" class="cf">
+        <section class="span1">
+            <aside>
+                <ul>
+                    <li>
+                        <button class="button button-horizontal icon-star1" id="b_one" type="button">
+                            <span>Click!</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button button-horizontal icon-star2" id="b_two" type="button">
+                            <span>And...Click!</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button button-horizontal icon-star2" id="b_three" type="button">
+                            <span>Duh!</span>
+                        </button>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="span4 col effect_container" id="character_block">
+            <div>
+                <h2 id="colorful_heading">
+                    <span id="colorful">HOVER OVER ME!</span>
+                </h2>
+            </div>
+        </section>
+
+        <section class="span4 col effect_container" id="oscilating_block">
+            <h3 id="no_move" class="no_move">DBC</h3>
+            <h3 id="move_left" class="move_left">DBC</h3>
+            <h3 id="move_right" class="move_right">DBC</h3>
+        </section>
+
+        <section class="span4 col effect_container">
+            <div class="dot" id="moving_dot">
+            </div>
+        </section>
+    </main>
+
+    <!--! end of #container -->
+
+
+</body>
+
+</html>

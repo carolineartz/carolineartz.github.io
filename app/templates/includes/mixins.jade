@@ -1,39 +1,27 @@
 mixin top-nav-list(...targets)
-  ul.nav.navbar-nav
+  //-ul.nav.navbar-nav#top-menu
+  ul#top-menu
     each target in targets
       li
         a.top-navigation-link(href="#" + "#{target.toLowerCase()}")= target
 
 mixin section(target)
-  .panel.panel-default
-    .panel-heading(id="section-#{target}", role="tab")
-      h2.panel-title.text-muted
-        a(data-toggle='collapse', data-parent='#accordion', href="#" + "#{target}", class='collapsed', aria-expanded='false', aria-controls=target) <span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
-            =target
-    div(id=target, class='panel-collapse collapse', role="tabpanel" aria-labelledby="section-#{target}")
-      .panel-body
-        block
-
+  section.accordion-section(id=target)
+    header.accordion-header
+      h2.accordion-heading<span><svg class="icon-add-1"><use xlink:href="#icon-add-1"></use></svg>&nbsp;</span>
+          =target
+    .accordion-content(id="section-#{target}")
+      block
 
 mixin project(iden, title, imageside)
-  .row(id=iden)
-    if imageside == 'left'
-      .col-md-8
-        div
-          +browser
-      .col-md-4
-        div.description
-          h2= title
-          block
-    else
-      .col-md-8.col-md-push-4
-        div(id=iden)
-          +browser
-      .col-md-4.col-md-pull-8
-        div.description
-          h2= title
-          block
-
+  .project(id=iden)
+    .visual
+      div
+        +browser
+    .text
+      div.description
+        h2= title
+        block
 
 mixin technology(...techs)
   ul.tech-list
@@ -69,7 +57,7 @@ mixin social-icon(social, link)
     a(href=link, target="_blank", title=social)
       i(class="icon-#{social}")
       i(class="icon-#{social}-inverse")
-    .network= social
+    //- .network= social
 
 
 mixin browser
