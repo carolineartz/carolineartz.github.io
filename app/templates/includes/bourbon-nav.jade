@@ -1,7 +1,7 @@
-header.centered-navigation.header(role="banner")
-  .centered-navigation-wrapper
+header.left-navigation.header(role="banner")
+  .left-navigation-wrapper
     nav(role="navigation")
-      ul#js-navigation-menu.centered-navigation-menu
+      ul#js-navigation-menu.left-navigation-menu
         each target in ['about', 'projects', 'cv', 'skills']
           li.nav-link
             a(href="#" + "#{target.toLowerCase()}")= target

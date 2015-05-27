@@ -1,67 +1,18 @@
 // Add any variables, libraries, mixins needed before bootstrap or bootstrap typography overrides import here:
 
-// colors
-$tangerine: #f7d100;
-$ce-soir-purple: #90759e;
-$ce-soir: #90759e;
-$light-blue: #5DC8CD;
-$bright-orange: #FFAA40;
-$flush-orange: #fd8505;
-$mantis: #7bc84b;
-$viking: #57c8d4;
-$mandy: #d64e66;
-$antique-fuchsia: #94607e;
-$carolina-blue: #90bbda;
-$monte-carlo: #78bfb6;
-$saphire: #234ba5;
-$dark-byzantium: #594157;
-$eggplant: #6d516b;
-$pacific-blue: #15b7c9;
-$eastern-blue: #1199a9;
-$iris-blue: #00b0c4;
-$white-smoke: #f3f7f8;
-$porcelain: #eff3f4;
 
-$bottom-skills-fill: $iris-blue;
-
-$top-skills-fill: $tangerine;
-$timeline-color: $iris-blue;
-
+@import "partials/fonts";
 @import "variables";
-@import "../../bower_components/compass-breakpoint/stylesheets/breakpoint";
-
-
-/*
-*  Responsive typography
-*/
-
-$xxs: min-width 320px;
-$xs: min-width 480px;
-$smx: min-width 618px;
-$sm: min-width 768px;
-$md: min-width 992px;
-$lg: min-width 1200px;
-
-$mobile-landscape: (max-width 768px) (orientation landscape);
-$mobile-portrait: (max-width: 768px) (orientation portrait);
-$timeline: max-width 768px;
-
-/*
-*  library imports here
-*/
-
-
+@import "partials/mixins";
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
-@import "partials/mixins";
-@import "partials/type";
+
 
 //override neat's breakpoint mixin, have to import again TODO: fix this. find out: does neat's breakpoint mixin replace the need for this?
 @import "../../bower_components/compass-breakpoint/stylesheets/breakpoint";
-@import "partials/fonts";
+@import "partials/type";
 @import "partials/social-icons";
-@import "partials/reset-extended";
-
+@import "partials/components";
 /*
 *  custom variables
 */
@@ -72,40 +23,25 @@ $padding-larger-vertical: 20px;
 $body-font-weight: 200;
 $border-bottom-light: 1px solid rgba(0, 0, 0, 0.05);
 
-// $institution-location:
-
-/*
-* custom component imports
-*/
-@import "partials/components";
-
 //
 // Extended Reset
 // --------------------------------------------------
 
 // Reset the box-sizing
 //
-
-// Box sizing
-@mixin box-sizing($boxmodel) {
-  -webkit-box-sizing: $boxmodel;
-  -moz-box-sizing: $boxmodel;
-  box-sizing: $boxmodel;
-}
-
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 *:before,
 *:after {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Body reset
 
 html {
-  font-size: 10px;
+  // font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -130,6 +66,10 @@ p em, div em {
   font-style: normal;
 }
 
+i {
+  font-style: normal !important;
+}
+
 ul {
   padding-left: 0;
 }
@@ -146,6 +86,10 @@ ol {
 
 img {
   vertical-align: middle;
+}
+
+.content > a {
+  @include underline($white, $iris-blue, $iris-blue);
 }
 
 /*
@@ -219,7 +163,6 @@ body {
 footer {
   clear: both;
   margin: 70px 15px 0;
-  // @include outer-container;
   .copy, .contact {
     @include span-columns(6);
   }
@@ -245,15 +188,10 @@ footer {
 
 /* Responsive: Portrait tablets and up */
 @include breakpoint($sm) {
-  /* Remove the padding we set earlier */
   .header,
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
   }
 }
 
@@ -284,10 +222,13 @@ footer {
     top: 50%;
     bottom: auto;
     right: auto;
-    -webkit-transform: translateX(-50%)translateY(-50%);
     transform: translateX(-50%)translateY(-50%);
     width: 70px;
     height: 70px;
     line-height: 70px
 }
 
+::selection {
+  background: $iris-blue;
+  color: white;
+}

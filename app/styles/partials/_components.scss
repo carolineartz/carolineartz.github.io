@@ -2,6 +2,7 @@
 *     Browser Windows credit: adapted from bourbon refills
 */
 
+
 .browsers {
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
@@ -66,11 +67,11 @@
     display: inline-block;
     text-align: left;
     width: 20%;
-    @include transform(scale(1));
+    transform: scale(1);
     background-color: white;
     width: 90%;
     @include media($large-screen) {
-      @include transform(scale(1.2));
+      transform: scale(1.2);
       width: 75%;
     }
   }
@@ -80,42 +81,42 @@
 *     Top Navigation: Adapted from Bourbon Refills
 */
 
-.centered-navigation {
+.left-navigation {
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
-  $centered-navigation-padding: 1em;
-  $centered-navigation-background: transparentize(white, 0.2);
-  $centered-navigation-color: $gray-light;
-  $centered-navigation-color-hover: $base-font-color;
-  $centered-navigation-height: 60px;
-  $centered-navigation-item-padding: 1em;
-  $centered-navigation-submenu-padding: 1em;
-  $centered-navigation-item-nudge: 2.2em;
+  $left-navigation-padding: 1em;
+  $left-navigation-background: transparentize(white, 0.2);
+  $left-navigation-color: $gray-light;
+  $left-navigation-color-hover: $base-font-color;
+  $left-navigation-height: 60px;
+  $left-navigation-item-padding: 1em;
+  $left-navigation-submenu-padding: 1em;
+  $left-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $large-screen;
   /* Space out content a bit */
-  background-color: $centered-navigation-background;
-  min-height: $centered-navigation-height;
+  background-color: $left-navigation-background;
+  min-height: $left-navigation-height;
   width: 100%;
   z-index: 9999;
   position: fixed;
   top: 0;
-  margin-left: -15px;
-  @include transition(top 0.3s ease-in);
+  // margin-left: -15px;
+  transition: top 0.3s ease-in;
   &.nav-up {
-    top: -$centered-navigation-height;
+    top: -$left-navigation-height;
   }
   &.nav-down {
     top: 0 !important;
   }
   // Nav menu
-  .centered-navigation-wrapper {
+  .left-navigation-wrapper {
     @include clearfix;
     position: relative;
     z-index: 999;
   }
-  ul.centered-navigation-menu {
+  ul.left-navigation-menu {
     -webkit-transform-style: preserve-3d;
     // stop webkit flicker
     clear: both;
@@ -130,37 +131,37 @@
     }
   }
   ul li.nav-link {
-    background: $centered-navigation-background;
+    background: $left-navigation-background;
     display: block;
-    line-height: $centered-navigation-height;
+    line-height: $left-navigation-height;
     overflow: hidden;
-    padding-right: $centered-navigation-submenu-padding;
+    padding-right: $left-navigation-submenu-padding;
     text-align: right;
     width: 100%;
     z-index: 9999;
     a {
-      color: $centered-navigation-color;
+      color: $left-navigation-color;
       display: inline-block;
       outline: none;
       text-decoration: none;
       &:focus, &:hover {
-        color: $gray-light
+        color: $gray;
       }
     }
   }
-  ul.centered-navigation-menu {
+  ul.left-navigation-menu {
     display: block;
   }
   // The nav items
   .nav-link:first-child {
-    margin-left: $centered-navigation-item-nudge;
+    margin-left: $left-navigation-item-nudge;
   }
   ul li.nav-link {
     background: transparent;
     display: inline;
-    line-height: $centered-navigation-height;
+    line-height: $left-navigation-height;
     a {
-      padding-right: $centered-navigation-item-padding;
+      padding-right: $left-navigation-item-padding;
     }
   }
 }

@@ -6,7 +6,7 @@ html
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1, minimal-ui')
 
-    title Caroine Artz - Full Stack Web Developer
+    title Caroline Artz - Full Stack Web Developer
     link(rel='stylesheet', href="https://fontastic.s3.amazonaws.com/gteBrByXDfCc2cnKjj7sVA/icons.css")
     <!-- -->
 
@@ -24,9 +24,12 @@ html
     <!-- -->
     script(src='https://fontastic.s3.amazonaws.com/gteBrByXDfCc2cnKjj7sVA/icons.js')
     <!-- -->
-    <!-- build:js scripts/vendor/modernizr.js -->
+    <!-- build:js scripts/vendor.js -->
     script(src='../bower_components/modernizr/modernizr.js')
     <!-- -->
+    script(src='../bower_components/prefixfree/prefixfree.min.js')
+    <!-- -->
+    script(src='../bower_components/fastclick/lib/fastclick.js')
     <!-- endbuild -->
 
 
@@ -34,7 +37,7 @@ html
     block content
 
     block scripts
-      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <!-- Google Analytics -->
       script(type='text/javascript').
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
         function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -43,7 +46,7 @@ html
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
         ga('create','UA-45765981-1');ga('send','pageview');
       <!-- -->
-      <!-- build:js scripts/vendor.js -->
+      <!-- build:js scripts/plugins.js -->
       <!-- bower:js -->
       script(src='../bower_components/jquery/dist/jquery.js')
       <!-- -->
@@ -51,8 +54,8 @@ html
       <!-- -->
       <!-- endbower -->
       <!-- endbuild -->
-      <!-- build:js scripts/plugins.js -->
-      script(src='../bower_components/jquery.typer/src/jquery.typer.js')
+      <!-- build:js scripts/nothing.js -->
+      //- script(src='../bower_components/jquery.typer/src/jquery.typer.js')
       <!-- -->
       <!-- endbuild -->
       <!-- build:js scripts/main.js -->

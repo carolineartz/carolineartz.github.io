@@ -1,6 +1,21 @@
+$about-bg: #242930;
+$about-color: #7E868C;
 #section-about {
-  background-color: #242930;
+  background-color: $about-bg;
   margin: 0 -15px;
+  p {
+    color: $about-color;
+    a {
+      color: $iris-blue;
+      @include underline($about-bg, $iris-blue, $iris-blue);
+    }
+  }
+  ul.icons li a {
+    color: $about-color;
+    &:hover {
+      color: transparent;
+    }
+  }
 }
 
 .about-content {
@@ -46,8 +61,6 @@
           float: left;
           width: 240px;
           padding: 30px 15px 15px;
-          // width: 240px;
-
         }
       }
     }
@@ -97,7 +110,7 @@ $caroline-social: "caroline-social";
       font-size: 220%;
       width: 55px;
       pointer-events: none;
-      @include transition(all 0.3s ease);
+      transition: all 0.3s ease;
       i {
         width: 55px;
         height: 55px;
@@ -109,7 +122,7 @@ $caroline-social: "caroline-social";
         width: 55px;
         color: $gray-dark;
         outline: none;
-        @include transition(all 0.3s ease);
+        transition: all 0.3s ease;
         &:hover {
           color: transparent;
         }
@@ -122,7 +135,7 @@ $caroline-social: "caroline-social";
         bottom: -27px;
         text-align: center;
         width: 55px;
-        @include transition(all 0.4s ease 0.2s);
+        transition: all 0.4s ease 0.2s;
       }
       &:hover {
         .network {

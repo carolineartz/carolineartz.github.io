@@ -3,6 +3,7 @@
 projects for quick update
 
 -------------------------------- */
+
 @include breakpoint($md) {
   .project {
     .visual {
@@ -26,6 +27,11 @@ projects for quick update
           padding: 0 2.3576515979%;
         }
       }
+      .visual {
+        &.codepen-v {
+          padding-right: 1.3576515979%;
+        }
+      }
     }
     &:nth-of-type(odd) {
       @include row($direction: LTR);
@@ -37,7 +43,7 @@ projects for quick update
       }
       .visual {
         &.codepen-v {
-          padding-left: 2.3576515979%;
+          padding-left: 4.3576515979%;
         }
       }
     }
@@ -48,7 +54,6 @@ projects for quick update
   .codepen-v {
     margin: 0 -15px;
     @include breakpoint($xs) {
-      // margin: 0;
     }
   }
 }
@@ -118,7 +123,7 @@ projects for quick update
     > div {
       text-transform: none;
       font-size: .8em;
-      font-family: $font-avenir-next-italic;
+      // font-family: $font-avenir-next-italic;
     }
   }
   a svg {

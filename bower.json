@@ -9,9 +9,8 @@
     "scroll-up-bar": "~0.3.0",
     "compass-breakpoint": "~2.5.0",
     "sassy-maps": "~0.4.0",
-    "jquery.easing": "~1.3.1"
-  },
-  "devDependencies": {
-    "theaterjs": "~1.3.2"
+    "jquery.easing": "~1.3.1",
+    "prefixfree": "*",
+    "fastclick": "~1.0.6"
   }
 }

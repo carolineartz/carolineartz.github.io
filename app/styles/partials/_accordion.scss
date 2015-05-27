@@ -27,9 +27,10 @@
     }
 
     color: $text-muted;
+    transition: all 0.3s ease;
   }
   svg {
-    @include transition(0.3s ease);
+    transition: all 0.3s ease;
     path {
       stroke-width: 15;
       fill: $text-muted;
@@ -38,16 +39,32 @@
   }
   &:not(.is-active) {
     + .accordion-content {
-     display: none;
-   }
+      display: none;
+    }
     svg {
-      @include transform(rotate(0deg));
+      transform: rotate(0deg);
+    }
+  }
+  &:hover {
+    h2 {
+      color: darken($text-muted, 20%);
+    }
+    svg {
+      path {
+        fill: darken($text-muted, 20%);
+      }
     }
   }
   &.is-active {
     border-bottom: none;
+    h2 {
+      color: darken($text-muted, 20%);
+    }
     svg {
-      @include transform(rotate(45deg));
+      path {
+        fill: darken($text-muted, 20%);
+      }
+      transform: rotate(45deg);
     }
   }
 }

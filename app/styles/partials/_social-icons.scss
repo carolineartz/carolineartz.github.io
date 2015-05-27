@@ -18,14 +18,13 @@ $caroline-social: "caroline-social";
 %icons_normal {
   color: $color1;
   position: absolute;
-  // bottom: 69px;
-  @include transition(color 0.35s linear);
+  transition: color 0.35s linear;
 }
 
 %icons_hover {
   color: transparent;
   position: relative;
-  @include transition(color 0.35s linear);
+  transition: 0.35s linear;
 }
 
 .icon-twitter:before {
@@ -155,17 +154,12 @@ $caroline-social: "caroline-social";
     list-style-type: none;
     padding-left: 0;
     li {
-      // display: inline-block;
       font-family: $caroline-social;
       line-height: 1;
       text-decoration: inherit;
       margin-bottom: 10px;
       font-size: 400%;
       width: 70px;
-//      @include respondto(phone, tablet-portrait) {
-//        width: 60px;
-//      }
-
       a {
         text-decoration: none;
         display: block;
@@ -188,7 +182,4 @@ $caroline-social: "caroline-social";
 .icon-email {
   position: relative;
   top: 68px;
-//  @include respondto(phone, tablet-portrait) {
-//    top: 56px;
-//  }
 }

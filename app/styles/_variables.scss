@@ -2,9 +2,47 @@
 *  Globals Variables
 */
 
-@import "partials/fonts";
+$xxs: min-width 320px;
+$xs: min-width 480px;
+$smx: min-width 618px;
+$sm: min-width 768px;
+$md: min-width 992px;
+$lg: min-width 1200px;
+
+$mobile-landscape: (max-width 768px) (orientation landscape);
+$mobile-portrait: (max-width: 768px) (orientation portrait);
+$timeline: max-width 768px;
 
 //== Colors
+
+// colors
+$tangerine: #f7d100;
+$ce-soir-purple: #90759e;
+$ce-soir: #90759e;
+$light-blue: #5DC8CD;
+$bright-orange: #FFAA40;
+$flush-orange: #fd8505;
+$mantis: #7bc84b;
+$viking: #57c8d4;
+$mandy: #d64e66;
+$antique-fuchsia: #94607e;
+$carolina-blue: #90bbda;
+$monte-carlo: #78bfb6;
+$saphire: #234ba5;
+$dark-byzantium: #594157;
+$eggplant: #6d516b;
+$pacific-blue: #15b7c9;
+$eastern-blue: #1199a9;
+$iris-blue: #00b0c4;
+$white-smoke: #f3f7f8;
+$porcelain: #eff3f4;
+$white: #ffffff;
+
+$bottom-skills-fill: $iris-blue;
+$top-skills-fill: $tangerine;
+
+$timeline-work: $iris-blue;
+$timeline-education: $tangerine;
 
 $gray-base: #20262b;
 $gray-darker: lighten($gray-base, 13.5%);
@@ -32,7 +70,7 @@ $text-muted: $gray-light !default;
 
 $link-color: $iris-blue;
 $link-hover-color: darken($link-color, 15%);
-$link-hover-decoration: none;
+$link-hover-decoration: none !important;
 
 //== Typography
 

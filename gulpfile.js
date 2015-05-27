@@ -12,7 +12,7 @@ gulp.task('styles', function () {
       style: 'expanded',
       precision: 10
     }))
-    .pipe($.autoprefixer({browsers: ['last 1 version']}))
+    // .pipe($.autoprefixer({browsers: ['last 1 version']}))
     .pipe(gulp.dest('.tmp/styles'));
 });
 
@@ -26,7 +26,7 @@ gulp.task('jshint', function () {
 gulp.task('templates', function () {
     var jade = require('gulp-jade');
     return gulp.src('app/templates/*.jade')
-        .pipe($.plumber())
+        // .pipe($.plumber())
         .pipe($.jade({
             pretty: true
         }))
@@ -34,9 +34,9 @@ gulp.task('templates', function () {
 });
 
 gulp.task('html', ['styles'], function () {
-    var lazypipe = require('lazypipe');
-    var cssChannel = lazypipe()
-        .pipe($.csso)
+    // var lazypipe = require('lazypipe');
+    //  lazypipe()
+    //     .pipe($.csso);
     var assets = $.useref.assets({
         searchPath: '{.tmp,app}'
     });
@@ -45,14 +45,11 @@ gulp.task('html', ['styles'], function () {
         .pipe(assets)
         .pipe($.if('*.js', $.uglify()))
         // Remove Any Unused CSS
-        .pipe($.if('*.css', $.uncss({
-            html: [
-                'app/index.html'
-            ]
-            // CSS Selectors for UnCSS to ignore
-            //ignore: [
-            //]
-        })))
+        // .pipe($.if('*.css', uncss({
+        //     html: [
+        //         'app/index.html'
+        //     ]
+        // })))
         // Concatenate And Minify Styles
         .pipe($.if('*.css', $.csso()))
         .pipe(assets.restore())
@@ -125,7 +122,8 @@ gulp.task('serve', ['connect', 'watch'], function () {
 
 var options = {
     remoteUrl: "https://github.com/carolineartz/carolineartz.github.io",
-    branch: "master"
+    branch: "master",
+    force: true
 };
 gulp.task('deploy', function () {
     var deploy = require('gulp-gh-pages');
@@ -162,7 +160,7 @@ gulp.task('watch', ['connect'], function () {
     gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'templates', 'styles', 'html', 'images', 'fonts', 'extras', 'docs', 'dbc-files'], function () {
+gulp.task('build', ['jshint', 'templates', 'html', 'images', 'fonts', 'extras', 'docs', 'dbc-files'], function () {
     return gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true

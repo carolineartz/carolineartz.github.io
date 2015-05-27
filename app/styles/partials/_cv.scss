@@ -1,11 +1,16 @@
 // **************************************************************************************
 // Timeline
+$tangerine: #f7d100;
+$iris-blue: #00b0c4;
+
+$timeline-education: $tangerine;
+$timeline-work: $iris-blue;
 
 #timeline {
   width: 90%;
   margin: 30px auto;
   position: relative;
-  &:before {
+  &::before {
     content: "";
     width: 3px;
     height: 100%;
@@ -13,7 +18,7 @@
     top: 7px;
     position: absolute;
   }
-  &:after {
+  &::after {
     content: "";
     clear: both;
     display: table;
@@ -37,7 +42,7 @@
       width: 45%;
       padding: 20px 20px 0;
       border-radius: 5px;
-      @include transition(all 0.3s ease);
+      transition: all 0.3s ease;
       .timeline-header {
         padding: 15px;
         color: #fff;
@@ -54,7 +59,6 @@
           margin-top: .5em;
         }
         .time {
-          font-family: $font-avenir-next-light-italic;
           font-size: .7em;
         }
       }
@@ -91,18 +95,23 @@
   }
 }
 
+#work a, .resume a {
+  color: $iris-blue;
+  @include underline($white, $iris-blue, $iris-blue);
+  font-family: $font-family-base;
+}
+
 #education {
   @include timeline-color(darken($tangerine, 2%));
   a {
-    @include basic-link($tangerine, false, true);
+    color: darken($tangerine, 4%);
+    @include underline($white, darken($tangerine, 4%), $iris-blue);
+    text-decoration: none !important;
   }
 }
 
 #work {
-  @include timeline-color($iris-blue);
-  a {
-    @include basic-link($iris-blue, true, false);
-  }
+  @include timeline-color(darken($iris-blue, 1%));
   li {
     line-height: 1.5;
     margin-bottom: .5em;
@@ -122,14 +131,14 @@
   #timeline {
     margin: 30px;
     padding: 0;
-    &:before {
+    &::before {
       left: 0;
     }
     .timeline-item {
       .timeline-content {
         width: 90%;
         float: right;
-        &:before, &.right:before {
+        &::before, &.right::before {
           left: 10%;
           margin-left: -6px;
           border-left: 0;
